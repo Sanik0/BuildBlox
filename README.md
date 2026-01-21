@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
@@ -57,3 +58,7 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+=======
+# BuildBlox
+BuildBlox is a Laravel-powered web platform featuring step-by-step Minecraft builds. Users can browse builds by category, view required materials, rate and comment on builds, and track views. Special users can upload new builds with detailed step-by-step images.
+>>>>>>> 7e13acd4c972b15f6256cd05b1490d3aaca7e929
