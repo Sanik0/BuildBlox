@@ -42,10 +42,82 @@
                             <a href="#" class="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent">About</a>
                         </li>
                         <li>
-                            <a href="#" class="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent">Services</a>
+                            <button id="mega-menu-full-dropdown-button" data-collapse-toggle="mega-menu-full-dropdown" class="flex items-center justify-between w-full py-2 px-3 font-medium text-heading border-b border-light md:w-auto hover:bg-neutral-secondary-soft md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0">
+                                Categories
+                                <svg class="w-4 h-4 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" />
+                                </svg>
+                            </button>
+                        </li>
+                        <li>
+                            <a href="#" class="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent">All Builds</a>
                         </li>
                         <li>
                             <a href="#" class="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="mega-menu-full-dropdown" class="mt-1 bg-neutral-primary-soft border-default shadow-xs border-y">
+                <div class="grid max-w-screen-xl px-4 py-5 mx-auto text-heading sm:grid-cols-2 md:grid-cols-3 md:px-6">
+                    <ul aria-labelledby="mega-menu-full-dropdown-button">
+                        <li>
+                            <a href="#" class="block p-3 rounded-lg hover:bg-neutral-secondary-medium">
+                                <div class="font-semibold">Online Stores</div>
+                                <span class="text-sm text-body">Connect with third-party tools that you're already using.</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="block p-3 rounded-lg hover:bg-neutral-secondary-medium">
+                                <div class="font-semibold">Segmentation</div>
+                                <span class="text-sm text-body">Connect with third-party tools that you're already using.</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="block p-3 rounded-lg hover:bg-neutral-secondary-medium">
+                                <div class="font-semibold">Marketing CRM</div>
+                                <span class="text-sm text-body">Connect with third-party tools that you're already using.</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <a href="#" class="block p-3 rounded-lg hover:bg-neutral-secondary-medium">
+                                <div class="font-semibold">Online Stores</div>
+                                <span class="text-sm text-body">Connect with third-party tools that you're already using.</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="block p-3 rounded-lg hover:bg-neutral-secondary-medium">
+                                <div class="font-semibold">Segmentation</div>
+                                <span class="text-sm text-body">Connect with third-party tools that you're already using.</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="block p-3 rounded-lg hover:bg-neutral-secondary-medium">
+                                <div class="font-semibold">Marketing CRM</div>
+                                <span class="text-sm text-body">Connect with third-party tools that you're already using.</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="hidden md:block">
+                        <li>
+                            <a href="#" class="block p-3 rounded-lg hover:bg-neutral-secondary-medium">
+                                <div class="font-semibold">Audience Management</div>
+                                <span class="text-sm text-body">Connect with third-party tools that you're already using.</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="block p-3 rounded-lg hover:bg-neutral-secondary-medium">
+                                <div class="font-semibold">Creative Tools</div>
+                                <span class="text-sm text-body">Connect with third-party tools that you're already using.</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="block p-3 rounded-lg hover:bg-neutral-secondary-medium">
+                                <div class="font-semibold">Marketing Automation</div>
+                                <span class="text-sm text-body">Connect with third-party tools that you're already using.</span>
+                            </a>
                         </li>
                     </ul>
                 </div>
