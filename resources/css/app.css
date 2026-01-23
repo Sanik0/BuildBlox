@@ -20,3 +20,13 @@
     box-shadow: inset -4px -4px 0px 0px rgba(0, 0, 0, 0.5);
     cursor: pointer;
 }
+
+.primary-color {
+    background: #E7000B;
+}
+
+.box-mc {
+    border: black 1px solid;
+    border-radius: 0px;
+    box-shadow: inset 0px 4px 0px 0px black
+}
