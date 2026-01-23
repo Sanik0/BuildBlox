@@ -126,7 +126,11 @@
     </header>
     <!-- JUMBOTRON -->
     <section class="w-full relative pt-20 lg:py-0">
-        <section class="w-full bg-neutral-primary bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
+        <div class="w-full h-full absolute top-0 left-0 flex opacity-[0.5] items-center justify-center">
+            <img class="w-full object-cover object-center h-full" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-white"></div>
+        <section class="w-full bg-neutral-primary">
             <div class="py-8 px-4 flex flex-col items-center justify-center mx-auto max-w-screen-xl text-center lg:py-30 z-10 relative">
                 <div class="w-auto inline-flex items-center p-1 pe-2 mb-4 text-sm text-fg-brand-strong rounded-full bg-brand-softer border border-brand-subtle" role="alert">
                     <span class="bg-brand-soft text-fg-brand-strong py-0.5 px-2 rounded-full">Latest</span>
