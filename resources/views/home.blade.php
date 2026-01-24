@@ -159,6 +159,206 @@
             <div class="bg-gradient-to-b from-blue-50 to-transparent dark:from-blue-900 w-full h-full absolute top-0 left-0 z-0"></div>
         </section>
     </section>
+    <!-- CATEGORIES -->
+    <section class="w-full flex items-center justify-center px-4 flex-col py-10 md:py-20 ">
+        <h4 class="mb-6 w-full max-w-screen-xl text-2xl font-bold tracking-tighter text-heading md:text-3xl lg:text-4xl">Categories</h4>
+        <div class="w-full overflow-x-auto max-w-screen-xl flex items-center gap-10">
+            <div class="border-black flex items-end relative border-solid border-2 min-w-45 lg:min-w-75 w-full max-w-45 h-25 lg:max-w-75 lg:h-40">
+                <div class="w-full absolute inset-0 h-full">
+                    <img class="w-full h-full object-center object-cover" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
+                <div class="w-full relative flex flex-col p-3 md:p-5">
+                    <p class="w-full text-base font-bold text-white md:text-xl lg:text-2xl">Medieval</p>
+                    <small class="w-full text-xs font-bold text-gray-300 md:text-xs lg:text-base">230 Builds</small>
+                </div>
+            </div>
+            <div class="border-black flex items-end relative border-solid border-2 min-w-45 lg:min-w-75 w-full max-w-45 h-25 lg:max-w-75 lg:h-40">
+                <div class="w-full absolute inset-0 h-full">
+                    <img class="w-full h-full object-center object-cover" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
+                <div class="w-full relative flex flex-col p-3 md:p-5">
+                    <p class="w-full text-base font-bold text-white md:text-xl lg:text-2xl">Medieval</p>
+                    <small class="w-full text-xs font-bold text-gray-300 md:text-xs lg:text-base">230 Builds</small>
+                </div>
+            </div>
+            <div class="border-black flex items-end relative border-solid border-2 min-w-45 lg:min-w-75 w-full max-w-45 h-25 lg:max-w-75 lg:h-40">
+                <div class="w-full absolute inset-0 h-full">
+                    <img class="w-full h-full object-center object-cover" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
+                <div class="w-full relative flex flex-col p-3 md:p-5">
+                    <p class="w-full text-base font-bold text-white md:text-xl lg:text-2xl">Medieval</p>
+                    <small class="w-full text-xs font-bold text-gray-300 md:text-xs lg:text-base">230 Builds</small>
+                </div>
+            </div>
+            <div class="border-black flex items-end relative border-solid border-2 min-w-45 lg:min-w-75 w-full max-w-45 h-25 lg:max-w-75 lg:h-40">
+                <div class="w-full absolute inset-0 h-full">
+                    <img class="w-full h-full object-center object-cover" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
+                <div class="w-full relative flex flex-col p-3 md:p-5">
+                    <p class="w-full text-base font-bold text-white md:text-xl lg:text-2xl">Medieval</p>
+                    <small class="w-full text-xs font-bold text-gray-300 md:text-xs lg:text-base">230 Builds</small>
+                </div>
+            </div>
+            <div class="border-black flex items-end relative border-solid border-2 min-w-45 lg:min-w-75 w-full max-w-45 h-25 lg:max-w-75 lg:h-40">
+                <div class="w-full absolute inset-0 h-full">
+                    <img class="w-full h-full object-center object-cover" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
+                <div class="w-full relative flex flex-col p-3 md:p-5">
+                    <p class="w-full text-base font-bold text-white md:text-xl lg:text-2xl">Medieval</p>
+                    <small class="w-full text-xs font-bold text-gray-300 md:text-xs lg:text-base">230 Builds</small>
+                </div>
+            </div>
+            <div class="border-black flex items-end relative border-solid border-2 min-w-45 lg:min-w-75 w-full max-w-45 h-25 lg:max-w-75 lg:h-40">
+                <div class="w-full absolute inset-0 h-full">
+                    <img class="w-full h-full object-center object-cover" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
+                <div class="w-full relative flex flex-col p-3 md:p-5">
+                    <p class="w-full text-base font-bold text-white md:text-xl lg:text-2xl">Medieval</p>
+                    <small class="w-full text-xs font-bold text-gray-300 md:text-xs lg:text-base">230 Builds</small>
+                </div>
+            </div>
+            <div class="border-black flex items-end relative border-solid border-2 min-w-45 lg:min-w-75 w-full max-w-45 h-25 lg:max-w-75 lg:h-40">
+                <div class="w-full absolute inset-0 h-full">
+                    <img class="w-full h-full object-center object-cover" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
+                <div class="w-full relative flex flex-col p-3 md:p-5">
+                    <p class="w-full text-base font-bold text-white md:text-xl lg:text-2xl">Medieval</p>
+                    <small class="w-full text-xs font-bold text-gray-300 md:text-xs lg:text-base">230 Builds</small>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- BUILDS -->
+    <section class="w-full flex items-center justify-center px-4 flex-col py-10 md:py-20 ">
+        <h4 class="mb-6 w-full max-w-screen-xl text-2xl font-bold tracking-tighter text-heading md:text-3xl lg:text-4xl">Top Builds</h4>
+        <div class="w-full max-w-screen-xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-9">
+
+                <div class="bg-neutral-primary-soft w-full border border-black shadow-[0_3px_0_0_black]">
+                    <div class="h-60 w-full">
+                        <img class="w-full h-full object-cover" src="{{asset('images/4K Minecraft Nature.jpg')}}" alt="Victorian House" />
+                    </div>
+                    <div class="flex p-6 pb-0 mb-3 items-center space-x-3">
+                        <div class="flex items-center space-x-1 rtl:space-x-reverse">
+                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                            </svg>
+                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                            </svg>
+                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                            </svg>
+                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                            </svg>
+                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                            </svg>
+                        </div>
+                        <span class="bg-brand-softer border border-brand-subtle text-fg-brand-strong text-xs font-medium px-1.5 py-0.5 rounded-sm">4.8 out of 5</span>
+                    </div>
+                    <div>
+                        <h5 class="p-6 pt-0 text-2xl font-semibold tracking-tight text-heading">Victorian House</h5>
+                    </div>
+                </div>
+                <div class="bg-neutral-primary-soft w-full border border-black shadow-[0_3px_0_0_black]">
+                    <div class="h-60 w-full">
+                        <img class="w-full h-full object-cover" src="{{asset('images/4K Minecraft Nature.jpg')}}" alt="Victorian House" />
+                    </div>
+                    <div class="flex p-6 pb-0 mb-3 items-center space-x-3">
+                        <div class="flex items-center space-x-1 rtl:space-x-reverse">
+                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                            </svg>
+                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                            </svg>
+                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                            </svg>
+                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                            </svg>
+                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                            </svg>
+                        </div>
+                        <span class="bg-brand-softer border border-brand-subtle text-fg-brand-strong text-xs font-medium px-1.5 py-0.5 rounded-sm">4.8 out of 5</span>
+                    </div>
+                    <div>
+                        <h5 class="p-6 pt-0 text-2xl font-semibold tracking-tight text-heading">Victorian House</h5>
+                    </div>
+                </div>
+
+                <div class="bg-neutral-primary-soft w-full border border-black shadow-[0_3px_0_0_black]">
+                    <div class="h-60 w-full">
+                        <img class="w-full h-full object-cover" src="{{asset('images/4K Minecraft Nature.jpg')}}" alt="Victorian House" />
+                    </div>
+                    <div class="flex p-6 pb-0 mb-3 items-center space-x-3">
+                        <div class="flex items-center space-x-1 rtl:space-x-reverse">
+                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                            </svg>
+                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                            </svg>
+                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                            </svg>
+                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                            </svg>
+                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                            </svg>
+                        </div>
+                        <span class="bg-brand-softer border border-brand-subtle text-fg-brand-strong text-xs font-medium px-1.5 py-0.5 rounded-sm">4.8 out of 5</span>
+                    </div>
+                    <div>
+                        <h5 class="p-6 pt-0 text-2xl font-semibold tracking-tight text-heading">Victorian House</h5>
+                    </div>
+                </div>
+                <div class="bg-neutral-primary-soft w-full border border-black shadow-[0_3px_0_0_black]">
+                    <div class="h-60 w-full">
+                        <img class="w-full h-full object-cover" src="{{asset('images/4K Minecraft Nature.jpg')}}" alt="Victorian House" />
+                    </div>
+                    <div class="flex p-6 pb-0 mb-3 items-center space-x-3">
+                        <div class="flex items-center space-x-1 rtl:space-x-reverse">
+                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                            </svg>
+                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                            </svg>
+                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                            </svg>
+                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                            </svg>
+                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                            </svg>
+                        </div>
+                        <span class="bg-brand-softer border border-brand-subtle text-fg-brand-strong text-xs font-medium px-1.5 py-0.5 rounded-sm">4.8 out of 5</span>
+                    </div>
+                    <div>
+                        <h5 class="p-6 pt-0 text-2xl font-semibold tracking-tight text-heading">Victorian House</h5>
+                    </div>
+                </div>
+                <!-- Add more cards here -->
+
+            </div>
+        </div>
+    </section>
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
