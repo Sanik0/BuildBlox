@@ -643,10 +643,10 @@
             </div>
         </div>
     </section>
-    <!-- MODERN BUILDS -->
+    <!-- FANTASY BUILDS -->
     <section class="w-full flex items-center justify-center px-4 flex-col py-10 ">
         <div class="w-full max-w-screen-xl py-5 flex gap-4">
-            <h4 class=" text-3xl font-bold tracking-tighter text-heading md:text-3xl lg:text-4xl">Mordern Builds</h4>
+            <h4 class=" text-3xl font-bold tracking-tighter text-heading md:text-3xl lg:text-4xl">Fantasy Builds</h4>
             <svg class="w-9 h-9 fill-pink-500" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FF0005">
                 <path d="m176-120-56-56 301-302-181-45 198-123-17-234 179 151 216-88-87 217 151 178-234-16-124 198-45-181-301 301Zm24-520-80-80 80-80 80 80-80 80Zm520 520-80-80 80-80 80 80-80 80Z" />
             </svg>
@@ -770,6 +770,53 @@
                     </div>
                 </a>
             </div>
+        </div>
+    </section>
+    <!-- TOP BUILDERS -->
+    <section class="w-full flex items-center justify-center px-4 flex-col py-10 ">
+        <div class="w-full max-w-screen-xl py-5 flex gap-4">
+            <h4 class=" text-3xl font-bold tracking-tighter text-heading md:text-3xl lg:text-4xl">Top Builders</h4>
+        </div>
+        <div class="w-full max-w-screen-xl">
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-9">
+                <div class="flex flex-col items-center justify-center gap-4">
+                    <div class="w-full max-w-38 h-38 border-2 border-black">
+                        <img class="w-full h-full object-center object-cover" src="{{asset('images/4K Minecraft Nature.jpg')}}" alt="">
+                    </div>
+                    <h5 class="text-2xl font-semibold tracking-tight text-heading">Alex_22</h5>
+                </div>
+                <div class="flex flex-col items-center justify-center gap-4">
+                    <div class="w-full max-w-38 h-38 border-2 border-black">
+                        <img class="w-full h-full object-center object-cover" src="{{asset('images/4K Minecraft Nature.jpg')}}" alt="">
+                    </div>
+                    <h5 class="text-2xl font-semibold tracking-tight text-heading">Alex_22</h5>
+                </div>
+                <div class="flex flex-col items-center justify-center gap-4">
+                    <div class="w-full max-w-38 h-38 border-2 border-black">
+                        <img class="w-full h-full object-center object-cover" src="{{asset('images/4K Minecraft Nature.jpg')}}" alt="">
+                    </div>
+                    <h5 class="text-2xl font-semibold tracking-tight text-heading">Alex_22</h5>
+                </div>
+                <div class="flex flex-col items-center justify-center gap-4">
+                    <div class="w-full max-w-38 h-38 border-2 border-black">
+                        <img class="w-full h-full object-center object-cover" src="{{asset('images/4K Minecraft Nature.jpg')}}" alt="">
+                    </div>
+                    <h5 class="text-2xl font-semibold tracking-tight text-heading">Alex_22</h5>
+                </div>
+                <div class="flex flex-col items-center justify-center gap-4">
+                    <div class="w-full max-w-38 h-38 border-2 border-black">
+                        <img class="w-full h-full object-center object-cover" src="{{asset('images/4K Minecraft Nature.jpg')}}" alt="">
+                    </div>
+                    <h5 class="text-2xl font-semibold tracking-tight text-heading">Alex_22</h5>
+                </div>
+                <div class="flex flex-col items-center justify-center gap-4">
+                    <div class="w-full max-w-38 h-38 border-2 border-black">
+                        <img class="w-full h-full object-center object-cover" src="{{asset('images/4K Minecraft Nature.jpg')}}" alt="">
+                    </div>
+                    <h5 class="text-2xl font-semibold tracking-tight text-heading">Alex_22</h5>
+                </div>
+            </div>
+        </div>
         </div>
     </section>
 
