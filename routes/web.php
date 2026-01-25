@@ -13,3 +13,7 @@ Route::get('/home', function () {
 Route::get('/categories', function () {
     return view('categories');
 });
+
+Route::get('/builds', function () {
+    return view('builds');
+});

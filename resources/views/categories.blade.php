@@ -132,15 +132,6 @@
         <div class="absolute inset-0 bg-gradient-to-b from-transparent to-white"></div>
         <section class="w-full bg-neutral-primary">
             <div class="py-8 px-4 flex flex-col items-center justify-center mx-auto max-w-screen-xl text-center lg:py-30 z-10 relative">
-                <div class="w-auto inline-flex items-center p-1 pe-2 mb-4 text-sm text-fg-brand-strong rounded-full bg-brand-softer border border-brand-subtle" role="alert">
-                    <span class="bg-brand-soft text-fg-brand-strong py-0.5 px-2 rounded-full">Latest</span>
-                    <div class="ms-2 text-sm">
-                        Checkout latest <a href="#" class="font-medium underline hover:no-underline">Builds</a>
-                    </div>
-                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7" />
-                    </svg>
-                </div>
                 <h1 class="mb-6 text-4xl font-bold tracking-tighter text-heading md:text-5xl lg:text-6xl">Search for the category of your build</h1>
                 <p class="mb-8 w-full text-base font-normal max-w-xl text-body md:text-xl">Here at flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</p>
                 <form class="max-w-md w-full mx-auto">
