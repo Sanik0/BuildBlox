@@ -17,3 +17,7 @@ Route::get('/categories', function () {
 Route::get('/builds', function () {
     return view('builds');
 });
+
+Route::get('/creation', function () {
+    return view('creation');
+});

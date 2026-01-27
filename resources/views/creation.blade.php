@@ -25,7 +25,7 @@
                     <span class="self-center text-xl text-heading font-pixelify font-semibold whitespace-nowrap">BuildBlox</span>
                 </a>
                 <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-                    <button type="button" class="text-white button-mc bg-brand hover:bg-brand-strong box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none">Sign In</button>
+                    <a href="#" class="text-white button-mc bg-brand hover:bg-brand-strong box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none">Sign In</a>
                     <button data-collapse-toggle="navbar-sticky" type="button" class="button-mc inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-body rounded-base md:hidden hover:bg-neutral-secondary-soft hover:text-heading focus:outline-none focus:ring-2 focus:ring-neutral-tertiary" aria-controls="navbar-sticky" aria-expanded="false">
                         <span class="sr-only">Open main menu</span>
                         <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -124,190 +124,47 @@
             </div>
         </nav>
     </header>
-    <!-- JUMBOTRON -->
-    <section class="w-full relative pt-20 lg:py-0">
-        <div class="w-full h-full absolute top-0 left-0 flex opacity-[0.5] items-center justify-center">
-            <img class="w-full object-cover object-center h-full" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="">
+    <!-- BUILD INFORMATION -->
+    <section class="w-full mt-20 flex p-4 py-6 lg:py-8 items-center justify-center py-13">
+        <div class="w-full max-w-screen-xl flex flex-col gap-13">
+            <div class="w-full flex flex-col items-center md:flex-row gap-8">
+                <div class="w-full md:max-w-75 max-w-full h-75 border-2">
+                    <img class="object-cover object-center w-full h-full" src="{{asset('images/4K Minecraft Nature.jpg')}}" alt="">
+                </div>
+
+                <div class="w-full flex flex-col gap-5">
+                    <h1 class="text-4xl font-bold tracking-tighter text-heading md:text-5xl lg:text-6xl">Victorian House</h1>
+                    <p class="w-full text-base font-normal max-w-xl text-body md:text-xl">Here at flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</p>
+                    <div class="flex items-center space-x-3">
+                        <span class="bg-brand-softer border border-black text-fg-brand-strong text-base font-medium px-2 py-1">170 Views</span>
+                        <div class="flex items-center space-x-1 rtl:space-x-reverse">
+                            <svg class="w-7 h-7 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                            </svg>
+                            <svg class="w-7 h-7 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                            </svg>
+                            <svg class="w-7 h-7 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                            </svg>
+                            <svg class="w-7 h-7 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                            </svg>
+                            <svg class="w-7 h-7 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <p class="w-full text-base font-normal max-w-xl text-body md:text-xl">Category: Medieval</p>
+                    <div class="flex gap-3">
+                        <div class="h-7 w-7 border-2">
+                            <img class="object-cover object-center w-full h-full" src="{{asset('images/4K Minecraft Nature.jpg')}}" alt="">
+                        </div>
+                        <p class="w-full text-xl font-normal max-w-xl text-body md:text-2xl">Alex_18</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-white"></div>
-        <section class="w-full bg-neutral-primary">
-            <div class="py-8 px-4 flex flex-col items-center justify-center mx-auto max-w-screen-xl text-center lg:py-30 z-10 relative">
-                <h1 class="mb-6 text-4xl font-bold tracking-tighter text-heading md:text-5xl lg:text-6xl">Search for the category of your build</h1>
-                <p class="mb-8 w-full text-base font-normal max-w-xl text-body md:text-xl">Here at flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</p>
-            </div>
-            <div class="bg-gradient-to-b from-blue-50 to-transparent dark:from-blue-900 w-full h-full absolute top-0 left-0 z-0"></div>
-        </section>
-    </section>
-    <!-- MEDIEVAL BUILDS -->
-    <section class="w-full flex items-center justify-center px-4 flex-col py-10 ">
-        <div class="w-full max-w-screen-xl">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-9">
-
-                <div class="border-black flex items-end relative border-2 w-full h-40 lg:h-48">
-                    <div class="w-full absolute inset-0 h-full">
-                        <img class="w-full h-full object-center object-cover" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Medieval">
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
-                    <div class="w-full relative flex flex-col p-3 md:p-5">
-                        <p class="w-full text-base font-bold text-white md:text-xl lg:text-2xl">Medieval</p>
-                        <small class="w-full text-xs font-bold text-gray-300 md:text-xs lg:text-base">230 Builds</small>
-                    </div>
-                </div>
-
-                <div class="border-black flex items-end relative border-2 w-full h-40 lg:h-48">
-                    <div class="w-full absolute inset-0 h-full">
-                        <img class="w-full h-full object-center object-cover" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Medieval">
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
-                    <div class="w-full relative flex flex-col p-3 md:p-5">
-                        <p class="w-full text-base font-bold text-white md:text-xl lg:text-2xl">Medieval</p>
-                        <small class="w-full text-xs font-bold text-gray-300 md:text-xs lg:text-base">230 Builds</small>
-                    </div>
-                </div>
-                <div class="border-black flex items-end relative border-2 w-full h-40 lg:h-48">
-                    <div class="w-full absolute inset-0 h-full">
-                        <img class="w-full h-full object-center object-cover" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Medieval">
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
-                    <div class="w-full relative flex flex-col p-3 md:p-5">
-                        <p class="w-full text-base font-bold text-white md:text-xl lg:text-2xl">Medieval</p>
-                        <small class="w-full text-xs font-bold text-gray-300 md:text-xs lg:text-base">230 Builds</small>
-                    </div>
-                </div>
-
-                <div class="border-black flex items-end relative border-2 w-full h-40 lg:h-48">
-                    <div class="w-full absolute inset-0 h-full">
-                        <img class="w-full h-full object-center object-cover" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Medieval">
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
-                    <div class="w-full relative flex flex-col p-3 md:p-5">
-                        <p class="w-full text-base font-bold text-white md:text-xl lg:text-2xl">Medieval</p>
-                        <small class="w-full text-xs font-bold text-gray-300 md:text-xs lg:text-base">230 Builds</small>
-                    </div>
-                </div>
-                <div class="border-black flex items-end relative border-2 w-full h-40 lg:h-48">
-                    <div class="w-full absolute inset-0 h-full">
-                        <img class="w-full h-full object-center object-cover" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Medieval">
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
-                    <div class="w-full relative flex flex-col p-3 md:p-5">
-                        <p class="w-full text-base font-bold text-white md:text-xl lg:text-2xl">Medieval</p>
-                        <small class="w-full text-xs font-bold text-gray-300 md:text-xs lg:text-base">230 Builds</small>
-                    </div>
-                </div>
-
-                <div class="border-black flex items-end relative border-2 w-full h-40 lg:h-48">
-                    <div class="w-full absolute inset-0 h-full">
-                        <img class="w-full h-full object-center object-cover" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Medieval">
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
-                    <div class="w-full relative flex flex-col p-3 md:p-5">
-                        <p class="w-full text-base font-bold text-white md:text-xl lg:text-2xl">Medieval</p>
-                        <small class="w-full text-xs font-bold text-gray-300 md:text-xs lg:text-base">230 Builds</small>
-                    </div>
-                </div>
-                <div class="border-black flex items-end relative border-2 w-full h-40 lg:h-48">
-                    <div class="w-full absolute inset-0 h-full">
-                        <img class="w-full h-full object-center object-cover" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Medieval">
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
-                    <div class="w-full relative flex flex-col p-3 md:p-5">
-                        <p class="w-full text-base font-bold text-white md:text-xl lg:text-2xl">Medieval</p>
-                        <small class="w-full text-xs font-bold text-gray-300 md:text-xs lg:text-base">230 Builds</small>
-                    </div>
-                </div>
-
-                <div class="border-black flex items-end relative border-2 w-full h-40 lg:h-48">
-                    <div class="w-full absolute inset-0 h-full">
-                        <img class="w-full h-full object-center object-cover" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Medieval">
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
-                    <div class="w-full relative flex flex-col p-3 md:p-5">
-                        <p class="w-full text-base font-bold text-white md:text-xl lg:text-2xl">Medieval</p>
-                        <small class="w-full text-xs font-bold text-gray-300 md:text-xs lg:text-base">230 Builds</small>
-                    </div>
-                </div>
-                <div class="border-black flex items-end relative border-2 w-full h-40 lg:h-48">
-                    <div class="w-full absolute inset-0 h-full">
-                        <img class="w-full h-full object-center object-cover" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Medieval">
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
-                    <div class="w-full relative flex flex-col p-3 md:p-5">
-                        <p class="w-full text-base font-bold text-white md:text-xl lg:text-2xl">Medieval</p>
-                        <small class="w-full text-xs font-bold text-gray-300 md:text-xs lg:text-base">230 Builds</small>
-                    </div>
-                </div>
-                <div class="border-black flex items-end relative border-2 w-full h-40 lg:h-48">
-                    <div class="w-full absolute inset-0 h-full">
-                        <img class="w-full h-full object-center object-cover" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Medieval">
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
-                    <div class="w-full relative flex flex-col p-3 md:p-5">
-                        <p class="w-full text-base font-bold text-white md:text-xl lg:text-2xl">Medieval</p>
-                        <small class="w-full text-xs font-bold text-gray-300 md:text-xs lg:text-base">230 Builds</small>
-                    </div>
-                </div>
-                <div class="border-black flex items-end relative border-2 w-full h-40 lg:h-48">
-                    <div class="w-full absolute inset-0 h-full">
-                        <img class="w-full h-full object-center object-cover" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Medieval">
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
-                    <div class="w-full relative flex flex-col p-3 md:p-5">
-                        <p class="w-full text-base font-bold text-white md:text-xl lg:text-2xl">Medieval</p>
-                        <small class="w-full text-xs font-bold text-gray-300 md:text-xs lg:text-base">230 Builds</small>
-                    </div>
-                </div>
-                <div class="border-black flex items-end relative border-2 w-full h-40 lg:h-48">
-                    <div class="w-full absolute inset-0 h-full">
-                        <img class="w-full h-full object-center object-cover" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Medieval">
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
-                    <div class="w-full relative flex flex-col p-3 md:p-5">
-                        <p class="w-full text-base font-bold text-white md:text-xl lg:text-2xl">Medieval</p>
-                        <small class="w-full text-xs font-bold text-gray-300 md:text-xs lg:text-base">230 Builds</small>
-                    </div>
-                </div>
-                <div class="border-black flex items-end relative border-2 w-full h-40 lg:h-48">
-                    <div class="w-full absolute inset-0 h-full">
-                        <img class="w-full h-full object-center object-cover" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Medieval">
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
-                    <div class="w-full relative flex flex-col p-3 md:p-5">
-                        <p class="w-full text-base font-bold text-white md:text-xl lg:text-2xl">Medieval</p>
-                        <small class="w-full text-xs font-bold text-gray-300 md:text-xs lg:text-base">230 Builds</small>
-                    </div>
-                </div>
-                <div class="border-black flex items-end relative border-2 w-full h-40 lg:h-48">
-                    <div class="w-full absolute inset-0 h-full">
-                        <img class="w-full h-full object-center object-cover" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Medieval">
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
-                    <div class="w-full relative flex flex-col p-3 md:p-5">
-                        <p class="w-full text-base font-bold text-white md:text-xl lg:text-2xl">Medieval</p>
-                        <small class="w-full text-xs font-bold text-gray-300 md:text-xs lg:text-base">230 Builds</small>
-                    </div>
-                </div>
-                <div class="border-black flex items-end relative border-2 w-full h-40 lg:h-48">
-                    <div class="w-full absolute inset-0 h-full">
-                        <img class="w-full h-full object-center object-cover" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Medieval">
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
-                    <div class="w-full relative flex flex-col p-3 md:p-5">
-                        <p class="w-full text-base font-bold text-white md:text-xl lg:text-2xl">Medieval</p>
-                        <small class="w-full text-xs font-bold text-gray-300 md:text-xs lg:text-base">230 Builds</small>
-                    </div>
-                </div>
-                <div class="border-black flex items-end relative border-2 w-full h-40 lg:h-48">
-                    <div class="w-full absolute inset-0 h-full">
-                        <img class="w-full h-full object-center object-cover" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Medieval">
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
-                    <div class="w-full relative flex flex-col p-3 md:p-5">
-                        <p class="w-full text-base font-bold text-white md:text-xl lg:text-2xl">Medieval</p>
-                        <small class="w-full text-xs font-bold text-gray-300 md:text-xs lg:text-base">230 Builds</small>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
     <!-- FOOTER -->
@@ -396,8 +253,6 @@
             </div>
         </div>
     </footer>
-
-
 </body>
 <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
 
