@@ -127,43 +127,100 @@
     <!-- BUILD INFORMATION -->
     <section class="w-full mt-20 flex p-4 py-6 lg:py-8 items-center justify-center py-13">
         <div class="w-full max-w-screen-xl flex flex-col gap-13">
-            <div class="w-full flex flex-col items-center md:flex-row gap-8">
-                <div class="w-full md:max-w-75 max-w-full h-75 border-2">
-                    <img class="object-cover object-center w-full h-full" src="{{asset('images/4K Minecraft Nature.jpg')}}" alt="">
-                </div>
+            <div class="w-full flex flex-col items-start lg:flex-row gap-8">
+                <div class="w-full flex justify-space-between gap-8 md:flex-row flex-col">
+                    <div class="w-full md:max-w-75 md:min-w-75 max-w-full h-75 border-2">
+                        <img class="object-cover object-center w-full h-full" src="{{asset('images/4K Minecraft Nature.jpg')}}" alt="">
+                    </div>
 
-                <div class="w-full flex flex-col gap-5">
-                    <h1 class="text-4xl font-bold tracking-tighter text-heading md:text-5xl lg:text-6xl">Victorian House</h1>
-                    <p class="w-full text-base font-normal max-w-xl text-body md:text-xl">Here at flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</p>
-                    <div class="flex items-center space-x-3">
-                        <span class="bg-brand-softer border border-black text-fg-brand-strong text-base font-medium px-2 py-1">170 Views</span>
-                        <div class="flex items-center space-x-1 rtl:space-x-reverse">
-                            <svg class="w-7 h-7 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                            </svg>
-                            <svg class="w-7 h-7 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                            </svg>
-                            <svg class="w-7 h-7 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                            </svg>
-                            <svg class="w-7 h-7 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                            </svg>
-                            <svg class="w-7 h-7 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                            </svg>
+                    <div class="w-full flex flex-col gap-3">
+                        <h1 class="text-4xl font-bold tracking-tighter text-heading md:text-5xl lg:text-6xl">Victorian House</h1>
+                        <p class="w-full text-base font-normal max-w-xl text-body md:text-xl">Here at flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</p>
+                        <div class="flex items-center space-x-3">
+                            <span class="bg-brand-softer border border-black text-fg-brand-strong text-base font-medium px-2 py-1">170 Views</span>
+                            <div class="flex items-center space-x-1 rtl:space-x-reverse">
+                                <svg class="w-7 h-7 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                </svg>
+                                <svg class="w-7 h-7 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                </svg>
+                                <svg class="w-7 h-7 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                </svg>
+                                <svg class="w-7 h-7 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                </svg>
+                                <svg class="w-7 h-7 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="w-full text-base font-normal max-w-xl text-body md:text-xl">Category: Medieval</p>
+                        <div class="flex gap-3">
+                            <div class="h-8 w-8 border-2">
+                                <img class="object-cover object-center w-full h-full" src="{{asset('images/4K Minecraft Nature.jpg')}}" alt="">
+                            </div>
+                            <p class="w-full text-xl font-normal max-w-xl text-body md:text-2xl">Alex_18</p>
                         </div>
                     </div>
-                    <p class="w-full text-base font-normal max-w-xl text-body md:text-xl">Category: Medieval</p>
-                    <div class="flex gap-3">
-                        <div class="h-7 w-7 border-2">
-                            <img class="object-cover object-center w-full h-full" src="{{asset('images/4K Minecraft Nature.jpg')}}" alt="">
-                        </div>
-                        <p class="w-full text-xl font-normal max-w-xl text-body md:text-2xl">Alex_18</p>
+                </div>
+
+                <div class="flex h-full align-self-start flex-col gap-2">
+                    <h1 class="text-xl font-bold tracking-tighter text-heading md:text-2xl lg:text-xl">Rate This Build</h1>
+                    <div class="flex items-center space-x-1 rtl:space-x-reverse">
+                        <svg class="md:w-10 md:h-10 lg:w-7 lg:h-7 h-8 w-8 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                        </svg>
+                        <svg class="md:w-10 md:h-10 lg:w-7 lg:h-7 h-8 w-8 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                        </svg>
+                        <svg class="md:w-10 md:h-10 lg:w-7 lg:h-7 h-8 w-8 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                        </svg>
+                        <svg class="md:w-10 md:h-10 lg:w-7 lg:h-7 h-8 w-8 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                        </svg>
+                        <svg class="md:w-10 md:h-10 lg:w-7 lg:h-7 h-8 w-8 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                        </svg>
                     </div>
                 </div>
             </div>
+
+
+
+            <div class="mb-4 border-b border-default">
+                <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="default-styled-tab" data-tabs-toggle="#default-styled-tab-content" data-tabs-active-classes="text-purple hover:text-purple border-purple" data-tabs-inactive-classes="dark:border-transparent text-body hover:text-fg-brand border-default hover:border-brand" role="tablist">
+                    <li class="me-2" role="presentation">
+                        <button class="inline-block p-4 border-b-2 rounded-t-base" id="profile-styled-tab" data-tabs-target="#styled-profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Profile</button>
+                    </li>
+                    <li class="me-2" role="presentation">
+                        <button class="inline-block p-4 border-b-2 rounded-t-base hover:text-fg-brand hover:border-brand" id="dashboard-styled-tab" data-tabs-target="#styled-dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="false">Dashboard</button>
+                    </li>
+                    <li class="me-2" role="presentation">
+                        <button class="inline-block p-4 border-b-2 rounded-t-base hover:text-fg-brand hover:border-brand" id="settings-styled-tab" data-tabs-target="#styled-settings" type="button" role="tab" aria-controls="settings" aria-selected="false">Settings</button>
+                    </li>
+                    <li role="presentation">
+                        <button class="inline-block p-4 border-b-2 rounded-t-base hover:text-fg-brand hover:border-brand" id="contacts-styled-tab" data-tabs-target="#styled-contacts" type="button" role="tab" aria-controls="contacts" aria-selected="false">Contacts</button>
+                    </li>
+                </ul>
+            </div>
+            <div id="default-styled-tab-content">
+                <div class="hidden p-4 rounded-base bg-neutral-secondary-soft" id="styled-profile" role="tabpanel" aria-labelledby="profile-tab">
+                    <p class="text-sm text-body">This is some placeholder content the <strong class="font-medium text-heading">Profile tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
+                </div>
+                <div class="hidden p-4 rounded-base bg-neutral-secondary-soft" id="styled-dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
+                    <p class="text-sm text-body">This is some placeholder content the <strong class="font-medium text-heading">Dashboard tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
+                </div>
+                <div class="hidden p-4 rounded-base bg-neutral-secondary-soft" id="styled-settings" role="tabpanel" aria-labelledby="settings-tab">
+                    <p class="text-sm text-body">This is some placeholder content the <strong class="font-medium text-heading">Settings tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
+                </div>
+                <div class="hidden p-4 rounded-base bg-neutral-secondary-soft" id="styled-contacts" role="tabpanel" aria-labelledby="contacts-tab">
+                    <p class="text-sm text-body">This is some placeholder content the <strong class="font-medium text-heading">Contacts tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
+                </div>
+            </div>
+
         </div>
         </div>
     </section>
