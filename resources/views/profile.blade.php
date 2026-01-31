@@ -141,51 +141,153 @@
                             <span class="bg-brand-softer border border-black text-fg-brand-strong text-base font-medium px-2 py-1">578 Rated Builds</span>
                         </div>
                         <p class="w-full text-base font-normal max-w-xl text-body md:text-xl">Joined: January 15, 2026</p>
-                    </div>
-                </div>
+                        <!-- Modal toggle -->
+                        <button data-modal-target="default-modal" data-modal-toggle="default-modal" class="text-white w-fit whitespace-nowrap button-mc bg-brand hover:bg-brand-strong box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none" type="button">
+                            Edit Profile
+                        </button>
 
+                        <!-- Main Modal -->
+                        <div id="default-modal" tabindex="-1" aria-hidden="true" class="overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 flex justify-center items-center w-full md:inset-0 h-full bg-white bg-opacity-10">
+                            <div class="relative p-4 w-full max-w-2xl max-h-full">
+                                <!-- Modal content -->
+                                <div class="relative bg-white border-2 border-black shadow-[4px_4px_0_0_rgba(0,0,0,0.3)]">
 
+                                    <!-- Modal header -->
+                                    <div class="flex items-start justify-between bg-blue-600 border-b-2 border-black p-4 md:p-6">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-10 h-10 bg-blue-700 border-2 border-black flex items-center justify-center">
+                                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                                </svg>
+                                            </div>
+                                            <h3 class="text-sm sm:text-base font-bold text-white leading-tight uppercase">
+                                                EDIT USER<br />PROFILE
+                                            </h3>
+                                        </div>
+                                        <button type="button" data-modal-hide="default-modal" class="text-white bg-red-600 hover:bg-red-700 border-2 border-black w-9 h-9 flex justify-center items-center shadow-[2px_2px_0_0_rgba(0,0,0,1)] hover:shadow-[1px_1px_0_0_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all">
+                                            <span class="text-xl leading-none">×</span>
+                                        </button>
+                                    </div>
 
-                <!-- Modal toggle -->
-                <button data-modal-target="default-modal" data-modal-toggle="default-modal" class="text-white bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none" type="button">
-                    Toggle modal
-                </button>
+                                    <!-- Modal body -->
+                                    <div class="p-4 md:p-6 space-y-4 max-h-[60vh] overflow-y-auto">
 
-                <!-- Main modal -->
-                <div id="default-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-                    <div class="relative p-4 w-full max-w-2xl max-h-full">
-                        <!-- Modal content -->
-                        <div class="relative bg-neutral-primary-soft border border-default rounded-base shadow-sm p-4 md:p-6">
-                            <!-- Modal header -->
-                            <div class="flex items-center justify-between border-b border-default pb-4 md:pb-5">
-                                <h3 class="text-lg font-medium text-heading">
-                                    Terms of Service
-                                </h3>
-                                <button type="button" class="text-body bg-transparent hover:bg-neutral-tertiary hover:text-heading rounded-base text-sm w-9 h-9 ms-auto inline-flex justify-center items-center" data-modal-hide="default-modal">
-                                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6" />
-                                    </svg>
-                                    <span class="sr-only">Close modal</span>
-                                </button>
-                            </div>
-                            <!-- Modal body -->
-                            <div class="space-y-4 md:space-y-6 py-4 md:py-6">
-                                <p class="leading-relaxed text-body">
-                                    With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
-                                </p>
-                                <p class="leading-relaxed text-body">
-                                    The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.
-                                </p>
-                            </div>
-                            <!-- Modal footer -->
-                            <div class="flex items-center border-t border-default space-x-4 pt-4 md:pt-5">
-                                <button data-modal-hide="default-modal" type="button" class="text-white bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">I accept</button>
-                                <button data-modal-hide="default-modal" type="button" class="text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">Decline</button>
+                                        <!-- Username Field -->
+                                        <div>
+                                            <label class="block text-gray-800 text-xs font-bold mb-2 uppercase">
+                                                USERNAME
+                                            </label>
+                                            <input
+                                                type="text"
+                                                value="Steve_Miner"
+                                                class="w-full px-3 py-2.5 bg-gray-100 text-gray-900 border-2 border-gray-400 text-sm focus:outline-none focus:border-blue-600 transition-colors placeholder-gray-500"
+                                                placeholder="Enter username" />
+                                        </div>
+
+                                        <!-- Email Field -->
+                                        <div>
+                                            <label class="block text-gray-800 text-xs font-bold mb-2 uppercase">
+                                                EMAIL
+                                            </label>
+                                            <input
+                                                type="email"
+                                                value="steve@minecraft.net"
+                                                class="w-full px-3 py-2.5 bg-gray-100 text-gray-900 border-2 border-gray-400 text-sm focus:outline-none focus:border-blue-600 transition-colors placeholder-gray-500"
+                                                placeholder="your@email.com" />
+                                        </div>
+
+                                        <!-- Display Name Field -->
+                                        <div>
+                                            <label class="block text-gray-800 text-xs font-bold mb-2 uppercase">
+                                                DISPLAY NAME
+                                            </label>
+                                            <input
+                                                type="text"
+                                                value="Steve the Builder"
+                                                class="w-full px-3 py-2.5 bg-gray-100 text-gray-900 border-2 border-gray-400 text-sm focus:outline-none focus:border-blue-600 transition-colors placeholder-gray-500"
+                                                placeholder="Display name" />
+                                        </div>
+
+                                        <!-- Role Selector -->
+                                        <div>
+                                            <label class="block text-gray-800 text-xs font-bold mb-2 uppercase">
+                                                ROLE
+                                            </label>
+                                            <select class="w-full px-3 py-2.5 bg-gray-100 text-gray-900 border-2 border-gray-400 text-sm focus:outline-none focus:border-blue-600 transition-colors cursor-pointer uppercase">
+                                                <option>PLAYER</option>
+                                                <option>MODERATOR</option>
+                                                <option selected>BUILDER</option>
+                                                <option>ADMIN</option>
+                                            </select>
+                                        </div>
+
+                                        <!-- Bio Field -->
+                                        <div>
+                                            <label class="block text-gray-800 text-xs font-bold mb-2 uppercase">
+                                                BIO
+                                            </label>
+                                            <textarea
+                                                rows="4"
+                                                class="w-full px-3 py-2.5 bg-gray-100 text-gray-900 border-2 border-gray-400 text-sm focus:outline-none focus:border-blue-600 transition-colors resize-none placeholder-gray-500"
+                                                placeholder="Tell us about yourself...">Love building medieval castles and redstone contraptions!</textarea>
+                                        </div>
+
+                                        <!-- Checkboxes -->
+                                        <div class="space-y-3">
+                                            <label class="flex items-start gap-3 cursor-pointer group">
+                                                <div class="relative mt-0.5">
+                                                    <input type="checkbox" checked class="peer appearance-none w-5 h-5 border-2 border-black bg-white checked:bg-blue-600 cursor-pointer transition-colors" />
+                                                    <svg class="absolute top-0 left-0 w-5 h-5 text-white pointer-events-none hidden peer-checked:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="3" d="M5 13l4 4L19 7" />
+                                                    </svg>
+                                                </div>
+                                                <span class="text-gray-800 text-sm leading-relaxed group-hover:text-gray-600 uppercase font-semibold">
+                                                    SEND EMAIL NOTIFICATIONS
+                                                </span>
+                                            </label>
+
+                                            <label class="flex items-start gap-3 cursor-pointer group">
+                                                <div class="relative mt-0.5">
+                                                    <input type="checkbox" class="peer appearance-none w-5 h-5 border-2 border-black bg-white checked:bg-blue-600 cursor-pointer transition-colors" />
+                                                    <svg class="absolute top-0 left-0 w-5 h-5 text-white pointer-events-none hidden peer-checked:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="3" d="M5 13l4 4L19 7" />
+                                                    </svg>
+                                                </div>
+                                                <span class="text-gray-800 text-sm leading-relaxed group-hover:text-gray-600 uppercase font-semibold">
+                                                    SHOW PROFILE PUBLICLY
+                                                </span>
+                                            </label>
+
+                                            <label class="flex items-start gap-3 cursor-pointer group">
+                                                <div class="relative mt-0.5">
+                                                    <input type="checkbox" checked class="peer appearance-none w-5 h-5 border-2 border-black bg-white checked:bg-blue-600 cursor-pointer transition-colors" />
+                                                    <svg class="absolute top-0 left-0 w-5 h-5 text-white pointer-events-none hidden peer-checked:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="3" d="M5 13l4 4L19 7" />
+                                                    </svg>
+                                                </div>
+                                                <span class="text-gray-800 text-sm leading-relaxed group-hover:text-gray-600 uppercase font-semibold">
+                                                    ALLOW FRIEND REQUESTS
+                                                </span>
+                                            </label>
+                                        </div>
+
+                                    </div>
+
+                                    <!-- Modal footer -->
+                                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 bg-gray-100 border-t-2 border-black p-4 md:p-6">
+                                        <button type="button" class="text-white button-mc bg-brand hover:bg-brand-strong box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-3 focus:outline-none">
+                                            SAVE CHANGES
+                                        </button>
+                                        <button data-modal-hide="default-modal" type="button" class="text-grey-800 button-mc bg-white hover:bg-gray-200 box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-3 focus:outline-none">
+                                            CANCEL
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
+                </div>
             </div>
 
             <div class="mb-4 border-b border-default">
