@@ -193,10 +193,12 @@
             <div class="mb-4 border-b border-default">
                 <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="default-styled-tab" data-tabs-toggle="#default-styled-tab-content" data-tabs-active-classes="text-purple hover:text-purple border-purple" data-tabs-inactive-classes="dark:border-transparent text-body hover:text-fg-brand border-default hover:border-brand" role="tablist">
                     <li class="me-2" role="presentation">
-                        <button class="inline-block p-4 border-b-2 rounded-t-base" id="steps-styled-tab" data-tabs-target="#styled-steps" type="button" role="tab" aria-controls="steps" aria-selected="false">Steps</button>
+                        <button class="inline-block p-4 border-b-2 rounded-t-base" id="steps-styled-tab" data-tabs-target="#styled-steps" type="button" role="tab" aria-controls="steps" aria-selected="false">My Builds</button>
                     </li>
                     <li class="me-2" role="presentation">
-                        <button class="inline-block p-4 border-b-2 rounded-t-base hover:text-fg-brand hover:border-brand" id="dashboard-styled-tab" data-tabs-target="#styled-dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="false">Materials</button>
+                        <button class="inline-block p-4 border-b-2 rounded-t-base hover:text-fg-brand hover:border-brand" id="dashboard-styled-tab" data-tabs-target="#styled-dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="false">Rated Builds</button>
+                    </li>
+                    <li class="me-2" role="presentation">
                     </li>
                 </ul>
             </div>
@@ -217,66 +219,19 @@
                     </div>
                 </div>
 
-                <div class="hidden p-4 border-2 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6" id="styled-dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
-
-                    <div class="p-3">
-                        <p class="font-semibold">Structure & Walls</p>
-                        <p>Bricks × 320</p>
-                        <p>Stone Bricks × 180</p>
-                        <p>Polished Andesite × 80</p>
-                        <p>Smooth Stone Slabs × 40</p>
+                <div class="hidden rounded-base grid grid-cols-1 md:grid-cols-2 gap-20" id="styled-dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
+                    <div class="w-full aspect-square max-w-150 border-2 border-black">
+                        <img class="object-center object-cover h-full w-full" src="{{asset('images/4K Minecraft Nature.jpg')}}" alt="">
                     </div>
-
-                    <div class="p-3">
-                        <p class="font-semibold">Wood (Main Details)</p>
-                        <p>Stripped Spruce Logs × 120</p>
-                        <p>Spruce Planks × 150</p>
-                        <p>Dark Oak Planks × 90</p>
+                    <div class="w-full aspect-square max-w-150 border-2 border-black">
+                        <img class="object-center object-cover h-full w-full" src="{{asset('images/4K Minecraft Nature.jpg')}}" alt="">
                     </div>
-
-                    <div class="p-3">
-                        <p class="font-semibold">Roof (Victorian Style)</p>
-                        <p>Dark Oak Stairs × 160</p>
-                        <p>Dark Oak Slabs × 70</p>
-                        <p>Spruce Stairs × 40</p>
+                    <div class="w-full aspect-square max-w-150 border-2 border-black">
+                        <img class="object-center object-cover h-full w-full" src="{{asset('images/4K Minecraft Nature.jpg')}}" alt="">
                     </div>
-
-                    <div class="p-3">
-                        <p class="font-semibold">Windows & Trim</p>
-                        <p>White Stained Glass Panes × 64</p>
-                        <p>Spruce Trapdoors × 24</p>
-                        <p>Spruce Fences × 20</p>
+                    <div class="w-full aspect-square max-w-150 border-2 border-black">
+                        <img class="object-center object-cover h-full w-full" src="{{asset('images/4K Minecraft Nature.jpg')}}" alt="">
                     </div>
-
-                    <div class="p-3">
-                        <p class="font-semibold">Structure & Walls</p>
-                        <p>Bricks × 320</p>
-                        <p>Stone Bricks × 180</p>
-                        <p>Polished Andesite × 80</p>
-                        <p>Smooth Stone Slabs × 40</p>
-                    </div>
-
-                    <div class="p-3">
-                        <p class="font-semibold">Wood (Main Details)</p>
-                        <p>Stripped Spruce Logs × 120</p>
-                        <p>Spruce Planks × 150</p>
-                        <p>Dark Oak Planks × 90</p>
-                    </div>
-
-                    <div class="p-3">
-                        <p class="font-semibold">Roof (Victorian Style)</p>
-                        <p>Dark Oak Stairs × 160</p>
-                        <p>Dark Oak Slabs × 70</p>
-                        <p>Spruce Stairs × 40</p>
-                    </div>
-
-                    <div class="p-3">
-                        <p class="font-semibold">Windows & Trim</p>
-                        <p>White Stained Glass Panes × 64</p>
-                        <p>Spruce Trapdoors × 24</p>
-                        <p>Spruce Fences × 20</p>
-                    </div>
-
                 </div>
 
                 <script>
@@ -297,17 +252,17 @@
                         button.addEventListener('click', function(e) {
                             // Remove any existing reply forms first
                             document.querySelectorAll('.reply-form').forEach(form => form.remove());
-                            
+
                             // Find the comment wrapper (closest parent with comment-wrapper class)
                             const commentWrapper = this.closest('.comment-wrapper');
-                            
+
                             // Check if reply form already exists for this comment
                             const existingReplyForm = commentWrapper.querySelector('.reply-form');
                             if (existingReplyForm) {
                                 existingReplyForm.remove();
                                 return;
                             }
-                            
+
                             // Create reply input form
                             const replyForm = document.createElement('div');
                             replyForm.className = 'reply-form mt-4 flex gap-2 sm:gap-3 items-start';
@@ -327,18 +282,18 @@
                                     </div>
                                 </div>
                             `;
-                            
+
                             // Insert the reply form at the end of the comment wrapper (YouTube style)
                             commentWrapper.appendChild(replyForm);
-                            
+
                             // Focus the input
                             replyForm.querySelector('input').focus();
-                            
+
                             // Handle cancel button
                             replyForm.querySelector('.cancel-reply').addEventListener('click', function() {
                                 replyForm.remove();
                             });
-                            
+
                             // Handle submit button
                             replyForm.querySelector('.submit-reply').addEventListener('click', function() {
                                 const input = replyForm.querySelector('input');

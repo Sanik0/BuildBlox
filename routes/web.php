@@ -21,3 +21,7 @@ Route::get('/builds', function () {
 Route::get('/creation', function () {
     return view('creation');
 });
+
+Route::get('/profile', function () {
+    return view('profile');
+});
