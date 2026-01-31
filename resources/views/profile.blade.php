@@ -164,7 +164,7 @@
                                                 EDIT USER<br />PROFILE
                                             </h3>
                                         </div>
-                                        <button type="button" data-modal-hide="default-modal" class="text-white button-mc bg-red-600 hover:bg-brand-strong box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-3 focus:outline-none">
+                                        <button type="button" data-modal-hide="default-modal" class="text-white button-mc bg-red-600 hover:bg-red-800 box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-3 focus:outline-none">
                                             <span class="text-xl leading-none">×</span>
                                         </button>
                                     </div>
@@ -278,7 +278,7 @@
                                         <button type="button" class="text-white button-mc bg-brand hover:bg-brand-strong box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-3 focus:outline-none">
                                             SAVE CHANGES
                                         </button>
-                                        <button data-modal-hide="default-modal" type="button" class="text-grey-800 button-mc bg-white hover:bg-gray-200 box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-3 focus:outline-none">
+                                        <button data-modal-hide="default-modal" type="button" class="text-grey-800 button-mc bg-grey-100 hover:bg-gray-200 box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-3 focus:outline-none">
                                             CANCEL
                                         </button>
                                     </div>

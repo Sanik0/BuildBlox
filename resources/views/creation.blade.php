@@ -198,25 +198,60 @@
                     <li class="me-2" role="presentation">
                         <button class="inline-block p-4 border-b-2 rounded-t-base hover:text-fg-brand hover:border-brand" id="dashboard-styled-tab" data-tabs-target="#styled-dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="false">Materials</button>
                     </li>
+                    <li class="me-2" role="presentation">
+                        <button class="inline-block p-4 border-b-2 rounded-t-base hover:text-fg-brand hover:border-brand" id="settings-styled-tab" data-tabs-target="#styled-settings" type="button" role="tab" aria-controls="settings" aria-selected="false">Comments</button>
+                    </li>
                 </ul>
             </div>
             <div id="default-styled-tab-content">
                 <!-- Steps content -->
-                <div class="hidden rounded-base grid grid-cols-1 md:grid-cols-2 gap-20" id="styled-steps" role="tabpanel" aria-labelledby="steps-tab">
-                    <div class="w-full aspect-square max-w-150 border-2 border-black">
-                        <img class="object-center object-cover h-full w-full" src="{{asset('images/4K Minecraft Nature.jpg')}}" alt="">
+                <div class=" hidden w-full flex flex-col gap-12" id="styled-steps" role="tabpanel" aria-labelledby="steps-tab">
+                    <!-- STEPS -->
+                    <div class="rounded-base grid grid-cols-1 md:grid-cols-2 gap-20">
+                        <div class="w-full aspect-square max-w-150 border-2 border-black">
+                            <img class="object-center object-cover h-full w-full" src="{{asset('images/4K Minecraft Nature.jpg')}}" alt="">
+                        </div>
+                        <div class="w-full aspect-square max-w-150 border-2 border-black">
+                            <img class="object-center object-cover h-full w-full" src="{{asset('images/4K Minecraft Nature.jpg')}}" alt="">
+                        </div>
+                        <div class="w-full aspect-square max-w-150 border-2 border-black">
+                            <img class="object-center object-cover h-full w-full" src="{{asset('images/4K Minecraft Nature.jpg')}}" alt="">
+                        </div>
+                        <div class="w-full aspect-square max-w-150 border-2 border-black">
+                            <img class="object-center object-cover h-full w-full" src="{{asset('images/4K Minecraft Nature.jpg')}}" alt="">
+                        </div>
                     </div>
-                    <div class="w-full aspect-square max-w-150 border-2 border-black">
-                        <img class="object-center object-cover h-full w-full" src="{{asset('images/4K Minecraft Nature.jpg')}}" alt="">
-                    </div>
-                    <div class="w-full aspect-square max-w-150 border-2 border-black">
-                        <img class="object-center object-cover h-full w-full" src="{{asset('images/4K Minecraft Nature.jpg')}}" alt="">
-                    </div>
-                    <div class="w-full aspect-square max-w-150 border-2 border-black">
-                        <img class="object-center object-cover h-full w-full" src="{{asset('images/4K Minecraft Nature.jpg')}}" alt="">
+                    <!-- PAGINATION -->
+                    <div class="w-full flex items-center justify-center">
+                        <nav aria-label="Page navigation example">
+                            <ul class="flex -space-x-px text-sm">
+                                <li>
+                                    <a href="#" class="flex items-center justify-center text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading font-medium text-sm px-3 h-10 focus:outline-none">Previous</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="flex items-center justify-center text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading font-medium text-sm w-10 h-10 focus:outline-none">1</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="flex items-center justify-center text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading font-medium text-sm w-10 h-10 focus:outline-none">2</a>
+                                </li>
+                                <li>
+                                    <a href="#" aria-current="page" class="flex items-center justify-center text-fg-brand bg-neutral-tertiary-medium box-border border border-default-medium hover:text-fg-brand font-medium text-sm w-10 h-10 focus:outline-none">3</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="flex items-center justify-center text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading font-medium text-sm w-10 h-10 focus:outline-none">4</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="flex items-center justify-center text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading font-medium text-sm w-10 h-10 focus:outline-none">5</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="flex items-center justify-center text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading font-medium text-sm px-3 h-10 focus:outline-none">Next</a>
+                                </li>
+                            </ul>
+                        </nav>
                     </div>
                 </div>
 
+                <!-- MATERIALS -->
                 <div class="hidden p-4 border-2 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6" id="styled-dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
 
                     <div class="p-3">
@@ -279,6 +314,291 @@
 
                 </div>
 
+                <!-- COMMENTS -->
+                <div class="hidden p-4 md:p-6 rounded-base bg-neutral-secondary-soft" id="styled-settings" role="tabpanel" aria-labelledby="settings-tab">
+
+                    <!-- Comment Input -->
+                    <div class="mb-8">
+                        <div class="flex gap-2 sm:gap-3 items-start">
+                            <div class="w-8 h-8 sm:w-10 sm:h-10 bg-black border-2 border-black flex-shrink-0 flex items-center justify-center">
+                                <span class="text-white font-bold text-xs sm:text-sm">U</span>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <input type="text" id="comment-input" placeholder="Add a comment..." class="w-full px-0 pb-2 bg-transparent border-0 border-b-2 border-gray-300 focus:border-black focus:ring-0 text-xs sm:text-sm placeholder-gray-500 transition-colors">
+                                <div class="mt-3 flex gap-2 justify-end hidden" id="comment-actions">
+                                    <button type="button" class="px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-bold bg-white border-2 border-black hover:bg-gray-100 transition-colors">
+                                        Cancel
+                                    </button>
+                                    <button type="button" class="px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-bold bg-black text-white border-2 border-black shadow-[3px_3px_0_0_rgba(0,0,0,1)] hover:shadow-[1px_1px_0_0_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all">
+                                        Comment
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comments List -->
+                    <div class="space-y-6">
+
+                        <!-- Comment 1 -->
+                        <div class="comment-wrapper">
+                            <div class="flex gap-2 sm:gap-3 items-start">
+                                <div class="w-8 h-8 sm:w-10 sm:h-10 bg-black border-2 border-black flex-shrink-0 flex items-center justify-center">
+                                    <span class="text-white font-bold text-xs sm:text-sm">JD</span>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <div class="flex items-center gap-2 mb-1 flex-wrap">
+                                        <span class="font-bold text-xs sm:text-sm">@johndoe</span>
+                                        <span class="text-xs text-gray-500">2 hours ago</span>
+                                    </div>
+                                    <p class="text-xs sm:text-sm text-body mb-2 break-words">This build is absolutely amazing! The attention to detail is incredible. How long did it take you to complete this?</p>
+                                    <div class="flex items-center gap-3 sm:gap-4">
+                                        <button class="flex items-center gap-1 group">
+                                            <svg class="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path>
+                                            </svg>
+                                            <span class="text-xs sm:text-sm font-bold">42</span>
+                                        </button>
+                                        <button class="flex items-center gap-1 group">
+                                            <svg class="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:scale-110 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path>
+                                            </svg>
+                                        </button>
+                                        <button class="reply-btn text-xs sm:text-sm font-bold hover:bg-black hover:text-white px-2 sm:px-3 py-1 border-2 border-transparent hover:border-black transition-all">
+                                            Reply
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Comment 2 with Reply -->
+                        <div class="comment-wrapper">
+                            <div class="flex gap-2 sm:gap-3 items-start">
+                                <div class="w-8 h-8 sm:w-10 sm:h-10 bg-black border-2 border-black flex-shrink-0 flex items-center justify-center">
+                                    <span class="text-white font-bold text-xs sm:text-sm">MC</span>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <div class="flex items-center gap-2 mb-1 flex-wrap">
+                                        <span class="font-bold text-xs sm:text-sm">@minecraftpro</span>
+                                        <span class="text-xs text-gray-500">5 hours ago</span>
+                                    </div>
+                                    <p class="text-xs sm:text-sm text-body mb-2 break-words">Love the medieval aesthetic! The stone textures really bring it to life.</p>
+                                    <div class="flex items-center gap-3 sm:gap-4 mb-4">
+                                        <button class="flex items-center gap-1 group">
+                                            <svg class="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path>
+                                            </svg>
+                                            <span class="text-xs sm:text-sm font-bold">15</span>
+                                        </button>
+                                        <button class="flex items-center gap-1 group">
+                                            <svg class="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:scale-110 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path>
+                                            </svg>
+                                        </button>
+                                        <button class="reply-btn text-xs sm:text-sm font-bold hover:bg-black hover:text-white px-2 sm:px-3 py-1 border-2 border-transparent hover:border-black transition-all">
+                                            Reply
+                                        </button>
+                                    </div>
+
+                                    <!-- Reply -->
+                                    <div class="ml-6 sm:ml-8 pl-3 sm:pl-4 border-l-2 border-black">
+                                        <div class="flex gap-2 sm:gap-3 items-start">
+                                            <div class="w-6 h-6 sm:w-8 sm:h-8 bg-black border-2 border-black flex-shrink-0 flex items-center justify-center">
+                                                <span class="text-white font-bold text-xs">AB</span>
+                                            </div>
+                                            <div class="flex-1 min-w-0">
+                                                <div class="flex items-center gap-2 mb-1 flex-wrap">
+                                                    <span class="font-bold text-xs sm:text-sm">@author</span>
+                                                    <!-- <span class="text-xs bg-black text-white px-2 py-0.5 font-bold">CREATOR</span> -->
+                                                    <span class="text-xs text-gray-500">3 hours ago</span>
+                                                </div>
+                                                <p class="text-xs sm:text-sm text-body mb-2 break-words">@minecraftpro Thank you! I spent a lot of time getting those textures just right.</p>
+                                                <div class="flex items-center gap-3 sm:gap-4">
+                                                    <button class="flex items-center gap-1 group">
+                                                        <svg class="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path>
+                                                        </svg>
+                                                        <span class="text-xs sm:text-sm font-bold">8</span>
+                                                    </button>
+                                                    <button class="flex items-center gap-1 group">
+                                                        <svg class="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:scale-110 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path>
+                                                        </svg>
+                                                    </button>
+                                                    <button class="reply-btn text-xs sm:text-sm font-bold hover:bg-black hover:text-white px-2 sm:px-3 py-1 border-2 border-transparent hover:border-black transition-all">
+                                                        Reply
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Comment 3 -->
+                        <div class="comment-wrapper">
+                            <div class="flex gap-2 sm:gap-3 items-start">
+                                <div class="w-8 h-8 sm:w-10 sm:h-10 bg-black border-2 border-black flex-shrink-0 flex items-center justify-center">
+                                    <span class="text-white font-bold text-xs sm:text-sm">BL</span>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <div class="flex items-center gap-2 mb-1 flex-wrap">
+                                        <span class="font-bold text-xs sm:text-sm">@builder123</span>
+                                        <span class="text-xs text-gray-500">1 day ago</span>
+                                    </div>
+                                    <p class="text-xs sm:text-sm text-body mb-2 break-words">Can you share the schematic for this? Would love to use it in my world!</p>
+                                    <div class="flex items-center gap-3 sm:gap-4">
+                                        <button class="flex items-center gap-1 group">
+                                            <svg class="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path>
+                                            </svg>
+                                            <span class="text-xs sm:text-sm font-bold">23</span>
+                                        </button>
+                                        <button class="flex items-center gap-1 group">
+                                            <svg class="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:scale-110 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path>
+                                            </svg>
+                                        </button>
+                                        <button class="reply-btn text-xs sm:text-sm font-bold hover:bg-black hover:text-white px-2 sm:px-3 py-1 border-2 border-transparent hover:border-black transition-all">
+                                            Reply
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- SIMILAR BUILDS -->
+                <section class="w-full flex items-center justify-center flex-col py-10">
+                    <div class="w-full max-w-screen-xl py-5 flex gap-4">
+                        <h4 class=" text-3xl font-bold tracking-tighter text-heading md:text-3xl lg:text-4xl">More Like This</h4>
+                    </div>
+                    <div class="w-full max-w-screen-xl">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-9">
+
+                            <a href="#" class="bg-neutral-primary-soft w-full border border-black border-2 shadow-[0_3px_0_0_black]">
+                                <div class="h-60 w-full">
+                                    <img class="w-full h-full object-cover" src="{{asset('images/4K Minecraft Nature.jpg')}}" alt="Victorian House" />
+                                </div>
+                                <div class="flex p-6 pb-0 mb-3 items-center space-x-3">
+                                    <div class="flex items-center space-x-1 rtl:space-x-reverse">
+                                        <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                        </svg>
+                                        <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                        </svg>
+                                        <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                        </svg>
+                                        <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                        </svg>
+                                        <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                        </svg>
+                                    </div>
+                                    <span class="bg-brand-softer border border-black text-fg-brand-strong text-xs font-medium px-1.5 py-0.5">170 Views</span>
+                                </div>
+                                <div>
+                                    <h5 class="p-6 pt-0 text-2xl font-semibold tracking-tight text-heading">Victorian House</h5>
+                                </div>
+                            </a>
+
+                            <a href="#" class="bg-neutral-primary-soft w-full border border-black border-2 shadow-[0_3px_0_0_black]">
+                                <div class="h-60 w-full">
+                                    <img class="w-full h-full object-cover" src="{{asset('images/4K Minecraft Nature.jpg')}}" alt="Victorian House" />
+                                </div>
+                                <div class="flex p-6 pb-0 mb-3 items-center space-x-3">
+                                    <div class="flex items-center space-x-1 rtl:space-x-reverse">
+                                        <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                        </svg>
+                                        <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                        </svg>
+                                        <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                        </svg>
+                                        <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                        </svg>
+                                        <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                        </svg>
+                                    </div>
+                                    <span class="bg-brand-softer border border-black text-fg-brand-strong text-xs font-medium px-1.5 py-0.5">170 Views</span>
+                                </div>
+                                <div>
+                                    <h5 class="p-6 pt-0 text-2xl font-semibold tracking-tight text-heading">Victorian House</h5>
+                                </div>
+                            </a>
+
+                            <a href="#" class="bg-neutral-primary-soft w-full border border-black border-2 shadow-[0_3px_0_0_black]">
+                                <div class="h-60 w-full">
+                                    <img class="w-full h-full object-cover" src="{{asset('images/4K Minecraft Nature.jpg')}}" alt="Victorian House" />
+                                </div>
+                                <div class="flex p-6 pb-0 mb-3 items-center space-x-3">
+                                    <div class="flex items-center space-x-1 rtl:space-x-reverse">
+                                        <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                        </svg>
+                                        <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                        </svg>
+                                        <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                        </svg>
+                                        <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                        </svg>
+                                        <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                        </svg>
+                                    </div>
+                                    <span class="bg-brand-softer border border-black text-fg-brand-strong text-xs font-medium px-1.5 py-0.5">170 Views</span>
+                                </div>
+                                <div>
+                                    <h5 class="p-6 pt-0 text-2xl font-semibold tracking-tight text-heading">Victorian House</h5>
+                                </div>
+                            </a>
+
+                            <a href="#" class="bg-neutral-primary-soft w-full border border-black border-2 shadow-[0_3px_0_0_black]">
+                                <div class="h-60 w-full">
+                                    <img class="w-full h-full object-cover" src="{{asset('images/4K Minecraft Nature.jpg')}}" alt="Victorian House" />
+                                </div>
+                                <div class="flex p-6 pb-0 mb-3 items-center space-x-3">
+                                    <div class="flex items-center space-x-1 rtl:space-x-reverse">
+                                        <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                        </svg>
+                                        <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                        </svg>
+                                        <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                        </svg>
+                                        <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                        </svg>
+                                        <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                        </svg>
+                                    </div>
+                                    <span class="bg-brand-softer border border-black text-fg-brand-strong text-xs font-medium px-1.5 py-0.5">170 Views</span>
+                                </div>
+                                <div>
+                                    <h5 class="p-6 pt-0 text-2xl font-semibold tracking-tight text-heading">Victorian House</h5>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
                 <script>
                     // Show comment actions when input is focused
                     document.getElementById('comment-input').addEventListener('focus', function() {
@@ -297,17 +617,17 @@
                         button.addEventListener('click', function(e) {
                             // Remove any existing reply forms first
                             document.querySelectorAll('.reply-form').forEach(form => form.remove());
-                            
+
                             // Find the comment wrapper (closest parent with comment-wrapper class)
                             const commentWrapper = this.closest('.comment-wrapper');
-                            
+
                             // Check if reply form already exists for this comment
                             const existingReplyForm = commentWrapper.querySelector('.reply-form');
                             if (existingReplyForm) {
                                 existingReplyForm.remove();
                                 return;
                             }
-                            
+
                             // Create reply input form
                             const replyForm = document.createElement('div');
                             replyForm.className = 'reply-form mt-4 flex gap-2 sm:gap-3 items-start';
@@ -327,18 +647,18 @@
                                     </div>
                                 </div>
                             `;
-                            
+
                             // Insert the reply form at the end of the comment wrapper (YouTube style)
                             commentWrapper.appendChild(replyForm);
-                            
+
                             // Focus the input
                             replyForm.querySelector('input').focus();
-                            
+
                             // Handle cancel button
                             replyForm.querySelector('.cancel-reply').addEventListener('click', function() {
                                 replyForm.remove();
                             });
-                            
+
                             // Handle submit button
                             replyForm.querySelector('.submit-reply').addEventListener('click', function() {
                                 const input = replyForm.querySelector('input');
