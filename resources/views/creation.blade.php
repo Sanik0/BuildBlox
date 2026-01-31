@@ -25,7 +25,8 @@
                     <span class="self-center text-xl text-heading font-pixelify font-semibold whitespace-nowrap">BuildBlox</span>
                 </a>
                 <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-                    <a href="#" class="text-white button-mc bg-brand hover:bg-brand-strong box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none">Sign In</a>
+                    <a href="#" class="text-white button-mc bg-brand hover:bg-brand-strong box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none">Profile</a>
+                    <!-- <a href="#" class="text-white button-mc bg-brand hover:bg-brand-strong box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none">Sign In</a> -->
                     <button data-collapse-toggle="navbar-sticky" type="button" class="button-mc inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-body rounded-base md:hidden hover:bg-neutral-secondary-soft hover:text-heading focus:outline-none focus:ring-2 focus:ring-neutral-tertiary" aria-controls="navbar-sticky" aria-expanded="false">
                         <span class="sr-only">Open main menu</span>
                         <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -208,16 +209,20 @@
                 <div class=" hidden w-full flex flex-col gap-12" id="styled-steps" role="tabpanel" aria-labelledby="steps-tab">
                     <!-- STEPS -->
                     <div class="rounded-base grid grid-cols-1 md:grid-cols-2 gap-20">
-                        <div class="w-full aspect-square max-w-150 border-2 border-black">
+                        <div class="w-full relative aspect-square max-w-150 border-2 border-black">
+                            <div class="w-full h-full inline-block text-end text-4xl md:text-5xl lg:text=7xl p-5 text-white absolute top-0 right-0 font-bold  [text-shadow:1px_1px_0_#000,-1px_1px_0_#000,1px_-1px_0_#000,-1px_-1px_0_#000]">1</div>
                             <img class="object-center object-cover h-full w-full" src="{{asset('images/4K Minecraft Nature.jpg')}}" alt="">
                         </div>
-                        <div class="w-full aspect-square max-w-150 border-2 border-black">
+                        <div class="w-full relative aspect-square max-w-150 border-2 border-black">
+                            <div class="w-full h-full inline-block text-end text-4xl md:text-5xl lg:text=7xl p-5 text-white absolute top-0 right-0 font-bold  [text-shadow:1px_1px_0_#000,-1px_1px_0_#000,1px_-1px_0_#000,-1px_-1px_0_#000]">2</div>
                             <img class="object-center object-cover h-full w-full" src="{{asset('images/4K Minecraft Nature.jpg')}}" alt="">
                         </div>
-                        <div class="w-full aspect-square max-w-150 border-2 border-black">
+                        <div class="w-full relative aspect-square max-w-150 border-2 border-black">
+                            <div class="w-full h-full inline-block text-end text-4xl md:text-5xl lg:text=7xl p-5 text-white absolute top-0 right-0 font-bold  [text-shadow:1px_1px_0_#000,-1px_1px_0_#000,1px_-1px_0_#000,-1px_-1px_0_#000]">3</div>
                             <img class="object-center object-cover h-full w-full" src="{{asset('images/4K Minecraft Nature.jpg')}}" alt="">
                         </div>
-                        <div class="w-full aspect-square max-w-150 border-2 border-black">
+                        <div class="w-full relative aspect-square max-w-150 border-2 border-black">
+                            <div class="w-full h-full inline-block text-end text-4xl md:text-5xl lg:text=7xl p-5 text-white absolute top-0 right-0 font-bold  [text-shadow:1px_1px_0_#000,-1px_1px_0_#000,1px_-1px_0_#000,-1px_-1px_0_#000]">4</div>
                             <img class="object-center object-cover h-full w-full" src="{{asset('images/4K Minecraft Nature.jpg')}}" alt="">
                         </div>
                     </div>
