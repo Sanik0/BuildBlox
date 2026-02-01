@@ -46,10 +46,10 @@ Route::get('/admin/partials/sidebar', function () {
 // ADMIN ROUTES
 Route::get('/admin/home', function () {
     return view('admin.home');
-});
+})->name('admin.home');
 
 Route::get('/admin/users', function () {
     return view('admin.users');
-});
+})->name('admin.users');
 
 
