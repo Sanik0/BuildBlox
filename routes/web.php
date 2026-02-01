@@ -48,4 +48,8 @@ Route::get('/admin/home', function () {
     return view('admin.home');
 });
 
+Route::get('/admin/users', function () {
+    return view('admin.users');
+});
+
 
