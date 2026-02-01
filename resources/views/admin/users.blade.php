@@ -723,6 +723,10 @@
                         </div>
                     </div>
                     <dl>
+                        <dt class="mb-2 font-semibold leading-none text-gray-900 dark:text-white">Display Photo</dt>
+                        <dd class="h-20 w-20 mb-2 border-2 border-black">
+                            <img class="object-cover h-full w-full object-center" src="{{asset('/images/4k Minecraft Nature.jpg')}}" alt="">
+                        </dd>
                         <dt class="mb-2 font-semibold leading-none text-gray-900 dark:text-white">Email</dt>
                         <dd class="mb-4 font-light text-gray-500 sm:mb-5 dark:text-gray-400">markjohnmacapagal@gmail.com</dd>
                         <dt class="mb-2 font-semibold leading-none text-gray-900 dark:text-white">Username</dt>
