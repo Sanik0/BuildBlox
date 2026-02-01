@@ -39,3 +39,13 @@ Route::get('/partials/header', function () {
     return view('partials.header');
 });
 
+Route::get('/admin/partials/sidebar', function () {
+    return view('admin.partials.sidebar');
+});
+
+// ADMIN ROUTES
+Route::get('/admin/home', function () {
+    return view('admin.home');
+});
+
+
