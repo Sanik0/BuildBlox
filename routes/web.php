@@ -29,3 +29,13 @@ Route::get('/profile', function () {
 Route::get('/create', function () {
     return view('create');
 });
+
+// COMPONENT ROUTES
+Route::get('/partials/footer', function () {
+    return view('partials.footer');
+});
+
+Route::get('/partials/header', function () {
+    return view('partials.header');
+});
+
