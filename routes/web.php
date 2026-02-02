@@ -56,4 +56,8 @@ Route::get('/admin/categories', function () {
     return view('admin.categories');
 })->name('admin.categories');
 
+Route::get('/admin/builds', function () {
+    return view('admin.builds');
+})->name('admin.builds');
+
 
