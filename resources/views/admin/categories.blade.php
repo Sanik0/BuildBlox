@@ -94,8 +94,8 @@
                                 <tr class="border-b dark:border-gray-700">
                                     <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">Medieval</th>
                                     <td class="px-4 py-3 max-w-[12rem] truncate">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur excepturi dolor omnis ratione dolores vitae, delectus nulla numquam nihil corrupti.</td>
-                                        <td class="px-4 py-3 max-w-[12rem] truncate">2024-01-01 12:00:00</td>
-                                        <td class="px-4 py-3 max-w-[12rem] truncate">2024-01-01 12:00:00</td>
+                                    <td class="px-4 py-3 max-w-[12rem] truncate">2024-01-01 12:00:00</td>
+                                    <td class="px-4 py-3 max-w-[12rem] truncate">2024-01-01 12:00:00</td>
                                     <td class="px-4 py-3">234</td>
                                     <td class="px-4 py-3 flex items-center justify-end">
                                         <button id="apple-imac-27-dropdown-button" data-dropdown-toggle="apple-imac-27-dropdown" class="inline-flex items-center text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-700 p-1.5 dark:hover-bg-gray-800 text-center text-gray-500 hover:text-gray-800 rounded-lg focus:outline-none dark:text-gray-400 dark:hover:text-gray-100" type="button">
@@ -302,8 +302,8 @@
                     <!-- Modal header -->
                     <div class="flex justify-between mb-4 rounded-t sm:mb-5">
                         <div class="text-lg text-gray-900 md:text-xl dark:text-white">
-                            <h3 class="font-semibold ">Apple iMac 27”</h3>
-                            <p class="font-bold">$2999</p>
+                            <h3 class="font-semibold ">Medieval</h3>
+                            <p class="font-bold"></p>
                         </div>
                         <div>
                             <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 inline-flex dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="readProductModal">
@@ -315,10 +315,17 @@
                         </div>
                     </div>
                     <dl>
-                        <dt class="mb-2 font-semibold leading-none text-gray-900 dark:text-white">Details</dt>
+                        <dd class="h-40 w-60 mb-2 border-2 border-black">
+                            <img class="object-cover h-full w-full object-center" src="{{asset('/images/4k Minecraft Nature.jpg')}}" alt="">
+                        </dd>
+                        <dt class="mb-2 font-semibold leading-none text-gray-900 dark:text-white">Description</dt>
                         <dd class="mb-4 font-light text-gray-500 sm:mb-5 dark:text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, officiis reprehenderit! Molestiae tempore culpa commodi incidunt repellendus eveniet voluptatum totam magni, provident iusto aut maxime enim. Eum explicabo asperiores, consequatur nesciunt eveniet corrupti quaerat blanditiis, officia totam accusantium nostrum nemo.</dd>
-                        <dt class="mb-2 font-semibold leading-none text-gray-900 dark:text-white">Category</dt>
-                        <dd class="mb-4 font-light text-gray-500 sm:mb-5 dark:text-gray-400">Electronics/PC</dd>
+                        <dt class="mb-2 font-semibold leading-none text-gray-900 dark:text-white">Created At</dt>
+                        <dd class="mb-4 font-light text-gray-500 sm:mb-5 dark:text-gray-400">2024-01-01 12:00:00</dd>
+                        <dt class="mb-2 font-semibold leading-none text-gray-900 dark:text-white">Updated At</dt>
+                        <dd class="mb-4 font-light text-gray-500 sm:mb-5 dark:text-gray-400">2024-01-01 12:00:00</dd>
+                        <dt class="mb-2 font-semibold leading-none text-gray-900 dark:text-white">Builds</dt>
+                        <dd class="mb-4 font-light text-gray-500 sm:mb-5 dark:text-gray-400">234</dd>
                     </dl>
                     <div class="flex justify-between items-center">
                         <div class="flex items-center space-x-3 sm:space-x-4">
@@ -329,7 +336,7 @@
                                 </svg>
                                 Edit
                             </button>
-                            <button type="button" class="py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Preview</button>
+                            <button type="button" class="py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-gray-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Preview</button>
                         </div>
                         <button type="button" class="inline-flex items-center text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-500 dark:hover:bg-red-600 dark:focus:ring-red-900">
                             <svg aria-hidden="true" class="w-5 h-5 mr-1.5 -ml-1" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
