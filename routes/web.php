@@ -30,6 +30,11 @@ Route::get('/create', function () {
     return view('create');
 });
 
+// REGISTER AND LOGIN ROUTES
+Route::get('/signin', function () {
+    return view('signin');
+})->name('signin');
+
 // COMPONENT ROUTES
 Route::get('/partials/footer', function () {
     return view('partials.footer');
