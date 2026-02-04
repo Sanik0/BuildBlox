@@ -31,9 +31,9 @@ Route::get('/create', function () {
 });
 
 // REGISTER AND LOGIN ROUTES
-Route::get('/signin', function () {
-    return view('signin');
-})->name('signin');
+Route::get('/signup', function () {
+    return view('signup');
+})->name('signup');
 
 // COMPONENT ROUTES
 Route::get('/partials/footer', function () {
