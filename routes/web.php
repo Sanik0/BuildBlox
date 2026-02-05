@@ -8,27 +8,27 @@ Route::get('/', function () {
 
 Route::get('/home', function () {
     return view('home');
-});
+})->name('home');
 
 Route::get('/categories', function () {
     return view('categories');
-});
+})->name('categories');
 
 Route::get('/builds', function () {
     return view('builds');
-});
+})->name('builds');
 
 Route::get('/creation', function () {
     return view('creation');
-});
+})->name('creation');
 
 Route::get('/profile', function () {
     return view('profile');
-});
+})->name('profile');
 
 Route::get('/create', function () {
     return view('create');
-});
+})->name('create');
 
 // REGISTER AND LOGIN ROUTES
 Route::get('/signup', function () {
@@ -51,6 +51,10 @@ Route::get('/partials/header', function () {
 Route::get('/admin/partials/sidebar', function () {
     return view('admin.partials.sidebar');
 });
+
+Route::get('/partials/navigation', function () {
+    return view('partials.navigation');
+})->name('partials.navigation');
 
 // ADMIN ROUTES
 Route::get('/admin/home', function () {
