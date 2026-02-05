@@ -35,6 +35,10 @@ Route::get('/signup', function () {
     return view('signup');
 })->name('signup');
 
+Route::get('/signin', function () {
+    return view('signin');
+})->name('signin');
+
 // COMPONENT ROUTES
 Route::get('/partials/footer', function () {
     return view('partials.footer');
