@@ -16,8 +16,8 @@
                         <h1 class="text-4xl font-bold tracking-tighter text-heading md:text-5xl lg:text-6xl">Alex_12</h1>
                         <p class="w-full text-base font-normal max-w-xl text-body md:text-xl">Here at flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</p>
                         <div class="flex items-center space-x-3">
-                            <span class="bg-brand-softer border border-black text-fg-brand-strong text-base font-medium px-2 py-1">340 Builds</span>
-                            <span class="bg-brand-softer border border-black text-fg-brand-strong text-base font-medium px-2 py-1">578 Rated Builds</span>
+                            <span class="bg-black border-black text-white text-base font-medium px-2 py-1">340 Builds</span>
+                            <span class="bg-black border border-black text-white text-base font-medium px-2 py-1">578 Rated Builds</span>
                         </div>
                         <p class="w-full text-base font-normal max-w-xl text-body md:text-xl">Joined: January 15, 2026</p>
                         <!-- Modal toggle -->
