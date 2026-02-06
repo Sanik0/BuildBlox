@@ -1,4 +1,5 @@
 @include('partials.header')
+
 <body class="bg-[#ffffff] text-[#1b1b18]">
     <!-- HEADER -->
     <header class="w-full">
@@ -122,7 +123,13 @@
                         <h1 class="text-4xl font-bold tracking-tighter text-heading md:text-5xl lg:text-6xl">Victorian House</h1>
                         <p class="w-full text-base font-normal max-w-xl text-body md:text-xl">Here at flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</p>
                         <div class="flex items-center space-x-3">
-                            <span class="bg-brand-softer border border-black text-fg-brand-strong text-base font-medium px-2 py-1">170 Views</span>
+                            <div class="flex items-center gap-1.5 bg-black text-white border-1 border-black text-fg-brand-strong text-md font-semibold px-1.5 py-.5">
+                                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="white" stroke-width="2" d="M21 12c0 1.2-4.03 6-9 6s-9-4.8-9-6c0-1.2 4.03-6 9-6s9 4.8 9 6Z" />
+                                    <path stroke="white" stroke-width="2" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                </svg>
+                                <span>170</span>
+                            </div>
                             <div class="flex items-center space-x-1 rtl:space-x-reverse">
                                 <svg class="w-7 h-7 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                                     <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
@@ -665,7 +672,7 @@
         </div>
     </section>
     <!-- FOOTER -->
-     @include('partials.footer')
+    @include('partials.footer')
 </body>
 <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
 
