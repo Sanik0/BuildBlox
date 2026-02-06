@@ -1,4 +1,5 @@
 @include('partials.header')
+
 <body class="bg-[#ffffff] text-[#1b1b18]">
     <!-- HEADER -->
     @include('partials.navigation')
@@ -21,9 +22,9 @@
         <div class="w-full max-w-screen-xl">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-9">
 
-                <div class="border-black flex items-end relative border-2 w-full h-40 lg:h-48">
+                <div class="border-black group overflow-hidden hover:border-brand flex items-end relative border-2 w-full h-40 lg:h-48">
                     <div class="w-full absolute inset-0 h-full">
-                        <img class="w-full h-full object-center object-cover" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Medieval">
+                        <img class="w-full h-full object-center object-cover transition-transform duration-300 group-hover:scale-105" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Medieval">
                     </div>
                     <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
                     <div class="w-full relative flex flex-col p-3 md:p-5">
@@ -32,9 +33,9 @@
                     </div>
                 </div>
 
-                <div class="border-black flex items-end relative border-2 w-full h-40 lg:h-48">
+                <div class="border-black group overflow-hidden hover:border-brand flex items-end relative border-2 w-full h-40 lg:h-48">
                     <div class="w-full absolute inset-0 h-full">
-                        <img class="w-full h-full object-center object-cover" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Medieval">
+                        <img class="w-full h-full object-center object-cover transition-transform duration-300 group-hover:scale-105" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Medieval">
                     </div>
                     <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
                     <div class="w-full relative flex flex-col p-3 md:p-5">
@@ -42,30 +43,9 @@
                         <small class="w-full text-xs font-bold text-gray-300 md:text-xs lg:text-base">230 Builds</small>
                     </div>
                 </div>
-                <div class="border-black flex items-end relative border-2 w-full h-40 lg:h-48">
+                <div class="border-black group overflow-hidden hover:border-brand flex items-end relative border-2 w-full h-40 lg:h-48">
                     <div class="w-full absolute inset-0 h-full">
-                        <img class="w-full h-full object-center object-cover" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Medieval">
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
-                    <div class="w-full relative flex flex-col p-3 md:p-5">
-                        <p class="w-full text-base font-bold text-white md:text-xl lg:text-2xl">Medieval</p>
-                        <small class="w-full text-xs font-bold text-gray-300 md:text-xs lg:text-base">230 Builds</small>
-                    </div>
-                </div>
-
-                <div class="border-black flex items-end relative border-2 w-full h-40 lg:h-48">
-                    <div class="w-full absolute inset-0 h-full">
-                        <img class="w-full h-full object-center object-cover" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Medieval">
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
-                    <div class="w-full relative flex flex-col p-3 md:p-5">
-                        <p class="w-full text-base font-bold text-white md:text-xl lg:text-2xl">Medieval</p>
-                        <small class="w-full text-xs font-bold text-gray-300 md:text-xs lg:text-base">230 Builds</small>
-                    </div>
-                </div>
-                <div class="border-black flex items-end relative border-2 w-full h-40 lg:h-48">
-                    <div class="w-full absolute inset-0 h-full">
-                        <img class="w-full h-full object-center object-cover" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Medieval">
+                        <img class="w-full h-full object-center object-cover transition-transform duration-300 group-hover:scale-105" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Medieval">
                     </div>
                     <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
                     <div class="w-full relative flex flex-col p-3 md:p-5">
@@ -74,9 +54,9 @@
                     </div>
                 </div>
 
-                <div class="border-black flex items-end relative border-2 w-full h-40 lg:h-48">
+                <div class="border-black group overflow-hidden hover:border-brand flex items-end relative border-2 w-full h-40 lg:h-48">
                     <div class="w-full absolute inset-0 h-full">
-                        <img class="w-full h-full object-center object-cover" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Medieval">
+                        <img class="w-full h-full object-center object-cover transition-transform duration-300 group-hover:scale-105" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Medieval">
                     </div>
                     <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
                     <div class="w-full relative flex flex-col p-3 md:p-5">
@@ -84,9 +64,9 @@
                         <small class="w-full text-xs font-bold text-gray-300 md:text-xs lg:text-base">230 Builds</small>
                     </div>
                 </div>
-                <div class="border-black flex items-end relative border-2 w-full h-40 lg:h-48">
+                <div class="border-black group overflow-hidden hover:border-brand flex items-end relative border-2 w-full h-40 lg:h-48">
                     <div class="w-full absolute inset-0 h-full">
-                        <img class="w-full h-full object-center object-cover" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Medieval">
+                        <img class="w-full h-full object-center object-cover transition-transform duration-300 group-hover:scale-105" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Medieval">
                     </div>
                     <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
                     <div class="w-full relative flex flex-col p-3 md:p-5">
@@ -95,9 +75,9 @@
                     </div>
                 </div>
 
-                <div class="border-black flex items-end relative border-2 w-full h-40 lg:h-48">
+                <div class="border-black group overflow-hidden hover:border-brand flex items-end relative border-2 w-full h-40 lg:h-48">
                     <div class="w-full absolute inset-0 h-full">
-                        <img class="w-full h-full object-center object-cover" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Medieval">
+                        <img class="w-full h-full object-center object-cover transition-transform duration-300 group-hover:scale-105" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Medieval">
                     </div>
                     <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
                     <div class="w-full relative flex flex-col p-3 md:p-5">
@@ -105,9 +85,9 @@
                         <small class="w-full text-xs font-bold text-gray-300 md:text-xs lg:text-base">230 Builds</small>
                     </div>
                 </div>
-                <div class="border-black flex items-end relative border-2 w-full h-40 lg:h-48">
+                <div class="border-black group overflow-hidden hover:border-brand flex items-end relative border-2 w-full h-40 lg:h-48">
                     <div class="w-full absolute inset-0 h-full">
-                        <img class="w-full h-full object-center object-cover" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Medieval">
+                        <img class="w-full h-full object-center object-cover transition-transform duration-300 group-hover:scale-105" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Medieval">
                     </div>
                     <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
                     <div class="w-full relative flex flex-col p-3 md:p-5">
@@ -115,9 +95,10 @@
                         <small class="w-full text-xs font-bold text-gray-300 md:text-xs lg:text-base">230 Builds</small>
                     </div>
                 </div>
-                <div class="border-black flex items-end relative border-2 w-full h-40 lg:h-48">
+
+                <div class="border-black group overflow-hidden hover:border-brand flex items-end relative border-2 w-full h-40 lg:h-48">
                     <div class="w-full absolute inset-0 h-full">
-                        <img class="w-full h-full object-center object-cover" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Medieval">
+                        <img class="w-full h-full object-center object-cover transition-transform duration-300 group-hover:scale-105" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Medieval">
                     </div>
                     <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
                     <div class="w-full relative flex flex-col p-3 md:p-5">
@@ -125,9 +106,9 @@
                         <small class="w-full text-xs font-bold text-gray-300 md:text-xs lg:text-base">230 Builds</small>
                     </div>
                 </div>
-                <div class="border-black flex items-end relative border-2 w-full h-40 lg:h-48">
+                <div class="border-black group overflow-hidden hover:border-brand flex items-end relative border-2 w-full h-40 lg:h-48">
                     <div class="w-full absolute inset-0 h-full">
-                        <img class="w-full h-full object-center object-cover" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Medieval">
+                        <img class="w-full h-full object-center object-cover transition-transform duration-300 group-hover:scale-105" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Medieval">
                     </div>
                     <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
                     <div class="w-full relative flex flex-col p-3 md:p-5">
@@ -135,9 +116,9 @@
                         <small class="w-full text-xs font-bold text-gray-300 md:text-xs lg:text-base">230 Builds</small>
                     </div>
                 </div>
-                <div class="border-black flex items-end relative border-2 w-full h-40 lg:h-48">
+                <div class="border-black group overflow-hidden hover:border-brand flex items-end relative border-2 w-full h-40 lg:h-48">
                     <div class="w-full absolute inset-0 h-full">
-                        <img class="w-full h-full object-center object-cover" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Medieval">
+                        <img class="w-full h-full object-center object-cover transition-transform duration-300 group-hover:scale-105" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Medieval">
                     </div>
                     <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
                     <div class="w-full relative flex flex-col p-3 md:p-5">
@@ -145,9 +126,9 @@
                         <small class="w-full text-xs font-bold text-gray-300 md:text-xs lg:text-base">230 Builds</small>
                     </div>
                 </div>
-                <div class="border-black flex items-end relative border-2 w-full h-40 lg:h-48">
+                <div class="border-black group overflow-hidden hover:border-brand flex items-end relative border-2 w-full h-40 lg:h-48">
                     <div class="w-full absolute inset-0 h-full">
-                        <img class="w-full h-full object-center object-cover" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Medieval">
+                        <img class="w-full h-full object-center object-cover transition-transform duration-300 group-hover:scale-105" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Medieval">
                     </div>
                     <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
                     <div class="w-full relative flex flex-col p-3 md:p-5">
@@ -155,9 +136,9 @@
                         <small class="w-full text-xs font-bold text-gray-300 md:text-xs lg:text-base">230 Builds</small>
                     </div>
                 </div>
-                <div class="border-black flex items-end relative border-2 w-full h-40 lg:h-48">
+                <div class="border-black group overflow-hidden hover:border-brand flex items-end relative border-2 w-full h-40 lg:h-48">
                     <div class="w-full absolute inset-0 h-full">
-                        <img class="w-full h-full object-center object-cover" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Medieval">
+                        <img class="w-full h-full object-center object-cover transition-transform duration-300 group-hover:scale-105" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Medieval">
                     </div>
                     <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
                     <div class="w-full relative flex flex-col p-3 md:p-5">
@@ -165,9 +146,9 @@
                         <small class="w-full text-xs font-bold text-gray-300 md:text-xs lg:text-base">230 Builds</small>
                     </div>
                 </div>
-                <div class="border-black flex items-end relative border-2 w-full h-40 lg:h-48">
+                <div class="border-black group overflow-hidden hover:border-brand flex items-end relative border-2 w-full h-40 lg:h-48">
                     <div class="w-full absolute inset-0 h-full">
-                        <img class="w-full h-full object-center object-cover" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Medieval">
+                        <img class="w-full h-full object-center object-cover transition-transform duration-300 group-hover:scale-105" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Medieval">
                     </div>
                     <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
                     <div class="w-full relative flex flex-col p-3 md:p-5">
@@ -175,9 +156,29 @@
                         <small class="w-full text-xs font-bold text-gray-300 md:text-xs lg:text-base">230 Builds</small>
                     </div>
                 </div>
-                <div class="border-black flex items-end relative border-2 w-full h-40 lg:h-48">
+                <div class="border-black group overflow-hidden hover:border-brand flex items-end relative border-2 w-full h-40 lg:h-48">
                     <div class="w-full absolute inset-0 h-full">
-                        <img class="w-full h-full object-center object-cover" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Medieval">
+                        <img class="w-full h-full object-center object-cover transition-transform duration-300 group-hover:scale-105" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Medieval">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
+                    <div class="w-full relative flex flex-col p-3 md:p-5">
+                        <p class="w-full text-base font-bold text-white md:text-xl lg:text-2xl">Medieval</p>
+                        <small class="w-full text-xs font-bold text-gray-300 md:text-xs lg:text-base">230 Builds</small>
+                    </div>
+                </div>
+                <div class="border-black group overflow-hidden hover:border-brand flex items-end relative border-2 w-full h-40 lg:h-48">
+                    <div class="w-full absolute inset-0 h-full">
+                        <img class="w-full h-full object-center object-cover transition-transform duration-300 group-hover:scale-105" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Medieval">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
+                    <div class="w-full relative flex flex-col p-3 md:p-5">
+                        <p class="w-full text-base font-bold text-white md:text-xl lg:text-2xl">Medieval</p>
+                        <small class="w-full text-xs font-bold text-gray-300 md:text-xs lg:text-base">230 Builds</small>
+                    </div>
+                </div>
+                <div class="border-black group overflow-hidden hover:border-brand flex items-end relative border-2 w-full h-40 lg:h-48">
+                    <div class="w-full absolute inset-0 h-full">
+                        <img class="w-full h-full object-center object-cover transition-transform duration-300 group-hover:scale-105" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Medieval">
                     </div>
                     <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
                     <div class="w-full relative flex flex-col p-3 md:p-5">
