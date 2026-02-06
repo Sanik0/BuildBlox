@@ -47,10 +47,10 @@
                 <!-- Carousel wrapper -->
                 <div class="flex transition-transform duration-500 ease-in-out gap-4">
                     <!-- Category 1 -->
-                    <div class="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 px-2">
-                        <div class="border-black flex items-end relative border-2 w-full h-40 lg:h-48">
+                    <div class="flex-shrink-0  w-full sm:w-1/2 md:w-1/3 lg:w-1/4 px-2">
+                        <div class="border-black group overflow-hidden hover:border-brand flex items-end relative border-2 w-full h-40 lg:h-48">
                             <div class="w-full absolute inset-0 h-full">
-                                <img class="w-full h-full object-center object-cover" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Medieval">
+                                <img class="w-full h-full object-center object-cover transition-transform duration-300 group-hover:scale-105" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Medieval">
                             </div>
                             <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
                             <div class="w-full relative flex flex-col p-3 md:p-5">
@@ -62,9 +62,9 @@
 
                     <!-- Category 2 -->
                     <div class="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 px-2">
-                        <div class="border-black flex items-end relative border-2 w-full h-40 lg:h-48">
+                        <div class="border-black group overflow-hidden hover:border-brand flex items-end relative border-2 w-full h-40 lg:h-48">
                             <div class="w-full absolute inset-0 h-full">
-                                <img class="w-full h-full object-center object-cover" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Modern">
+                                <img class="w-full h-full object-center object-cover transition-transform duration-300 group-hover:scale-105" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Medieval">
                             </div>
                             <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
                             <div class="w-full relative flex flex-col p-3 md:p-5">
@@ -76,9 +76,9 @@
 
                     <!-- Category 3 -->
                     <div class="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 px-2">
-                        <div class="border-black flex items-end relative border-2 w-full h-40 lg:h-48">
+                        <div class="border-black group overflow-hidden hover:border-brand flex items-end relative border-2 w-full h-40 lg:h-48">
                             <div class="w-full absolute inset-0 h-full">
-                                <img class="w-full h-full object-center object-cover" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Fantasy">
+                                <img class="w-full h-full object-center object-cover transition-transform duration-300 group-hover:scale-105" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Medieval">
                             </div>
                             <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
                             <div class="w-full relative flex flex-col p-3 md:p-5">
@@ -90,9 +90,9 @@
 
                     <!-- Category 4 -->
                     <div class="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 px-2">
-                        <div class="border-black flex items-end relative border-2 w-full h-40 lg:h-48">
+                        <div class="border-black group overflow-hidden hover:border-brand flex items-end relative border-2 w-full h-40 lg:h-48">
                             <div class="w-full absolute inset-0 h-full">
-                                <img class="w-full h-full object-center object-cover" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Victorian">
+                                <img class="w-full h-full object-center object-cover transition-transform duration-300 group-hover:scale-105" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Medieval">
                             </div>
                             <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
                             <div class="w-full relative flex flex-col p-3 md:p-5">
@@ -104,9 +104,9 @@
 
                     <!-- Category 5 -->
                     <div class="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 px-2">
-                        <div class="border-black flex items-end relative border-2 w-full h-40 lg:h-48">
+                        <div class="border-black group overflow-hidden hover:border-brand flex items-end relative border-2 w-full h-40 lg:h-48">
                             <div class="w-full absolute inset-0 h-full">
-                                <img class="w-full h-full object-center object-cover" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Japanese">
+                                <img class="w-full h-full object-center object-cover transition-transform duration-300 group-hover:scale-105" src="{{asset('images/4k Minecraft Nature.jpg')}}" alt="Medieval">
                             </div>
                             <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
                             <div class="w-full relative flex flex-col p-3 md:p-5">
