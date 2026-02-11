@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -38,6 +39,10 @@ Route::get('/signup', function () {
 Route::get('/signin', function () {
     return view('signin');
 })->name('signin');
+
+// FUNCTIONALITY ROUTES
+Route::get('/signup', [AuthController::class, 'showSignupForm'])->name('signup');
+Route::post('/signup', [AuthController::class, 'register'])->name('signup.submit');
 
 // COMPONENT ROUTES
 Route::get('/partials/footer', function () {
