@@ -57,7 +57,7 @@
                             <label for="last-name" class="block mb-2 text-sm font-medium text-gray-900">Last Name</label>
                             <input type="text" name="last_name" value="{{ old('last_name')}}" id="last-name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-brand focus:border-brand block w-full p-2.5" placeholder="Doe" required>
                         </div>
-                         @error('last_name')
+                        @error('last_name')
                         <span class="error text-red-500 text-sm">{{ $message}}</span>
                         @enderror
                     </div>
@@ -65,7 +65,7 @@
                     <div>
                         <label for="username" class="block mb-2 text-sm font-medium text-gray-900">Username</label>
                         <input type="text" name="username" value="{{ old('username')}}" id="username" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-brand focus:border-brand block w-full p-2.5" placeholder="john_doe" required>
-                         @error('username')
+                        @error('username')
                         <span class="error text-red-500 text-sm">{{ $message}}</span>
                         @enderror
                     </div>
@@ -73,7 +73,7 @@
                     <div>
                         <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Email address</label>
                         <input type="email" name="email" value="{{ old('email') }}" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-brand focus:border-brand block w-full p-2.5" placeholder="name@company.com" required>
-                         @error('email')
+                        @error('email')
                         <span class="error text-red-500 text-sm">{{ $message}}</span>
                         @enderror
                     </div>
@@ -89,15 +89,12 @@
                                 </svg>
                             </button>
                         </div>
-                         @error('password')
-                        <span class="error text-red-500 text-sm">{{ $message}}</span>
-                        @enderror
                     </div>
 
                     <div>
                         <label for="confirm-password" class="block mb-2 text-sm font-medium text-gray-900">Confirm password</label>
                         <div class="relative">
-                            <input type="password" name="password_confirmation" id="confirm_password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-brand focus:border-brand block w-full p-2.5 pr-10" required>
+                            <input type="password" name="password_confirmation" id="confirm-password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-brand focus:border-brand block w-full p-2.5 pr-10" required>
                             <button type="button" id="toggle-confirm-password" class="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500 hover:text-gray-700">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
@@ -105,6 +102,9 @@
                                 </svg>
                             </button>
                         </div>
+                        @error('password')
+                        <span class="error text-red-500 text-sm">{{ $message}}</span>
+                        @enderror
                     </div>
 
                     <div class="flex items-start">
