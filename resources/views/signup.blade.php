@@ -50,20 +50,32 @@
                             <label for="first-name" class="block mb-2 text-sm font-medium text-gray-900">First Name</label>
                             <input type="text" name="first_name" value="{{ old('first_name')}}" id="first-name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-brand focus:border-brand block w-full p-2.5" placeholder="John" required>
                         </div>
+                        @error('first_name')
+                        <span class="error text-red-500 text-sm">{{ $message}}</span>
+                        @enderror
                         <div class="w-full">
                             <label for="last-name" class="block mb-2 text-sm font-medium text-gray-900">Last Name</label>
                             <input type="text" name="last_name" value="{{ old('last_name')}}" id="last-name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-brand focus:border-brand block w-full p-2.5" placeholder="Doe" required>
                         </div>
+                         @error('last_name')
+                        <span class="error text-red-500 text-sm">{{ $message}}</span>
+                        @enderror
                     </div>
 
                     <div>
                         <label for="username" class="block mb-2 text-sm font-medium text-gray-900">Username</label>
-                        <input type="text" name="username" id="username" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-brand focus:border-brand block w-full p-2.5" placeholder="john_doe" required>
+                        <input type="text" name="username" value="{{ old('username')}}" id="username" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-brand focus:border-brand block w-full p-2.5" placeholder="john_doe" required>
+                         @error('username')
+                        <span class="error text-red-500 text-sm">{{ $message}}</span>
+                        @enderror
                     </div>
 
                     <div>
                         <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Email address</label>
                         <input type="email" name="email" value="{{ old('email') }}" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-brand focus:border-brand block w-full p-2.5" placeholder="name@company.com" required>
+                         @error('email')
+                        <span class="error text-red-500 text-sm">{{ $message}}</span>
+                        @enderror
                     </div>
 
                     <div>
@@ -77,6 +89,9 @@
                                 </svg>
                             </button>
                         </div>
+                         @error('password')
+                        <span class="error text-red-500 text-sm">{{ $message}}</span>
+                        @enderror
                     </div>
 
                     <div>

@@ -21,6 +21,7 @@ class AuthController extends Controller
             'last_name' => 'required|string|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|string|min:8|confirmed',
+            'username' => 'required|string|max:255|unique:users',
         ]);
 
         if ($validator->fails()) {
@@ -35,8 +36,9 @@ class AuthController extends Controller
             'last_name' => $request->last_name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'username' => $request->username,
         ]);
 
-        return redirect('/home')->with('success', 'Registration successful! Please log in.');
+        return redirect('signin')->with('success', 'Registration successful! Please log in.');
     }
 }
