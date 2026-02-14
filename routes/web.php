@@ -43,6 +43,8 @@ Route::get('/signin', function () {
 // FUNCTIONALITY ROUTES
 Route::get('/signup', [AuthController::class, 'showSignupForm'])->name('signup');
 Route::post('/signup', [AuthController::class, 'register'])->name('signup.submit');
+Route::get('/signin', [AuthController::class, 'showLoginForm'])->name('signin');
+Route::post('/signin', [AuthController::class, 'login'])->name('signin.submit');
 
 // COMPONENT ROUTES
 Route::get('/partials/footer', function () {

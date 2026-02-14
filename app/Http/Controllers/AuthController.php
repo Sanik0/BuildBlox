@@ -6,15 +6,19 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
+
+    // SIGNUP METHODS
     public function showSignupForm()
     {
         return view('signup');
     }
 
-    public function register(Request $request) {
+    public function register(Request $request)
+    {
         // Validate incoming data
         $validator = Validator::make($request->all(), [
             'first_name' => 'required|string|max:255',
@@ -26,8 +30,8 @@ class AuthController extends Controller
 
         if ($validator->fails()) {
             return redirect()->back()
-            ->withErrors($validator)
-            ->withInput();
+                ->withErrors($validator)
+                ->withInput();
         }
 
         // Create the user
@@ -40,5 +44,36 @@ class AuthController extends Controller
         ]);
 
         return redirect('signin')->with('success', 'Registration successful! Please log in.');
+    }
+
+    // LOGIN METHODS
+    public function showLoginForm() 
+    {
+        return view('signin');
+    }
+
+    public function login(Request $request) 
+    {
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|email',
+            'password' => 'required|string|min:8',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()
+            ->withErrors($validator)
+            ->withInput($request->except('password'));
+        }
+
+        $credentials = $request->only('email', 'password');
+
+        if(auth()->attempt($credentials)) {
+            $request->session()->regenerate();
+            return redirect()->intended('/home')->with('success', 'Login succesful');
+        }
+
+        return redirect()->back()
+        ->withErrors(['email' => 'The provided credentials do not match our records.'])
+        ->withInput($request->except('password'));
     }
 }

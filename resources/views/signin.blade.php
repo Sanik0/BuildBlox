@@ -2,15 +2,15 @@
 
 <body class="bg-[#ffffff] relative text-[#1b1b18]">
     <!-- ALERT -->
-     @if(session('success'))
+    @if(session('success'))
     <section class="w-full absolute p-7 z-10 top-0">
-        <div id="alert-5" class="flex sm:items-center p-4 text-sm border-2 text-heading bg-neutral-secondary-medium" role="alert">
+        <div id="alert-5" class="flex sm:items-center w-full md:w-fit max-w-md p-4 text-sm border-2 text-heading bg-neutral-secondary-medium" role="alert">
             <svg class="w-4 h-4 shrink-0 mt-0.5 md:mt-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11h2v5m-2 0h4m-2.592-8.5h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
             </svg>
             <span class="sr-only">Info</span>
-            <div class="ms-2 text-sm ">
-               {{ session('success')}}
+            <div class="ms-2 text-sm overflow-hidden">
+                {{ session('success') }}
             </div>
             <button type="button" class="ms-auto -mx-1.5 -my-1.5 rounded focus:ring-2 focus:ring-neutral-tertiary p-1.5 hover:bg-neutral-tertiary-medium inline-flex items-center justify-center h-8 w-8 shrink-0 shrink-0" data-dismiss-target="#alert-5" aria-label="Close">
                 <span class="sr-only">Dismiss</span>
@@ -64,11 +64,14 @@
                 </div>
 
                 <!-- Login Form -->
-                <form id="signupForm" class="space-y-4">
-
+                <form method="POST" action="{{ route('signin.submit')}}" id="signupForm" class="space-y-4">
+                    @csrf
                     <div>
                         <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Email address</label>
-                        <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-brand focus:border-brand block w-full p-2.5" placeholder="name@company.com" required>
+                        <input type="email" value="{{ old('email')}}" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-brand focus:border-brand block w-full p-2.5" placeholder="name@company.com" required>
+                        @error('email')
+                        <span class="error text-red-500 text-sm">{{ $message}}</span>
+                        @enderror
                     </div>
                     <div>
                         <label for="password" class="block mb-2 text-sm font-medium text-gray-900">Password</label>
@@ -81,6 +84,9 @@
                                 </svg>
                             </button>
                         </div>
+                        @error('password')
+                        <span class="error text-red-500 text-sm">{{ $message}}</span>
+                        @enderror
                     </div>
 
                     <div>
