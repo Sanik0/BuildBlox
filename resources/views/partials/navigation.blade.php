@@ -23,14 +23,6 @@
                     <img class="object-cover object-center w-full h-full" src="{{asset('images/default_profile.png')}}" alt="">
                     @endif
                 </a>
-                @else
-                <a href="" class="w-9.5 h-9.5 border-2 min-w-10 ml-2">
-                    @if($user->image)
-                    <img class="object-cover object-center w-full h-full" src="{{ asset('storage/' . $user->image)}}" alt="">
-                    @else
-                    <img class="object-cover object-center w-full h-full" src="{{asset('images/default_profile.png')}}" alt="">
-                    @endif
-                </a>
                 @endif
                 <button data-collapse-toggle="navbar-sticky" type="button" class="button-mc inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-body rounded-base md:hidden hover:bg-neutral-secondary-soft hover:text-heading focus:outline-none focus:ring-2 focus:ring-neutral-tertiary" aria-controls="navbar-sticky" aria-expanded="false">
                     <span class="sr-only">Open main menu</span>

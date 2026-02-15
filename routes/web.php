@@ -39,6 +39,9 @@ Route::post('/signin', [AuthController::class, 'login'])->name('signin.submit');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // PROFILE ROUTES
+Route::get('/profile', function () {
+    return redirect('/home');
+});
 Route::get('/profile/{username}', [AuthController::class, 'showProfile'])->name('profile.show');
 
 
