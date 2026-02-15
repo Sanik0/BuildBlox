@@ -32,19 +32,14 @@ Route::get('/create', function () {
 })->name('create');
 
 // REGISTER AND LOGIN ROUTES
-Route::get('/signup', function () {
-    return view('signup');
-})->name('signup');
-
-Route::get('/signin', function () {
-    return view('signin');
-})->name('signin');
 
 // FUNCTIONALITY ROUTES
 Route::get('/signup', [AuthController::class, 'showSignupForm'])->name('signup');
 Route::post('/signup', [AuthController::class, 'register'])->name('signup.submit');
 Route::get('/signin', [AuthController::class, 'showLoginForm'])->name('signin');
 Route::post('/signin', [AuthController::class, 'login'])->name('signin.submit');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
 
 // COMPONENT ROUTES
 Route::get('/partials/footer', function () {
