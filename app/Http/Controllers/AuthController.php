@@ -85,4 +85,21 @@ class AuthController extends Controller
         $request->session()->regenerateToken();
         return redirect('/signin')->with('success', 'You have been logged out successfully!');
     }
+
+    // PROFILE METHOD
+    public function showProfile($username)
+    {
+        $user = User::where('username', $username)->first();
+
+        if (!$user) {
+            abort(404, 'User not found');
+        }
+
+        $isOwnProfile = Auth::check() && Auth::user()->user_id == $user->user_id;
+
+        return view('profile', [
+            'user' => $user,
+            'isOwnProfile' => $isOwnProfile
+        ]);
+    }
 }

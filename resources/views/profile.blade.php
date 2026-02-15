@@ -9,17 +9,27 @@
             <div class="w-full flex flex-col items-start lg:flex-row gap-8">
                 <div class="w-full flex justify-space-between gap-8 md:flex-row flex-col">
                     <div class="w-full md:max-w-75 md:min-w-75 max-w-full h-75 border-2">
-                        <img class="object-cover object-center w-full h-full" src="{{asset('images/4K Minecraft Nature.jpg')}}" alt="">
+                        @if($user->image)
+                        <img class="object-cover object-center w-full h-full" src="{{ asset('storage/' . $user->image)}}" alt="">
+                        @else
+                        <img class="object-cover object-center w-full h-full" src="{{ asset('images/default_profile.png')}}" alt="">
+                        @endif
                     </div>
 
                     <div class="w-full flex flex-col gap-3">
-                        <h1 class="text-4xl font-bold tracking-tighter text-heading md:text-5xl lg:text-6xl">Alex_12</h1>
-                        <p class="w-full text-base font-normal max-w-xl text-body md:text-xl">Here at flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</p>
+                        <h1 class="text-4xl font-bold tracking-tighter text-heading md:text-5xl lg:text-6xl">{{ $user->username}}</h1>
+                        <p class="w-full text-base font-normal max-w-xl text-body md:text-xl">
+                            @if($user->biography)
+                            {{ $user->biography}}
+                            @else
+                           Too cool to write a bio. or too lazy. <br> Probably just lazy.
+                            @endif
+                        </p>
                         <div class="flex items-center space-x-3">
                             <span class="bg-black border-black text-white text-base font-medium px-2 py-1">340 Builds</span>
                             <span class="bg-black border border-black text-white text-base font-medium px-2 py-1">578 Rated Builds</span>
                         </div>
-                        <p class="w-full text-base font-normal max-w-xl text-body md:text-xl">Joined: January 15, 2026</p>
+                        <p class="w-full text-base font-normal max-w-xl text-body md:text-xl">Joined: {{ $user->created_at->format('F d, Y')}}</p>
                         <!-- Modal toggle -->
                         <button data-modal-target="default-modal" data-modal-toggle="default-modal" class="text-white w-fit whitespace-nowrap button-mc bg-brand hover:bg-brand-strong box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none" type="button">
                             Edit Profile

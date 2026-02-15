@@ -32,13 +32,14 @@ Route::get('/create', function () {
 })->name('create');
 
 // REGISTER AND LOGIN ROUTES
-
-// FUNCTIONALITY ROUTES
 Route::get('/signup', [AuthController::class, 'showSignupForm'])->name('signup');
 Route::post('/signup', [AuthController::class, 'register'])->name('signup.submit');
 Route::get('/signin', [AuthController::class, 'showLoginForm'])->name('signin');
 Route::post('/signin', [AuthController::class, 'login'])->name('signin.submit');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+// PROFILE ROUTES
+Route::get('/profile/{username}', [AuthController::class, 'showProfile'])->name('proile.show');
 
 
 // COMPONENT ROUTES

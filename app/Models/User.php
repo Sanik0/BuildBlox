@@ -28,6 +28,8 @@ class User extends Authenticatable
         'first_name',
         'last_name',
         'username',
+        'biography',
+        'image',
     ];
 
     public $timestamps = true;
