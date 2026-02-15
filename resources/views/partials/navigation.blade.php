@@ -7,13 +7,16 @@
             </a>
             <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
                 @if(Auth::check())
-                <form action="{{ route('logout')}}" method="POST">
+                <form class="hidden md:block" action="{{ route('logout')}}" method="POST">
                     @csrf
                     <button type="submit" class="text-white button-mc bg-brand hover:bg-brand-strong box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none">Logout</button>
                 </form>
                 @else
                 <a href="{{ route('signin') }}" class="text-white button-mc bg-brand hover:bg-brand-strong box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none">Sign In</a>
                 @endif
+                <a href="" class="w-10 h-10 border-2 min-w-10 ml-2">
+                    <img src="{{ asset('images/4K Minecraft Nature.jpg')}}" alt="" class="w-full h-full object-center object-cover">
+                </a>
                 <button data-collapse-toggle="navbar-sticky" type="button" class="button-mc inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-body rounded-base md:hidden hover:bg-neutral-secondary-soft hover:text-heading focus:outline-none focus:ring-2 focus:ring-neutral-tertiary" aria-controls="navbar-sticky" aria-expanded="false">
                     <span class="sr-only">Open main menu</span>
                     <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -45,6 +48,14 @@
                     </li>
                     <li>
                         <a href="#" class="block py-2 px-3 text-heading rounded md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent">Contact</a>
+                    </li>
+                    <li>
+                        @if(Auth::check())
+                        <form class="block md:hidden" action="{{ route('logout')}}" method="POST">
+                            @csrf
+                            <button type="submit" class="block py-2 px-3 text-heading rounded md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent">Logout</button>
+                        </form>
+                        @endif
                     </li>
                 </ul>
             </div>
