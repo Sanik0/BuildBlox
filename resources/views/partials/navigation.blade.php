@@ -14,6 +14,16 @@
                 @else
                 <a href="{{ route('signin') }}" class="text-white button-mc bg-brand hover:bg-brand-strong box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none">Sign In</a>
                 @endif
+
+                @if(Auth::check())
+                <a href="{{ route('profile.show', Auth::user()->username) }}" class="w-9.5 h-9.5 border-2 min-w-10 ml-2">
+                    @if(Auth::user()->image)
+                    <img class="object-cover object-center w-full h-full" src="{{ asset('storage/' . Auth::user()->image)}}" alt="">
+                    @else
+                    <img class="object-cover object-center w-full h-full" src="{{asset('images/default_profile.png')}}" alt="">
+                    @endif
+                </a>
+                @else
                 <a href="" class="w-9.5 h-9.5 border-2 min-w-10 ml-2">
                     @if($user->image)
                     <img class="object-cover object-center w-full h-full" src="{{ asset('storage/' . $user->image)}}" alt="">
@@ -21,6 +31,7 @@
                     <img class="object-cover object-center w-full h-full" src="{{asset('images/default_profile.png')}}" alt="">
                     @endif
                 </a>
+                @endif
                 <button data-collapse-toggle="navbar-sticky" type="button" class="button-mc inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-body rounded-base md:hidden hover:bg-neutral-secondary-soft hover:text-heading focus:outline-none focus:ring-2 focus:ring-neutral-tertiary" aria-controls="navbar-sticky" aria-expanded="false">
                     <span class="sr-only">Open main menu</span>
                     <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
