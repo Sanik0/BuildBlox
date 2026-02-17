@@ -18,7 +18,7 @@
                 @if(Auth::check())
                 <a href="{{ route('profile.show', Auth::user()->username) }}" class="w-9.5 h-9.5 border-2 min-w-10 ml-2">
                     @if(Auth::user()->image)
-                    <img class="object-cover object-center w-full h-full" src="{{ asset('storage/' . Auth::user()->image)}}" alt="">
+                    <img class="object-cover object-center w-full h-full" src="{{ asset('images/' . Auth::user()->image)}}" alt="">
                     @else
                     <img class="object-cover object-center w-full h-full" src="{{asset('images/default_profile.png')}}" alt="">
                     @endif

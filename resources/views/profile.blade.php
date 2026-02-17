@@ -21,14 +21,14 @@
         </button>
     </div>
     @endif
-    <!-- BUILD INFORMATION -->
+    <!-- PROFILE INFORMATION -->
     <section class="w-full mt-20 flex p-4 py-6 lg:py-8 items-center justify-center py-13">
         <div class="w-full max-w-screen-xl flex flex-col gap-13">
             <div class="w-full flex flex-col items-start lg:flex-row gap-8">
                 <div class="w-full flex justify-space-between gap-8 md:flex-row flex-col">
                     <div class="w-full md:max-w-75 md:min-w-75 max-w-full h-75 border-2">
                         @if($user->image)
-                        <img class="object-cover object-center w-full h-full" src="{{ asset('storage/' . $user->image)}}" alt="">
+                        <img class="object-cover object-center w-full h-full" src="{{ asset('images/' . $user->image)}}" alt="">
                         @else
                         <img class="object-cover object-center w-full h-full" src="{{ asset('images/default_profile.png')}}" alt="">
                         @endif
@@ -49,18 +49,16 @@
                         </div>
                         <p class="w-full text-base font-normal max-w-xl text-body md:text-xl">Joined: {{ $user->created_at->format('F d, Y')}}</p>
                         <!-- Modal toggle -->
-                        @if(Auth::check())
-                        @if(Auth::user()->user_id === $user->user_id)
+                        @if($isOwnProfile)
                         <button data-modal-target="default-modal" data-modal-toggle="default-modal" class="text-white w-fit whitespace-nowrap button-mc bg-brand hover:bg-brand-strong box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none" type="button">
                             Edit Profile
                         </button>
 
                         <!-- Main Modal -->
-                        @if($isOwnProfile)
                         <div id="default-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
                             <div class="relative p-4 w-full max-w-2xl max-h-full">
                                 <!-- Modal content -->
-                                <div class="relative bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                                <div class="relative bg-white border-4">
                                     <!-- Modal header -->
                                     <div class="flex items-start justify-between bg-blue-600 border-b-2 border-black p-4 md:p-6">
                                         <div class="flex items-center gap-3">
@@ -101,25 +99,41 @@
                                             @csrf
                                             @method('PUT')
 
-                                            <!-- Profile Image -->
-                                            <div class="mb-6">
-                                                <label class="block text-sm font-bold text-gray-900 mb-2 uppercase">Profile Image</label>
-                                                <div class="flex items-center gap-4">
-                                                    <div class="w-24 h-24 border-4 border-black overflow-hidden bg-gray-100">
-                                                        @if($user->image)
-                                                        <img id="imagePreview" class="object-cover w-full h-full" src="{{ asset('storage/' . $user->image) }}" alt="Profile">
-                                                        @else
-                                                        <img id="imagePreview" class="object-cover w-full h-full" src="{{ asset('default_profile.png') }}" alt="Default">
-                                                        @endif
-                                                    </div>
-                                                    <div>
-                                                        <input type="file" name="image" id="imageInput" accept="image/*" class="hidden" onchange="previewImage(event)">
-                                                        <label for="imageInput" class="cursor-pointer bg-gray-900 hover:bg-gray-700 text-white border-2 border-black px-4 py-2 font-bold uppercase text-sm inline-block shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-                                                            Choose Image
+                                            <div class="mb-4">
+                                                <label for="first_name" class="block text-sm font-bold text-gray-900 mb-2 uppercase">Profile Avatar</label>
+                                                <ul class="select-none grid gap-2 grid-cols-4 sm:grid-cols-5">
+                                                    <li>
+                                                        <input type="radio" id="react-option" value="profile/profile_1.png" name="image" class="hidden peer" required="" checked>
+                                                        <label for="react-option" class="inline-flex h-15 w-15 border-2 border-black items-center justify-between text-body bg-neutral-primary-soft cursor-pointer peer-checked:hover:bg-brand-softer peer-checked:border-brand">
+                                                            <img src="{{ asset('/images/profile/profile_1.png')}}" class="h-full w-full" alt="">
                                                         </label>
-                                                        <p class="text-xs text-gray-600 mt-2 font-medium">JPG, PNG, GIF (Max 2MB)</p>
-                                                    </div>
-                                                </div>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" id="vue-option" value="profile/profile_2.png" name="image" class="hidden peer" required="">
+                                                        <label for="vue-option" class="inline-flex h-15 w-15 border-2 border-black items-center justify-between text-body bg-neutral-primary-soft cursor-pointer peer-checked:hover:bg-brand-softer peer-checked:border-brand">
+                                                            <img src="{{ asset('/images/profile/profile_2.png')}}" class="h-full w-full" alt="">
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" id="bruh-option" value="profile_3" name="image" class="hidden peer" required="">
+                                                        <label for="bruh-option" class="inline-flex h-15 w-15 border-2 border-black items-center justify-between text-body bg-neutral-primary-soft cursor-pointer peer-checked:hover:bg-brand-softer peer-checked:border-brand">
+                                                            <img src="{{ asset('/images/default_profile.png')}}" class="h-full w-full" alt="">
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" id="p4-option" value="profile_4" name="image" class="hidden peer" required="">
+                                                        <label for="p4-option" class="inline-flex h-15 w-15 border-2 border-black items-center justify-between text-body bg-neutral-primary-soft cursor-pointer peer-checked:hover:bg-brand-softer peer-checked:border-brand">
+                                                            <img src="{{ asset('/images/default_profile.png')}}" class="h-full w-full" alt="">
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" id="p5-option" value="profile_5" name="image" class="hidden peer" required="">
+                                                        <label for="p5-option" class="inline-flex h-15 w-15 border-2 border-black items-center justify-between text-body bg-neutral-primary-soft cursor-pointer peer-checked:hover:bg-brand-softer peer-checked:border-brand">
+                                                            <img src="{{ asset('/images/default_profile.png')}}" class="h-full w-full" alt="">
+                                                        </label>
+                                                    </li>
+                                                </ul>
+
                                             </div>
 
                                             <!-- First Name -->
@@ -176,14 +190,14 @@
                                             <div class="flex flex-col sm:flex-row gap-3">
                                                 <button
                                                     type="submit"
-                                                    class="flex-1 bg-green-600 hover:bg-green-700 text-white border-2 border-black px-6 py-3 font-bold uppercase shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
+                                                    class="text-white flex-1 button-mc bg-green-600 hover:bg-green-900 box-border  px-6 py-3 border border-transparent uppercase focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm focus:outline-none">
                                                     Save Changes
                                                 </button>
                                                 <button
                                                     type="button"
                                                     data-modal-hide="default-modal"
-                                                    class="flex-1 bg-gray-300 hover:bg-gray-400 text-gray-900 border-2 border-black px-6 py-3 font-bold uppercase shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
-                                                    Cancel
+                                                    class="text-gray-600 flex-1 button-mc bg-gray-100 hover:bg-gray-300 box-border  px-6 py-3 border border-transparent uppercase focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm focus:outline-none">
+                                                    cancel
                                                 </button>
                                             </div>
                                         </form>
@@ -191,8 +205,6 @@
                                 </div>
                             </div>
                         </div>
-                        @endif
-                        @endif
                         @endif
 
                     </div>
@@ -522,77 +534,6 @@
                     </a>
                 </div>
 
-                <script>
-                    // Show comment actions when input is focused
-                    document.getElementById('comment-input').addEventListener('focus', function() {
-                        document.getElementById('comment-actions').classList.remove('hidden');
-                    });
-
-                    // Hide comment actions on cancel
-                    document.querySelector('#comment-actions button:first-child').addEventListener('click', function() {
-                        document.getElementById('comment-input').value = '';
-                        document.getElementById('comment-input').blur();
-                        document.getElementById('comment-actions').classList.add('hidden');
-                    });
-
-                    // Handle reply button clicks - YouTube style
-                    document.querySelectorAll('.reply-btn').forEach(button => {
-                        button.addEventListener('click', function(e) {
-                            // Remove any existing reply forms first
-                            document.querySelectorAll('.reply-form').forEach(form => form.remove());
-
-                            // Find the comment wrapper (closest parent with comment-wrapper class)
-                            const commentWrapper = this.closest('.comment-wrapper');
-
-                            // Check if reply form already exists for this comment
-                            const existingReplyForm = commentWrapper.querySelector('.reply-form');
-                            if (existingReplyForm) {
-                                existingReplyForm.remove();
-                                return;
-                            }
-
-                            // Create reply input form
-                            const replyForm = document.createElement('div');
-                            replyForm.className = 'reply-form mt-4 flex gap-2 sm:gap-3 items-start';
-                            replyForm.innerHTML = `
-                                <div class="w-6 h-6 sm:w-8 sm:h-8 bg-black border-2 border-black flex-shrink-0 flex items-center justify-center">
-                                    <span class="text-white font-bold text-xs">U</span>
-                                </div>
-                                <div class="flex-1 min-w-0">
-                                    <input type="text" placeholder="Write a reply..." class="w-full px-0 pb-2 bg-transparent border-0 border-b-2 border-gray-300 focus:border-black focus:ring-0 text-xs sm:text-sm placeholder-gray-500 transition-colors">
-                                    <div class="mt-3 flex gap-2 justify-end">
-                                        <button type="button" class="cancel-reply px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-bold bg-white border-2 border-black hover:bg-gray-100 transition-colors">
-                                            Cancel
-                                        </button>
-                                        <button type="button" class="submit-reply px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-bold bg-black text-white border-2 border-black shadow-[3px_3px_0_0_rgba(0,0,0,1)] hover:shadow-[1px_1px_0_0_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all">
-                                            Reply
-                                        </button>
-                                    </div>
-                                </div>
-                            `;
-
-                            // Insert the reply form at the end of the comment wrapper (YouTube style)
-                            commentWrapper.appendChild(replyForm);
-
-                            // Focus the input
-                            replyForm.querySelector('input').focus();
-
-                            // Handle cancel button
-                            replyForm.querySelector('.cancel-reply').addEventListener('click', function() {
-                                replyForm.remove();
-                            });
-
-                            // Handle submit button
-                            replyForm.querySelector('.submit-reply').addEventListener('click', function() {
-                                const input = replyForm.querySelector('input');
-                                if (input.value.trim()) {
-                                    console.log('Reply submitted:', input.value);
-                                    replyForm.remove();
-                                }
-                            });
-                        });
-                    });
-                </script>
             </div>
 
         </div>

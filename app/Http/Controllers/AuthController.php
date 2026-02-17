@@ -112,7 +112,7 @@ class AuthController extends Controller
             'last_name' => 'required|string|max:255',
             'username' => 'required|string|max:255|unique:users,username,' . $user->user_id . ',user_id',
             'biography' => 'nullable|string|max:500',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image' => 'nullable|string|max:255',
         ]);
 
         if($validator->fails()) {
@@ -125,16 +125,8 @@ class AuthController extends Controller
         $user->last_name = $request->last_name;
         $user->username = $request->username;
         $user->biography = $request->biography;
-
-        if($request->hasFile('image')) {
-            if ($user->image && file_exists(public_path('storage/' . $user->image))) {
-                unlink(public_path('storage/' . $user->image));
-            }
-
-            $imagePath = $request->file('image')->store('profile-images', 'public');
-            $user->image = $imagePath;
-        }
-
+        $user->image = $request->image;
+        
         $user->save();
         return redirect()->route('profile.show', $user->username)->with('success', 'Profile updated successfully!');
     }
