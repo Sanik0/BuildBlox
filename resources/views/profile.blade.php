@@ -22,7 +22,7 @@
                             @if($user->biography)
                             {{ $user->biography}}
                             @else
-                           Too cool to write a bio. or too lazy. <br> Probably just lazy.
+                            Too cool to write a bio. or too lazy. <br> Probably just lazy.
                             @endif
                         </p>
                         <div class="flex items-center space-x-3">
@@ -31,6 +31,8 @@
                         </div>
                         <p class="w-full text-base font-normal max-w-xl text-body md:text-xl">Joined: {{ $user->created_at->format('F d, Y')}}</p>
                         <!-- Modal toggle -->
+                        @if(Auth::check())
+                        @if(Auth::user()->user_id === $user->user_id)
                         <button data-modal-target="default-modal" data-modal-toggle="default-modal" class="text-white w-fit whitespace-nowrap button-mc bg-brand hover:bg-brand-strong box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none" type="button">
                             Edit Profile
                         </button>
@@ -174,6 +176,9 @@
                                 </div>
                             </div>
                         </div>
+                        @endif
+                        @endif
+
                     </div>
 
                 </div>
