@@ -38,11 +38,11 @@
                         </button>
 
                         <!-- Main Modal -->
-                        <div id="default-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 flex justify-center items-center w-full md:inset-0 h-full">
+                        @if($isOwnProfile)
+                        <div id="default-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
                             <div class="relative p-4 w-full max-w-2xl max-h-full">
                                 <!-- Modal content -->
-                                <div class="relative bg-white border-2 border-black shadow-[4px_4px_0_0_rgba(0,0,0,0.3)]">
-
+                                <div class="relative bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
                                     <!-- Modal header -->
                                     <div class="flex items-start justify-between bg-blue-600 border-b-2 border-black p-4 md:p-6">
                                         <div class="flex items-center gap-3">
@@ -61,121 +61,119 @@
                                     </div>
 
                                     <!-- Modal body -->
-                                    <div class="p-4 md:p-6 space-y-4 max-h-[60vh] overflow-y-auto">
-
-                                        <!-- Username Field -->
-                                        <div>
-                                            <label class="block text-gray-800 text-xs font-bold mb-2 uppercase">
-                                                USERNAME
-                                            </label>
-                                            <input
-                                                type="text"
-                                                value="Steve_Miner"
-                                                class="w-full px-3 py-2.5 bg-gray-100 text-gray-900 border-2 border-gray-400 text-sm focus:outline-none focus:border-blue-600 transition-colors placeholder-gray-500"
-                                                placeholder="Enter username" />
+                                    <div class="p-4 md:p-6 space-y-4">
+                                        <!-- Success/Error Messages -->
+                                        @if(session('success'))
+                                        <div class="bg-green-100 border-2 border-green-600 text-green-700 px-4 py-3">
+                                            {{ session('success') }}
                                         </div>
+                                        @endif
 
-                                        <!-- Email Field -->
-                                        <div>
-                                            <label class="block text-gray-800 text-xs font-bold mb-2 uppercase">
-                                                EMAIL
-                                            </label>
-                                            <input
-                                                type="email"
-                                                value="steve@minecraft.net"
-                                                class="w-full px-3 py-2.5 bg-gray-100 text-gray-900 border-2 border-gray-400 text-sm focus:outline-none focus:border-blue-600 transition-colors placeholder-gray-500"
-                                                placeholder="your@email.com" />
+                                        @if($errors->any())
+                                        <div class="bg-red-100 border-2 border-red-600 text-red-700 px-4 py-3">
+                                            <ul class="list-disc list-inside">
+                                                @foreach($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                                @endforeach
+                                            </ul>
                                         </div>
+                                        @endif
 
-                                        <!-- Display Name Field -->
-                                        <div>
-                                            <label class="block text-gray-800 text-xs font-bold mb-2 uppercase">
-                                                DISPLAY NAME
-                                            </label>
-                                            <input
-                                                type="text"
-                                                value="Steve the Builder"
-                                                class="w-full px-3 py-2.5 bg-gray-100 text-gray-900 border-2 border-gray-400 text-sm focus:outline-none focus:border-blue-600 transition-colors placeholder-gray-500"
-                                                placeholder="Display name" />
-                                        </div>
+                                        <form action="{{ route('profile.update') }}" method="POST" enctype="multipart/form-data">
+                                            @csrf
+                                            @method('PUT')
 
-                                        <!-- Role Selector -->
-                                        <div>
-                                            <label class="block text-gray-800 text-xs font-bold mb-2 uppercase">
-                                                ROLE
-                                            </label>
-                                            <select class="w-full px-3 py-2.5 bg-gray-100 text-gray-900 border-2 border-gray-400 text-sm focus:outline-none focus:border-blue-600 transition-colors cursor-pointer uppercase">
-                                                <option>PLAYER</option>
-                                                <option>MODERATOR</option>
-                                                <option selected>BUILDER</option>
-                                                <option>ADMIN</option>
-                                            </select>
-                                        </div>
-
-                                        <!-- Bio Field -->
-                                        <div>
-                                            <label class="block text-gray-800 text-xs font-bold mb-2 uppercase">
-                                                BIO
-                                            </label>
-                                            <textarea
-                                                rows="4"
-                                                class="w-full px-3 py-2.5 bg-gray-100 text-gray-900 border-2 border-gray-400 text-sm focus:outline-none focus:border-blue-600 transition-colors resize-none placeholder-gray-500"
-                                                placeholder="Tell us about yourself...">Love building medieval castles and redstone contraptions!</textarea>
-                                        </div>
-
-                                        <!-- Checkboxes -->
-                                        <div class="space-y-3">
-                                            <label class="flex items-start gap-3 cursor-pointer group">
-                                                <div class="relative mt-0.5">
-                                                    <input type="checkbox" checked class="peer appearance-none w-5 h-5 border-2 border-black bg-white checked:bg-blue-600 cursor-pointer transition-colors" />
-                                                    <svg class="absolute top-0 left-0 w-5 h-5 text-white pointer-events-none hidden peer-checked:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                        <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="3" d="M5 13l4 4L19 7" />
-                                                    </svg>
+                                            <!-- Profile Image -->
+                                            <div class="mb-6">
+                                                <label class="block text-sm font-bold text-gray-900 mb-2 uppercase">Profile Image</label>
+                                                <div class="flex items-center gap-4">
+                                                    <div class="w-24 h-24 border-4 border-black overflow-hidden bg-gray-100">
+                                                        @if($user->image)
+                                                        <img id="imagePreview" class="object-cover w-full h-full" src="{{ asset('storage/' . $user->image) }}" alt="Profile">
+                                                        @else
+                                                        <img id="imagePreview" class="object-cover w-full h-full" src="{{ asset('default_profile.png') }}" alt="Default">
+                                                        @endif
+                                                    </div>
+                                                    <div>
+                                                        <input type="file" name="image" id="imageInput" accept="image/*" class="hidden" onchange="previewImage(event)">
+                                                        <label for="imageInput" class="cursor-pointer bg-gray-900 hover:bg-gray-700 text-white border-2 border-black px-4 py-2 font-bold uppercase text-sm inline-block shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                                                            Choose Image
+                                                        </label>
+                                                        <p class="text-xs text-gray-600 mt-2 font-medium">JPG, PNG, GIF (Max 2MB)</p>
+                                                    </div>
                                                 </div>
-                                                <span class="text-gray-800 text-sm leading-relaxed group-hover:text-gray-600 uppercase font-semibold">
-                                                    SEND EMAIL NOTIFICATIONS
-                                                </span>
-                                            </label>
+                                            </div>
 
-                                            <label class="flex items-start gap-3 cursor-pointer group">
-                                                <div class="relative mt-0.5">
-                                                    <input type="checkbox" class="peer appearance-none w-5 h-5 border-2 border-black bg-white checked:bg-blue-600 cursor-pointer transition-colors" />
-                                                    <svg class="absolute top-0 left-0 w-5 h-5 text-white pointer-events-none hidden peer-checked:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                        <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="3" d="M5 13l4 4L19 7" />
-                                                    </svg>
-                                                </div>
-                                                <span class="text-gray-800 text-sm leading-relaxed group-hover:text-gray-600 uppercase font-semibold">
-                                                    SHOW PROFILE PUBLICLY
-                                                </span>
-                                            </label>
+                                            <!-- First Name -->
+                                            <div class="mb-4">
+                                                <label for="first_name" class="block text-sm font-bold text-gray-900 mb-2 uppercase">First Name</label>
+                                                <input
+                                                    type="text"
+                                                    name="first_name"
+                                                    id="first_name"
+                                                    value="{{ old('first_name', $user->first_name) }}"
+                                                    class="w-full px-4 py-3 border-2 border-black focus:ring-2 focus:ring-blue-600 focus:border-blue-600 font-medium"
+                                                    required>
+                                            </div>
 
-                                            <label class="flex items-start gap-3 cursor-pointer group">
-                                                <div class="relative mt-0.5">
-                                                    <input type="checkbox" checked class="peer appearance-none w-5 h-5 border-2 border-black bg-white checked:bg-blue-600 cursor-pointer transition-colors" />
-                                                    <svg class="absolute top-0 left-0 w-5 h-5 text-white pointer-events-none hidden peer-checked:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                        <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="3" d="M5 13l4 4L19 7" />
-                                                    </svg>
-                                                </div>
-                                                <span class="text-gray-800 text-sm leading-relaxed group-hover:text-gray-600 uppercase font-semibold">
-                                                    ALLOW FRIEND REQUESTS
-                                                </span>
-                                            </label>
-                                        </div>
+                                            <!-- Last Name -->
+                                            <div class="mb-4">
+                                                <label for="last_name" class="block text-sm font-bold text-gray-900 mb-2 uppercase">Last Name</label>
+                                                <input
+                                                    type="text"
+                                                    name="last_name"
+                                                    id="last_name"
+                                                    value="{{ old('last_name', $user->last_name) }}"
+                                                    class="w-full px-4 py-3 border-2 border-black focus:ring-2 focus:ring-blue-600 focus:border-blue-600 font-medium"
+                                                    required>
+                                            </div>
 
-                                    </div>
+                                            <!-- Username -->
+                                            <div class="mb-4">
+                                                <label for="username" class="block text-sm font-bold text-gray-900 mb-2 uppercase">Username</label>
+                                                <input
+                                                    type="text"
+                                                    name="username"
+                                                    id="username"
+                                                    value="{{ old('username', $user->username) }}"
+                                                    class="w-full px-4 py-3 border-2 border-black focus:ring-2 focus:ring-blue-600 focus:border-blue-600 font-medium"
+                                                    required>
+                                                <p class="text-xs text-gray-600 mt-2 font-medium">Your profile URL: /profile/<span id="usernamePreview" class="font-bold">{{ $user->username }}</span></p>
+                                            </div>
 
-                                    <!-- Modal footer -->
-                                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 bg-gray-100 border-t-2 border-black p-4 md:p-6">
-                                        <button type="button" class="text-white button-mc bg-brand hover:bg-brand-strong box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-3 focus:outline-none">
-                                            SAVE CHANGES
-                                        </button>
-                                        <button data-modal-hide="default-modal" type="button" class="text-grey-800 button-mc bg-grey-100 hover:bg-gray-200 box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-3 focus:outline-none">
-                                            CANCEL
-                                        </button>
+                                            <!-- Biography -->
+                                            <div class="mb-6">
+                                                <label for="biography" class="block text-sm font-bold text-gray-900 mb-2 uppercase">Biography</label>
+                                                <textarea
+                                                    name="biography"
+                                                    id="biography"
+                                                    rows="4"
+                                                    maxlength="500"
+                                                    class="w-full px-4 py-3 border-2 border-black focus:ring-2 focus:ring-blue-600 focus:border-blue-600 font-medium resize-none"
+                                                    placeholder="Tell us about yourself...">{{ old('biography', $user->biography) }}</textarea>
+                                                <p class="text-xs text-gray-600 mt-2 font-medium"><span id="bioCount">{{ strlen($user->biography ?? '') }}</span>/500 characters</p>
+                                            </div>
+
+                                            <!-- Buttons -->
+                                            <div class="flex flex-col sm:flex-row gap-3">
+                                                <button
+                                                    type="submit"
+                                                    class="flex-1 bg-green-600 hover:bg-green-700 text-white border-2 border-black px-6 py-3 font-bold uppercase shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
+                                                    Save Changes
+                                                </button>
+                                                <button
+                                                    type="button"
+                                                    data-modal-hide="default-modal"
+                                                    class="flex-1 bg-gray-300 hover:bg-gray-400 text-gray-900 border-2 border-black px-6 py-3 font-bold uppercase shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
+                                                    Cancel
+                                                </button>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        @endif
                         @endif
                         @endif
 

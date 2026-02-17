@@ -43,7 +43,7 @@ Route::get('/profile', function () {
     return redirect('/home');
 });
 Route::get('/profile/{username}', [AuthController::class, 'showProfile'])->name('profile.show');
-
+Route::put('/profile/update', [AuthController::class, 'updateProfile'])->name('profile.update')->middleware('auth');
 
 // COMPONENT ROUTES
 Route::get('/partials/footer', function () {
