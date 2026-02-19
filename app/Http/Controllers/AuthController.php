@@ -116,9 +116,8 @@ class AuthController extends Controller
         ]);
 
         if($validator->fails()) {
-            return redirect()->back()
-            ->withErrors($validator)
-            ->withInput();
+             return redirect()->route('profile.show', $user->username)
+            ->with('error', $validator->errors()->first());
         }
 
         $user->first_name = $request->first_name;
