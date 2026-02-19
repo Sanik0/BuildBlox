@@ -101,35 +101,35 @@
 
                                             <div class="mb-4">
                                                 <label for="first_name" class="block text-sm font-bold text-gray-900 mb-2 uppercase">Profile Avatar</label>
-                                                <ul class="select-none grid gap-2 grid-cols-4 sm:grid-cols-5">
+                                                <ul class="select-none md:w-fit md:gap-4 grid gap-2 grid-cols-4 sm:grid-cols-5">
                                                     <li>
-                                                        <input type="radio" id="react-option" value="profile/profile_1.png" name="image" class="hidden peer" required="" checked>
+                                                        <input type="radio" id="react-option" value="profile/profile_1.png" name="image" class="hidden peer" required="" {{ $user->image === 'profile/profile_1.png' ? 'checked' : '' }}>
                                                         <label for="react-option" class="inline-flex h-15 w-15 border-2 border-black items-center justify-between text-body bg-neutral-primary-soft cursor-pointer peer-checked:hover:bg-brand-softer peer-checked:border-brand">
                                                             <img src="{{ asset('/images/profile/profile_1.png')}}" class="h-full w-full" alt="">
                                                         </label>
                                                     </li>
                                                     <li>
-                                                        <input type="radio" id="vue-option" value="profile/profile_2.png" name="image" class="hidden peer" required="">
+                                                        <input type="radio" id="vue-option" value="profile/profile_2.png" name="image" class="hidden peer" required="" {{ $user->image === 'profile/profile_2.png' ? 'checked' : '' }}>
                                                         <label for="vue-option" class="inline-flex h-15 w-15 border-2 border-black items-center justify-between text-body bg-neutral-primary-soft cursor-pointer peer-checked:hover:bg-brand-softer peer-checked:border-brand">
                                                             <img src="{{ asset('/images/profile/profile_2.png')}}" class="h-full w-full" alt="">
                                                         </label>
                                                     </li>
                                                     <li>
-                                                        <input type="radio" id="bruh-option" value="profile_3" name="image" class="hidden peer" required="">
+                                                        <input type="radio" id="bruh-option" value="profile/profile_3.png" name="image" class="hidden peer" required="" {{ $user->image === 'profile/profile_3.png' ? 'checked' : '' }}>
                                                         <label for="bruh-option" class="inline-flex h-15 w-15 border-2 border-black items-center justify-between text-body bg-neutral-primary-soft cursor-pointer peer-checked:hover:bg-brand-softer peer-checked:border-brand">
-                                                            <img src="{{ asset('/images/default_profile.png')}}" class="h-full w-full" alt="">
+                                                            <img src="{{ asset('/images/profile/profile_3.png')}}" class="h-full w-full" alt="">
                                                         </label>
                                                     </li>
                                                     <li>
-                                                        <input type="radio" id="p4-option" value="profile_4" name="image" class="hidden peer" required="">
+                                                        <input type="radio" id="p4-option" value="profile/profile_4.png" name="image" class="hidden peer" required="" {{ $user->image === 'profile/profile_4.png' ? 'checked' : ''}}>
                                                         <label for="p4-option" class="inline-flex h-15 w-15 border-2 border-black items-center justify-between text-body bg-neutral-primary-soft cursor-pointer peer-checked:hover:bg-brand-softer peer-checked:border-brand">
-                                                            <img src="{{ asset('/images/default_profile.png')}}" class="h-full w-full" alt="">
+                                                            <img src="{{ asset('/images/profile/profile_4.png')}}" class="h-full w-full" alt="">
                                                         </label>
                                                     </li>
                                                     <li>
-                                                        <input type="radio" id="p5-option" value="profile_5" name="image" class="hidden peer" required="">
+                                                        <input type="radio" id="p5-option" value="profile/profile_5.png" name="image" class="hidden peer" required="" {{ $user->image === 'profile/profile_5.png' ? 'checked' : '' }}>
                                                         <label for="p5-option" class="inline-flex h-15 w-15 border-2 border-black items-center justify-between text-body bg-neutral-primary-soft cursor-pointer peer-checked:hover:bg-brand-softer peer-checked:border-brand">
-                                                            <img src="{{ asset('/images/default_profile.png')}}" class="h-full w-full" alt="">
+                                                            <img src="{{ asset('/images/profile/profile_5.png')}}" class="h-full w-full" alt="">
                                                         </label>
                                                     </li>
                                                 </ul>
@@ -170,6 +170,9 @@
                                                     value="{{ old('username', $user->username) }}"
                                                     class="w-full px-4 py-3 border-2 border-black focus:ring-2 focus:ring-blue-600 focus:border-blue-600 font-medium"
                                                     required>
+                                                @error('username')
+                                                <span class="error text-red-500 text-sm">{{ $message}}</span>
+                                                @enderror
                                                 <p class="text-xs text-gray-600 mt-2 font-medium">Your profile URL: /profile/<span id="usernamePreview" class="font-bold">{{ $user->username }}</span></p>
                                             </div>
 
