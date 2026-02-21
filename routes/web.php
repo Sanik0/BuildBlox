@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AuthorController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -27,9 +28,6 @@ Route::get('/profile', function () {
     return view('profile');
 })->name('profile');
 
-Route::get('/create', function () {
-    return view('create');
-})->name('create');
 
 // REGISTER AND LOGIN ROUTES
 Route::get('/signup', [AuthController::class, 'showSignupForm'])->name('signup');
@@ -37,6 +35,9 @@ Route::post('/signup', [AuthController::class, 'register'])->name('signup.submit
 Route::get('/signin', [AuthController::class, 'showLoginForm'])->name('signin');
 Route::post('/signin', [AuthController::class, 'login'])->name('signin.submit');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('/login', function () {
+    return redirect()->route('signin');
+})->name('login');
 
 // PROFILE ROUTES
 Route::get('/profile', function () {
@@ -44,6 +45,11 @@ Route::get('/profile', function () {
 });
 Route::get('/profile/{username}', [AuthController::class, 'showProfile'])->name('profile.show');
 Route::put('/profile/update', [AuthController::class, 'updateProfile'])->name('profile.update')->middleware('auth');
+
+// AUTHOR ROUTES
+Route::get('/create', [AuthorController::class, 'createBuild'])
+    ->name('create')
+    ->middleware('auth');
 
 // COMPONENT ROUTES
 Route::get('/partials/footer', function () {
@@ -78,5 +84,3 @@ Route::get('/admin/categories', function () {
 Route::get('/admin/builds', function () {
     return view('admin.builds');
 })->name('admin.builds');
-
-

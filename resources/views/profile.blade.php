@@ -67,9 +67,16 @@
                         <p class="w-full text-base font-normal max-w-xl text-body md:text-xl">Joined: {{ $user->created_at->format('F d, Y')}}</p>
                         <!-- Modal toggle -->
                         @if($isOwnProfile)
-                        <button data-modal-target="default-modal" data-modal-toggle="default-modal" class="text-white w-fit whitespace-nowrap button-mc bg-brand hover:bg-brand-strong box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none" type="button">
-                            Edit Profile
-                        </button>
+                        <div class="">
+                            <button data-modal-target="default-modal" data-modal-toggle="default-modal" class="text-white w-fit whitespace-nowrap button-mc bg-brand hover:bg-brand-strong box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none" type="button">
+                                Edit Profile
+                            </button>
+                            @if(Auth::check() && Auth::user()->role === 2)
+                            <a href="{{ route('create')}}" class="text-white w-fit ml-4 whitespace-nowrap button-mc bg-red-600 hover:bg-red-700 box-border border border-transparent focus:ring-4 focus:ring-red-100 shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none" type="button">
+                                Create Build
+                            </a>
+                            @endif
+                        </div>
 
                         <!-- Main Modal -->
                         <div id="default-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">

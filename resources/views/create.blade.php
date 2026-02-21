@@ -1,4 +1,5 @@
 @include('partials.header')
+
 <body class="bg-gray-100 min-h-screen">
     <!-- Header -->
     <header class="bg-blue-600 border-b-4 border-black shadow-[0_4px_0_0_rgba(0,0,0,1)]">
@@ -7,8 +8,8 @@
                 SUBMIT BUILD
             </h1>
             <a
-                href="/"
-                class="text-gray-800 bg-white hover:bg-gray-200 border-2 border-black [box-shadow:inset_-4px_-4px_0px_0px_rgba(0,0,0,0.5)] transition-all font-bold text-base px-3 py-2 uppercase">
+                href="{{ route('profile.show', Auth::user()->username) }}"
+                class="text-gray-800 text-center bg-white hover:bg-gray-200 border-2 border-black [box-shadow:inset_-4px_-4px_0px_0px_rgba(0,0,0,0.5)] transition-all font-bold text-base px-3 py-2 uppercase">
                 EXIT
             </a>
         </div>
@@ -134,11 +135,11 @@
                         class="flex-1 text-white bg-blue-600 hover:bg-blue-700 border-2 border-black [box-shadow:inset_-4px_-4px_0px_0px_rgba(0,0,0,0.5)] transition-all font-bold text-sm px-8 py-4 uppercase">
                         SUBMIT BUILD
                     </button>
-                    <button
-                        type="button"
-                        class="flex-1 sm:flex-initial text-gray-800 bg-white hover:bg-gray-200 border-2 border-black [box-shadow:inset_-4px_-4px_0px_0px_rgba(0,0,0,0.5)] transition-all font-bold text-sm px-8 py-4 uppercase">
+                    <a
+                        href="{{ route('profile.show', Auth::user()->username) }}"
+                        class="flex-1 sm:flex-initial text-gray-800 text-center bg-white hover:bg-gray-200 border-2 border-black [box-shadow:inset_-4px_-4px_0px_0px_rgba(0,0,0,0.5)] transition-all font-bold text-sm px-8 py-4 uppercase">
                         CANCEL
-                    </button>
+                    </a>
                 </div>
 
             </form>
