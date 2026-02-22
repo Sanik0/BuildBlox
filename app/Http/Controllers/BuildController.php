@@ -5,14 +5,19 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Build;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class BuildController extends Controller
 {
     public function create()
     {
+         if (!Auth::user()->isAuthor() && !Auth::user()->isAdmin()) {
+            return redirect()->route('home')->with('error', 'Only authors can access this page.');
+        }
+
         $categories = Category::orderBy('title')->get();
-        return view('builds.creatte', compact('categories'));
+        return view('create', compact('categories'));
     }
 
     public function store(Request $request)

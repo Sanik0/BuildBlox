@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\AuthorController;
+use App\Http\Controllers\BuildController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -47,7 +47,7 @@ Route::get('/profile/{username}', [AuthController::class, 'showProfile'])->name(
 Route::put('/profile/update', [AuthController::class, 'updateProfile'])->name('profile.update')->middleware('auth');
 
 // AUTHOR ROUTES
-Route::get('/create', [AuthorController::class, 'createBuild'])
+Route::get('/create', [BuildController::class, 'create'])
     ->name('create')
     ->middleware('auth');
 
