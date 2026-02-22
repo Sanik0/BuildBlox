@@ -156,7 +156,91 @@
 
     </main>
 
+    <script>
+        let stepCounter = 0;
 
+        // Thumbnail preview
+        document.getElementById('thumbnail').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('thumbnailPreview').innerHTML = `
+                    <img src="${e.target.result}" class="w-full h-full object-cover" alt="Thumbnail preview">
+                `;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Add step functionality
+        document.getElementById('addStepBtn').addEventListener('click', function() {
+            stepCounter++;
+            const stepId = `step-${stepCounter}`;
+            const index = stepCounter; // capture for closure
+
+            const stepHTML = `
+            <div class="step-item bg-gray-50 border-2 border-gray-300 p-4" id="${stepId}">
+                <div class="flex items-center justify-between mb-3">
+                    <h3 class="text-xs font-bold text-gray-800 uppercase">STEP ${index}</h3>
+                    <button type="button" class="remove-step text-red-600 hover:text-red-800 font-bold text-xs" data-step="${stepId}">
+                        ✕ REMOVE
+                    </button>
+                </div>
+                <div class="space-y-3">
+                    <div class="file-input-wrapper">
+                        <label class="cursor-pointer block">
+                            <div class="step-preview w-full aspect-square bg-white border-2 border-dashed border-gray-300 flex items-center justify-center hover:border-blue-600 transition-colors">
+                                <div class="text-center">
+                                    <svg class="w-8 h-8 mx-auto mb-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                    </svg>
+                                    <p class="text-gray-600 text-sm font-bold uppercase">Upload Image</p>
+                                </div>
+                            </div>
+                        </label>
+                        <!-- name="steps[]" lets Laravel receive an array of step images -->
+                        <input type="file" name="steps[]" accept="image/*" class="step-image-input">
+                    </div>
+                </div>
+            </div>
+        `;
+
+            document.getElementById('stepsContainer').insertAdjacentHTML('beforeend', stepHTML);
+
+            // Preview for the newly added step
+            const newStep = document.getElementById(stepId);
+            const imageInput = newStep.querySelector('.step-image-input');
+            imageInput.addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        newStep.querySelector('.step-preview').innerHTML = `
+                        <img src="${e.target.result}" class="w-full h-full object-cover" alt="Step preview">
+                    `;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        });
+
+        // Remove step (event delegation)
+        document.getElementById('stepsContainer').addEventListener('click', function(e) {
+            if (e.target.classList.contains('remove-step')) {
+                const stepId = e.target.getAttribute('data-step');
+                document.getElementById(stepId).remove();
+
+                // Renumber remaining steps
+                document.querySelectorAll('.step-item h3').forEach((heading, index) => {
+                    heading.textContent = `STEP ${index + 1}`;
+                });
+                stepCounter = document.querySelectorAll('.step-item').length;
+            }
+        });
+
+        // NO submit handler — let the form submit naturally to Laravel
+    </script>
 
 </body>
 
