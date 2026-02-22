@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Build;
 
 class AuthController extends Controller
 {
@@ -96,10 +97,12 @@ class AuthController extends Controller
         }
 
         $isOwnProfile = Auth::check() && Auth::user()->user_id == $user->user_id;
+        $builds = Build::where('user_id', $user->user_id)->latest()->get();
 
         return view('profile', [
             'user' => $user,
-            'isOwnProfile' => $isOwnProfile
+            'isOwnProfile' => $isOwnProfile,
+            'builds' => $builds
         ]);
     }
 
