@@ -61,6 +61,7 @@
                 </div>
 
                 <!-- Category -->
+                 @foreach($categories as $category)
                 <div>
                     <label for="category" class="block text-gray-800 text-xs mb-2 uppercase">
                         CATEGORY *
@@ -69,18 +70,10 @@
                         id="category"
                         required
                         class="w-full px-3 py-3 bg-gray-100 text-gray-900 border-2 border-gray-400 text-lg focus:outline-none focus:border-blue-600 transition-colors cursor-pointer uppercase">
-                        <option value="">SELECT A CATEGORY</option>
-                        <option value="castle">CASTLE</option>
-                        <option value="house">HOUSE</option>
-                        <option value="farm">FARM</option>
-                        <option value="redstone">REDSTONE</option>
-                        <option value="statue">STATUE</option>
-                        <option value="pixel-art">PIXEL ART</option>
-                        <option value="city">CITY</option>
-                        <option value="survival">SURVIVAL BASE</option>
-                        <option value="other">OTHER</option>
+                        <option value="">{{ $category->title}}</option>
                     </select>
                 </div>
+                @endforeach
 
                 <!-- Description -->
                 <div>
