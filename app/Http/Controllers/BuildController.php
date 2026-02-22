@@ -25,7 +25,7 @@ class BuildController extends Controller
         $validator = Validator::make($request->all(), [
             'title' => 'required|string|max:255',
             'description' => 'required|string',
-            'category_id' => 'required|exists:categories,id',
+            'category_id' => 'required|exists:categories,category_id',
             'materials' => 'required|string',
             'cover_image' => 'nullable|image|mimes:jpeg,png,jpg',
         ]);   
@@ -47,9 +47,10 @@ class BuildController extends Controller
             'category_id' => $request->category_id,
             'materials' => $request->materials,
             'cover_image' => $imagePath,
+            'user_id' => Auth::id()
         ]);
 
-        return redirect()->route('builds.index')->with('success', 'Build created successfully.');
+        return redirect()->route('profile.show', Auth::user()->username)->with('success', 'Build created successfully.');
     }
 
 }

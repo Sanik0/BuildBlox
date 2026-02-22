@@ -48,9 +48,12 @@ Route::put('/profile/update', [AuthController::class, 'updateProfile'])->name('p
 
 // AUTHOR ROUTES
 Route::get('/create', [BuildController::class, 'create'])
-    ->name('create')
+    ->name('create.show')
     ->middleware('auth');
-
+Route::post('/create', [BuildController::class, 'store'])
+    ->name('create.store')
+    ->middleware('auth');
+    
 // COMPONENT ROUTES
 Route::get('/partials/footer', function () {
     return view('partials.footer');

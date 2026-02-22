@@ -72,7 +72,7 @@
                                 Edit Profile
                             </button>
                             @if(Auth::check() && Auth::user()->role === 2)
-                            <a href="{{ route('create')}}" class="text-white w-fit ml-4 whitespace-nowrap button-mc bg-red-600 hover:bg-red-700 box-border border border-transparent focus:ring-4 focus:ring-red-100 shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none" type="button">
+                            <a href="{{ route('create.show')}}" class="text-white w-fit ml-4 whitespace-nowrap button-mc bg-red-600 hover:bg-red-700 box-border border border-transparent focus:ring-4 focus:ring-red-100 shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none" type="button">
                                 Create Build
                             </a>
                             @endif
