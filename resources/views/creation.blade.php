@@ -9,11 +9,11 @@
             <div class="w-full flex flex-col items-start lg:flex-row gap-8">
                 <div class="w-full flex justify-space-between gap-8 md:flex-row flex-col">
                     <div class="w-full md:max-w-75 md:min-w-75 max-w-full h-75 border-2">
-                        <img class="object-cover object-center w-full h-full" src="{{asset('images/4K Minecraft Nature.jpg')}}" alt="">
+                        <img class="object-cover object-center w-full h-full" src="{{asset('storage/' . $build->cover_image)}}" alt="">
                     </div>
 
                     <div class="w-full flex flex-col gap-3">
-                        <h1 class="text-4xl font-bold tracking-tighter text-heading md:text-5xl lg:text-6xl">Victorian House</h1>
+                        <h1 class="text-4xl font-bold tracking-tighter text-heading md:text-5xl lg:text-6xl">{{ $build->title}}</h1>
                         <p class="w-full text-base font-normal max-w-xl text-body md:text-xl">Here at flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</p>
                         <div class="flex items-center space-x-3">
                             <div class="flex items-center gap-1.5 bg-black text-white border-1 border-black text-fg-brand-strong text-md font-semibold px-1.5 py-.5">
