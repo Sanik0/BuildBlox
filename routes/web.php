@@ -20,10 +20,6 @@ Route::get('/builds', function () {
     return view('builds');
 })->name('builds');
 
-Route::get('/creation', function () {
-    return view('creation');
-})->name('creation');
-
 Route::get('/profile', function () {
     return view('profile');
 })->name('profile');
@@ -46,6 +42,9 @@ Route::get('/profile', function () {
 Route::get('/profile/{username}', [AuthController::class, 'showProfile'])->name('profile.show');
 Route::put('/profile/update', [AuthController::class, 'updateProfile'])->name('profile.update')->middleware('auth');
 
+// BUILD ROUTES
+Route::get('/creation/{build_id}', [BuildController::class, 'showBuild'])->name('build.show');
+
 // AUTHOR ROUTES
 Route::get('/create', [BuildController::class, 'create'])
     ->name('create.show')
@@ -53,7 +52,7 @@ Route::get('/create', [BuildController::class, 'create'])
 Route::post('/create', [BuildController::class, 'store'])
     ->name('create.store')
     ->middleware('auth');
-    
+
 // COMPONENT ROUTES
 Route::get('/partials/footer', function () {
     return view('partials.footer');

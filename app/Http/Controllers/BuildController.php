@@ -11,6 +11,16 @@ use App\Models\BuildStep;
 
 class BuildController extends Controller
 {
+
+    public function showBuild($build_id)
+    {
+        $build = Build::where('build_id', $build_id)->first();
+        if (!$build) {
+            return redirect()->route('home')->with('error', 'Build not found.');
+        }
+        return view('creation');
+    }
+
     public function create()
     {
         if (!Auth::user()->isAuthor() && !Auth::user()->isAdmin()) {

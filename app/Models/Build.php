@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Build extends Model
 {
@@ -17,6 +17,7 @@ class Build extends Model
         'description',
         'materials',
         'category_id',
+        'build_id',
         'created_at',
         'updated_at',
         'user_id',
