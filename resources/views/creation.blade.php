@@ -14,7 +14,7 @@
 
                     <div class="w-full flex flex-col gap-3">
                         <h1 class="text-4xl font-bold tracking-tighter text-heading md:text-5xl lg:text-6xl">{{ $build->title}}</h1>
-                        <p class="w-full text-base font-normal max-w-xl text-body md:text-xl">Here at flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</p>
+                        <p class="w-full text-base font-normal max-w-xl text-body md:text-xl">{{ $build->description}}</p>
                         <div class="flex items-center space-x-3">
                             <div class="flex items-center gap-1.5 bg-black text-white border-1 border-black text-fg-brand-strong text-md font-semibold px-1.5 py-.5">
                                 <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -93,22 +93,12 @@
                 <div class=" hidden w-full flex flex-col gap-12" id="styled-steps" role="tabpanel" aria-labelledby="steps-tab">
                     <!-- STEPS -->
                     <div class="rounded-base grid grid-cols-1 md:grid-cols-2 gap-15">
+                        @foreach($steps as $step)
                         <div class="w-full relative aspect-square max-w-150 border-2 border-black">
-                            <div class="w-full h-full inline-block text-end text-4xl md:text-5xl lg:text=7xl p-5 text-white absolute top-0 right-0 font-bold  [text-shadow:1px_1px_0_#000,-1px_1px_0_#000,1px_-1px_0_#000,-1px_-1px_0_#000]">1</div>
-                            <img class="object-center object-cover h-full w-full" src="{{asset('images/4K Minecraft Nature.jpg')}}" alt="">
+                            <div class="w-full h-full inline-block text-end text-4xl md:text-5xl lg:text=7xl p-5 text-white absolute top-0 right-0 font-bold  [text-shadow:1px_1px_0_#000,-1px_1px_0_#000,1px_-1px_0_#000,-1px_-1px_0_#000]">{{ $step->step_number}}</div>
+                            <img class="object-center object-cover h-full w-full" src="{{asset('storage/' . $step->step_image)}}" alt="">
                         </div>
-                        <div class="w-full relative aspect-square max-w-150 border-2 border-black">
-                            <div class="w-full h-full inline-block text-end text-4xl md:text-5xl lg:text=7xl p-5 text-white absolute top-0 right-0 font-bold  [text-shadow:1px_1px_0_#000,-1px_1px_0_#000,1px_-1px_0_#000,-1px_-1px_0_#000]">2</div>
-                            <img class="object-center object-cover h-full w-full" src="{{asset('images/4K Minecraft Nature.jpg')}}" alt="">
-                        </div>
-                        <div class="w-full relative aspect-square max-w-150 border-2 border-black">
-                            <div class="w-full h-full inline-block text-end text-4xl md:text-5xl lg:text=7xl p-5 text-white absolute top-0 right-0 font-bold  [text-shadow:1px_1px_0_#000,-1px_1px_0_#000,1px_-1px_0_#000,-1px_-1px_0_#000]">3</div>
-                            <img class="object-center object-cover h-full w-full" src="{{asset('images/4K Minecraft Nature.jpg')}}" alt="">
-                        </div>
-                        <div class="w-full relative aspect-square max-w-150 border-2 border-black">
-                            <div class="w-full h-full inline-block text-end text-4xl md:text-5xl lg:text=7xl p-5 text-white absolute top-0 right-0 font-bold  [text-shadow:1px_1px_0_#000,-1px_1px_0_#000,1px_-1px_0_#000,-1px_-1px_0_#000]">4</div>
-                            <img class="object-center object-cover h-full w-full" src="{{asset('images/4K Minecraft Nature.jpg')}}" alt="">
-                        </div>
+                        @endforeach
                     </div>
                     <!-- PAGINATION -->
                     <div class="w-full flex items-center justify-center">
@@ -153,52 +143,7 @@
 
                     <div class="p-3">
                         <p class="font-semibold">Wood (Main Details)</p>
-                        <p>Stripped Spruce Logs × 120</p>
-                        <p>Spruce Planks × 150</p>
-                        <p>Dark Oak Planks × 90</p>
-                    </div>
-
-                    <div class="p-3">
-                        <p class="font-semibold">Roof (Victorian Style)</p>
-                        <p>Dark Oak Stairs × 160</p>
-                        <p>Dark Oak Slabs × 70</p>
-                        <p>Spruce Stairs × 40</p>
-                    </div>
-
-                    <div class="p-3">
-                        <p class="font-semibold">Windows & Trim</p>
-                        <p>White Stained Glass Panes × 64</p>
-                        <p>Spruce Trapdoors × 24</p>
-                        <p>Spruce Fences × 20</p>
-                    </div>
-
-                    <div class="p-3">
-                        <p class="font-semibold">Structure & Walls</p>
-                        <p>Bricks × 320</p>
-                        <p>Stone Bricks × 180</p>
-                        <p>Polished Andesite × 80</p>
-                        <p>Smooth Stone Slabs × 40</p>
-                    </div>
-
-                    <div class="p-3">
-                        <p class="font-semibold">Wood (Main Details)</p>
-                        <p>Stripped Spruce Logs × 120</p>
-                        <p>Spruce Planks × 150</p>
-                        <p>Dark Oak Planks × 90</p>
-                    </div>
-
-                    <div class="p-3">
-                        <p class="font-semibold">Roof (Victorian Style)</p>
-                        <p>Dark Oak Stairs × 160</p>
-                        <p>Dark Oak Slabs × 70</p>
-                        <p>Spruce Stairs × 40</p>
-                    </div>
-
-                    <div class="p-3">
-                        <p class="font-semibold">Windows & Trim</p>
-                        <p>White Stained Glass Panes × 64</p>
-                        <p>Spruce Trapdoors × 24</p>
-                        <p>Spruce Fences × 20</p>
+                        <p>{{ $build->materials }}</p>
                     </div>
 
                 </div>

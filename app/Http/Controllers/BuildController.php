@@ -18,7 +18,9 @@ class BuildController extends Controller
         if (!$build) {
             return redirect()->route('home')->with('error', 'Build not found.');
         }
-        return view('creation', compact('build'));
+
+        $steps = BuildStep::where('build_id', $build->build_id)->get();
+        return view('creation', compact('build', 'steps'));
     }
 
     public function create()
