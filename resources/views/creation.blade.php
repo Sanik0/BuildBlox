@@ -43,10 +43,10 @@
                         </div>
                         <p class="w-full text-base font-normal max-w-xl text-body md:text-xl">Category: Medieval</p>
                         <div class="flex gap-3">
-                            <div class="h-8 w-8 border-2">
+                            <div class="h-8 w-8 min-w-8 border-2">
                                 <img class="object-cover object-center w-full h-full" src="{{asset('images/4K Minecraft Nature.jpg')}}" alt="">
                             </div>
-                            <p class="w-full text-xl font-normal max-w-xl text-body md:text-2xl">Alex_18</p>
+                            <p class="w-full text-xl font-normal max-w-xl text-body md:text-2xl">{{ $author->username}}</p>
                         </div>
                     </div>
                 </div>
@@ -134,16 +134,8 @@
                 <div class="hidden p-4 border-2 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6" id="styled-dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
 
                     <div class="p-3">
-                        <p class="font-semibold">Structure & Walls</p>
-                        <p>Bricks × 320</p>
-                        <p>Stone Bricks × 180</p>
-                        <p>Polished Andesite × 80</p>
-                        <p>Smooth Stone Slabs × 40</p>
-                    </div>
-
-                    <div class="p-3">
                         <p class="font-semibold">Wood (Main Details)</p>
-                        <p>{{ $build->materials }}</p>
+                        <p>{!! $build->materials !!}</p>
                     </div>
 
                 </div>

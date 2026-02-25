@@ -8,6 +8,7 @@ use App\Models\Build;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use App\Models\BuildStep;
+use App\Models\User;
 
 class BuildController extends Controller
 {
@@ -20,7 +21,8 @@ class BuildController extends Controller
         }
 
         $steps = BuildStep::where('build_id', $build->build_id)->get();
-        return view('creation', compact('build', 'steps'));
+        $author = User::where('user_id', $build->user_id)->first();
+        return view('creation', compact('build', 'steps', 'author'));
     }
 
     public function create()

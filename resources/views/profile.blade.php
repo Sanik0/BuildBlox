@@ -236,7 +236,7 @@
                 <div class="hidden" id="styled-steps" role="tabpanel" aria-labelledby="steps-tab">
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-9">
                         @foreach($builds as $build)
-                        <a href="#" class="bg-neutral-primary-soft w-full border-2 border-black shadow-[0_3px_0_0_black] transition-all duration-200 hover:translate-y-[2px] hover:shadow-[0_1px_0_0_black] hover:border-blue-500 hover:shadow-[0_1px_0_0_rgb(59,130,246)] block group">
+                        <a href="{{ route('build.show', $build->build_id) }}" class="bg-neutral-primary-soft w-full border-2 border-black shadow-[0_3px_0_0_black] transition-all duration-200 hover:translate-y-[2px] hover:shadow-[0_1px_0_0_black] hover:border-blue-500 hover:shadow-[0_1px_0_0_rgb(59,130,246)] block group">
                             <div class="h-60 w-full overflow-hidden">
                                 <img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" src="{{ asset('storage/'. $build->cover_image )}}" alt="Victorian House" />
                             </div>
