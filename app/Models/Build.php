@@ -37,4 +37,9 @@ class Build extends Model
     {
         return $this->belongsTo(Category::class);
     }
+
+    public function ratings()
+    {
+        return $this->hasMany(Rating::class, 'build_id', 'build_id');
+    }
 }

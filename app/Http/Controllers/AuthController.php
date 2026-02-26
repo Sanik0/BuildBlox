@@ -97,7 +97,7 @@ class AuthController extends Controller
         }
 
         $isOwnProfile = Auth::check() && Auth::user()->user_id == $user->user_id;
-        $builds = Build::where('user_id', $user->user_id)->latest()->get();
+        $builds = Build::where('user_id', $user->user_id)->withAvg('ratings', 'rating')->latest()->get();
 
         return view('profile', [
             'user' => $user,
