@@ -20,7 +20,7 @@ class BuildController extends Controller
             return redirect()->route('home')->with('error', 'Build not found.');
         }
 
-        $steps = BuildStep::where('build_id', $build->build_id)->get();
+        $steps = BuildStep::where('build_id', $build->build_id)->paginate(5);
         $author = User::where('user_id', $build->user_id)->first();
         return view('creation', compact('build', 'steps', 'author'));
     }
