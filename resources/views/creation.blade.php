@@ -59,21 +59,13 @@
                                 <span>170</span>
                             </div>
                             <div class="flex items-center space-x-1 rtl:space-x-reverse">
-                                <svg class="w-7 h-7 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                @for ($i = 1; $i <= 5; $i++)
+                                    <svg class="w-7 h-7 {{ $i <= round($averageRating ?? 0) ? 'text-fg-yellow' : 'text-gray-400' }}"
+                                    aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
                                     <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-7 h-7 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-7 h-7 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-7 h-7 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-7 h-7 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
+                                    </svg>
+                                    @endfor
+                                    <span class="text-body text-sm">({{ round($averageRating ?? 0, 1) }})</span>
                             </div>
                         </div>
                         <p class="w-full text-base font-normal max-w-xl text-body md:text-xl">Category: Medieval</p>
@@ -93,7 +85,7 @@
                         <div class="flex items-center gap-1" id="star-container">
                             @for ($i = 1; $i <= 5; $i++)
                                 <button type="submit" name="rating" value="{{ $i }}"
-                                class="star text-gray-400 hover:outline-none focus:outline-none"
+                                class="star focus:outline-none {{ $i <= ($userRating ?? 0) ? 'text-yellow-400' : 'text-gray-400' }}"
                                 onmouseover="highlightStars({{ $i }})"
                                 onmouseout="resetStars()">
                                 <svg class="lg:w-7 lg:h-7 h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
@@ -107,16 +99,23 @@
 
                 <script>
                     const stars = document.querySelectorAll('.star');
+                    const userRating = {
+                        {
+                            $userRating ?? 0
+                        }
+                    };
 
                     function highlightStars(n) {
-                        stars.forEach((s, i) => s.classList.toggle('text-yellow-400', i < n));
-                        stars.forEach((s, i) => s.classList.toggle('text-gray-400', i >= n));
+                        stars.forEach((s, i) => {
+                            s.classList.toggle('text-yellow-400', i < n);
+                            s.classList.toggle('text-gray-400', i >= n);
+                        });
                     }
 
                     function resetStars() {
-                        stars.forEach(s => {
-                            s.classList.remove('text-yellow-400');
-                            s.classList.add('text-gray-400');
+                        stars.forEach((s, i) => {
+                            s.classList.toggle('text-yellow-400', i < userRating);
+                            s.classList.toggle('text-gray-400', i >= userRating);
                         });
                     }
                 </script>

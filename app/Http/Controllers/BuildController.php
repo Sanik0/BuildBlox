@@ -23,8 +23,9 @@ class BuildController extends Controller
 
         $steps = BuildStep::where('build_id', $build->build_id)->paginate(6);
         $author = User::where('user_id', $build->user_id)->first();
+        $averageRating = Rating::where('build_id', $build_id)->avg('rating');
         $userRating = Auth::check() ? Rating::where('build_id', $build_id)->where('user_id', Auth::id())->value('rating') : null;
-        return view('creation', compact('build', 'steps', 'author', 'userRating'));
+        return view('creation', compact('build', 'steps', 'author', 'averageRating', 'userRating'));
     }
 
     public function create()
