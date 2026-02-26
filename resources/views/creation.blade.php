@@ -3,6 +3,41 @@
 <body class="bg-[#ffffff] text-[#1b1b18]">
     <!-- HEADER -->
     @include('partials.navigation')
+    <!-- ALERT -->
+    @if(session('success'))
+    <div id="alert-5" class="flex mt-10 bg-black fixed bottom-5 inset-x-5 md:inset-x-10 md:left-auto z-999 sm:items-center w-fit max-w-md p-4 text-sm border-2" role="alert">
+        <svg class="w-4 h-4 fill-white shrink-0 mt-0.5 md:mt-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11h2v5m-2 0h4m-2.592-8.5h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+        </svg>
+        <span class="sr-only">Info</span>
+        <div class="ms-2 text-sm text-white overflow-hidden">
+            {{ session('success')}}
+        </div>
+        <button type="button" class="ms-auto -mx-1.5 -my-1.5 rounded focus:ring-2 focus:ring-neutral-tertiary p-1.5 hover:bg-gray-800 inline-flex items-center justify-center h-8 w-8 shrink-0 shrink-0" data-dismiss-target="#alert-5" aria-label="Close">
+            <span class="sr-only">Dismiss</span>
+            <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6" />
+            </svg>
+        </button>
+    </div>
+    @endif
+    @if(session('error'))
+    <div id="alert-5" class="flex mt-10 bg-black fixed bottom-5 inset-x-5 md:inset-x-10 md:left-auto z-999 sm:items-center w-fit max-w-md p-4 text-sm border-2" role="alert">
+        <svg class="w-4 h-4 fill-white shrink-0 mt-0.5 md:mt-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11h2v5m-2 0h4m-2.592-8.5h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+        </svg>
+        <span class="sr-only">Info</span>
+        <div class="ms-2 text-sm text-white overflow-hidden">
+            {{ session('error')}}
+        </div>
+        <button type="button" class="ms-auto -mx-1.5 -my-1.5 rounded focus:ring-2 focus:ring-neutral-tertiary p-1.5 hover:bg-gray-800 inline-flex items-center justify-center h-8 w-8 shrink-0 shrink-0" data-dismiss-target="#alert-5" aria-label="Close">
+            <span class="sr-only">Dismiss</span>
+            <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6" />
+            </svg>
+        </button>
+    </div>
+    @endif
     <!-- BUILD INFORMATION -->
     <section class="w-full mt-20 flex p-4 py-6 lg:py-8 items-center justify-center py-13">
         <div class="w-full max-w-screen-xl flex flex-col gap-13">
@@ -53,24 +88,38 @@
 
                 <div class="flex h-full align-self-start flex-col gap-2">
                     <h1 class="text-xl font-bold tracking-tighter text-heading md:text-2xl lg:text-xl">Rate This Build</h1>
-                    <div class="flex items-center space-x-1 rtl:space-x-reverse">
-                        <svg class="lg:w-7 lg:h-7 h-8 w-8 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                        </svg>
-                        <svg class="lg:w-7 lg:h-7 h-8 w-8 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                        </svg>
-                        <svg class="lg:w-7 lg:h-7 h-8 w-8 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                        </svg>
-                        <svg class="lg:w-7 lg:h-7 h-8 w-8 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                        </svg>
-                        <svg class="lg:w-7 lg:h-7 h-8 w-8 text-fg-yellow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                        </svg>
-                    </div>
+                    <form action="{{ route('creation.rate', $build->build_id) }}" method="POST">
+                        @csrf
+                        <div class="flex items-center gap-1" id="star-container">
+                            @for ($i = 1; $i <= 5; $i++)
+                                <button type="submit" name="rating" value="{{ $i }}"
+                                class="star text-gray-400 hover:outline-none focus:outline-none"
+                                onmouseover="highlightStars({{ $i }})"
+                                onmouseout="resetStars()">
+                                <svg class="lg:w-7 lg:h-7 h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                </svg>
+                                </button>
+                                @endfor
+                        </div>
+                    </form>
                 </div>
+
+                <script>
+                    const stars = document.querySelectorAll('.star');
+
+                    function highlightStars(n) {
+                        stars.forEach((s, i) => s.classList.toggle('text-yellow-400', i < n));
+                        stars.forEach((s, i) => s.classList.toggle('text-gray-400', i >= n));
+                    }
+
+                    function resetStars() {
+                        stars.forEach(s => {
+                            s.classList.remove('text-yellow-400');
+                            s.classList.add('text-gray-400');
+                        });
+                    }
+                </script>
             </div>
 
 
@@ -92,9 +141,9 @@
                 <!-- Steps content -->
                 <div class=" hidden w-full flex flex-col gap-12" id="styled-steps" role="tabpanel" aria-labelledby="steps-tab">
                     <!-- STEPS -->
-                    <div class="rounded-base grid grid-cols-1 md:grid-cols-2 gap-15">
+                    <div class="rounded-base grid grid-cols-1 md:grid-cols-2 gap-5">
                         @foreach($steps as $step)
-                        <div class="w-full relative aspect-square max-w-150 border-2 border-black">
+                        <div class="w-full relative aspect-square max-w-160 border-2 border-black">
                             <div class="w-full h-full inline-block text-end text-4xl md:text-5xl lg:text=7xl p-5 text-white absolute top-0 right-0 font-bold  [text-shadow:1px_1px_0_#000,-1px_1px_0_#000,1px_-1px_0_#000,-1px_-1px_0_#000]">{{ $step->step_number}}</div>
                             <img class="object-center object-cover h-full w-full" src="{{asset('storage/' . $step->step_image)}}" alt="">
                         </div>

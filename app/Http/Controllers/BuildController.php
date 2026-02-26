@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use App\Models\BuildStep;
 use App\Models\User;
+use App\Models\Rating;
 
 class BuildController extends Controller
 {
@@ -20,9 +21,10 @@ class BuildController extends Controller
             return redirect()->route('home')->with('error', 'Build not found.');
         }
 
-        $steps = BuildStep::where('build_id', $build->build_id)->paginate(5);
+        $steps = BuildStep::where('build_id', $build->build_id)->paginate(6);
         $author = User::where('user_id', $build->user_id)->first();
-        return view('creation', compact('build', 'steps', 'author'));
+        $userRating = Auth::check() ? Rating::where('build_id', $build_id)->where('user_id', Auth::id())->value('rating') : null;
+        return view('creation', compact('build', 'steps', 'author', 'userRating'));
     }
 
     public function create()
@@ -79,5 +81,19 @@ class BuildController extends Controller
         }
 
         return redirect()->route('profile.show', Auth::user()->username)->with('success', 'Build created successfully.');
+    }
+
+    public function rate(Request $request, $build_id)
+    {
+        $request->validate([
+            'rating' => 'required|integer|min:1|max:5',
+        ]);
+
+        Rating::updateOrCreate(
+            ['build_id' => $build_id, 'user_id' => Auth::id()],
+            ['rating' => $request->rating]
+        );
+
+        return redirect()->back()->with('success', 'Rating submitted!');
     }
 }

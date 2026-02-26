@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BuildController;
+use App\Models\Build;
+use App\Models\Rating;
+use App\Models\Category;
 
 Route::get('/', function () {
     return view('welcome');
@@ -44,6 +47,9 @@ Route::put('/profile/update', [AuthController::class, 'updateProfile'])->name('p
 
 // BUILD ROUTES
 Route::get('/creation/{build_id}', [BuildController::class, 'showBuild'])->name('build.show');
+
+// RATING ROUTES
+Route::post('/creation/{build_id}/rate', [BuildController::class, 'rate'])->name('creation.rate')->middleware('auth');
 
 // AUTHOR ROUTES
 Route::get('/create', [BuildController::class, 'create'])
