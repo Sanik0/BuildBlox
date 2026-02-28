@@ -43,7 +43,6 @@ class BuildController extends Controller
         }
 
         $viewCount = \App\Models\View::where('build_id', $build_id)->count();
-
         $steps = BuildStep::where('build_id', $build->build_id)->paginate(6);
         $author = User::where('user_id', $build->user_id)->first();
         $averageRating = Rating::where('build_id', $build_id)->avg('rating');

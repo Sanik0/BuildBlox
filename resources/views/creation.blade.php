@@ -69,12 +69,12 @@
                             </div>
                         </div>
                         <p class="w-full text-base font-normal max-w-xl text-body md:text-xl">Category: Medieval</p>
-                        <div class="flex gap-3">
+                        <a href="{{ route('profile.show',  $author->username)}}" class="flex gap-3">
                             <div class="h-8 w-8 min-w-8 border-2">
                                 <img class="object-cover object-center w-full h-full" src="{{asset('images/4K Minecraft Nature.jpg')}}" alt="">
                             </div>
                             <p class="w-full text-xl font-normal max-w-xl text-body md:text-2xl">{{ $author->username}}</p>
-                        </div>
+                        </a>
                     </div>
                 </div>
 
