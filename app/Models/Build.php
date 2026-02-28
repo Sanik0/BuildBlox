@@ -4,6 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\BuildStep;
+use App\Models\View;
+use App\Models\Rating;
+use App\Models\Category;
 
 class Build extends Model
 {
@@ -41,5 +45,10 @@ class Build extends Model
     public function ratings()
     {
         return $this->hasMany(Rating::class, 'build_id', 'build_id');
+    }
+
+    public function views()
+    {
+        return $this->hasMany(View::class, 'build_id', 'build_id');
     }
 }

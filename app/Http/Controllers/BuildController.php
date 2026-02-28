@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Validator;
 use App\Models\BuildStep;
 use App\Models\User;
 use App\Models\Rating;
+use App\Models\View;
 
 class BuildController extends Controller
 {
@@ -21,12 +22,34 @@ class BuildController extends Controller
             return redirect()->route('home')->with('error', 'Build not found.');
         }
 
+        $ip = request()->ip();
+        $userId = Auth::id();
+
+        $alreadyViewed = \App\Models\View::where('build_id', $build_id)
+            ->where(function ($query) use ($userId, $ip) {
+                if ($userId) {
+                    $query->where('user_id', $userId);
+                } else {
+                    $query->where('ip_address', $ip);
+                }
+            })->exists();
+
+        if (!$alreadyViewed) {
+            \App\Models\View::create([
+                'build_id' => $build_id,
+                'user_id' => $userId,
+                'ip_address' => $ip,
+            ]);
+        }
+
+        $viewCount = \App\Models\View::where('build_id', $build_id)->count();
+
         $steps = BuildStep::where('build_id', $build->build_id)->paginate(6);
         $author = User::where('user_id', $build->user_id)->first();
         $averageRating = Rating::where('build_id', $build_id)->avg('rating');
-        $categoryBuilds = Build::where('category_id', $build->category_id)->where('build_id', '!=', $build_id)->withAvg('ratings', 'rating')->latest()->take(4)->get();
+        $categoryBuilds = Build::where('category_id', $build->category_id)->where('build_id', '!=', $build_id)->withAvg('ratings', 'rating')->withCount('views')->latest()->take(4)->get();
         $userRating = Auth::check() ? Rating::where('build_id', $build_id)->where('user_id', Auth::id())->value('rating') : null;
-        return view('creation', compact('build', 'steps', 'author', 'averageRating', 'userRating', 'categoryBuilds'));
+        return view('creation', compact('build', 'steps', 'author', 'averageRating', 'userRating', 'categoryBuilds', 'viewCount'));
     }
 
     public function create()
