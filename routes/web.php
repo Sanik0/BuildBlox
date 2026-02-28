@@ -3,9 +3,14 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BuildController;
+use App\Http\Controllers\CommentController;
 use App\Models\Build;
 use App\Models\Rating;
 use App\Models\Category;
+use App\Models\BuildStep;
+use App\Models\View;
+use App\Models\User;
+use App\Models\Comment;
 
 Route::get('/', function () {
     return view('welcome');
@@ -50,6 +55,10 @@ Route::get('/creation/{build_id}', [BuildController::class, 'showBuild'])->name(
 
 // RATING ROUTES
 Route::post('/creation/{build_id}/rate', [BuildController::class, 'rate'])->name('creation.rate')->middleware('auth');
+
+// COMMENT ROUTES
+Route::post('/creation/{build_id}/comment', [CommentController::class, 'store'])->name('comment.store')->middleware('auth');
+Route::delete('/comment/{comment_id}', [CommentController::class, 'destroy'])->name('comment.destroy')->middleware('auth');
 
 // AUTHOR ROUTES
 Route::get('/create', [BuildController::class, 'create'])

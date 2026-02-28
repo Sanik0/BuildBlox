@@ -11,6 +11,7 @@ use App\Models\BuildStep;
 use App\Models\User;
 use App\Models\Rating;
 use App\Models\View;
+use App\Models\Comment;
 
 class BuildController extends Controller
 {
@@ -42,13 +43,30 @@ class BuildController extends Controller
             ]);
         }
 
-        $viewCount = \App\Models\View::where('build_id', $build_id)->count();
-        $steps = BuildStep::where('build_id', $build->build_id)->paginate(6);
-        $author = User::where('user_id', $build->user_id)->first();
-        $averageRating = Rating::where('build_id', $build_id)->avg('rating');
-        $categoryBuilds = Build::where('category_id', $build->category_id)->where('build_id', '!=', $build_id)->withAvg('ratings', 'rating')->withCount('views')->latest()->take(4)->get();
-        $userRating = Auth::check() ? Rating::where('build_id', $build_id)->where('user_id', Auth::id())->value('rating') : null;
-        return view('creation', compact('build', 'steps', 'author', 'averageRating', 'userRating', 'categoryBuilds', 'viewCount'));
+        $viewCount = \App\Models\View::where('build_id', $build_id)
+            ->count();
+        $steps = BuildStep::where('build_id', $build->build_id)
+            ->paginate(6);
+        $author = User::where('user_id', $build->user_id)
+            ->first();
+        $averageRating = Rating::where('build_id', $build_id)
+            ->avg('rating');
+        $comments = Comment::where('build_id', $build_id)
+            ->whereNull('parent_id')
+            ->with(['user', 'replies.user'])
+            ->latest()
+            ->get();
+        $categoryBuilds = Build::where('category_id', $build->category_id)
+            ->where('build_id', '!=', $build_id)
+            ->withAvg('ratings', 'rating')
+            ->withCount('views')
+            ->latest()
+            ->take(4)
+            ->get();
+        $userRating = Auth::check() ? Rating::where('build_id', $build_id)
+            ->where('user_id', Auth::id())
+            ->value('rating') : null;
+        return view('creation', compact('build', 'steps', 'author', 'averageRating', 'userRating', 'categoryBuilds', 'viewCount', 'comments'));
     }
 
     public function create()

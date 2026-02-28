@@ -69,9 +69,9 @@
                             </div>
                         </div>
                         <p class="w-full text-base font-normal max-w-xl text-body md:text-xl">Category: Medieval</p>
-                        <a href="{{ route('profile.show',  $author->username)}}" class="flex gap-3">
+                        <a href="{{ route('profile.show',  $author->username)}}" class="flex w-fit gap-3">
                             <div class="h-8 w-8 min-w-8 border-2">
-                                <img class="object-cover object-center w-full h-full" src="{{asset('images/4K Minecraft Nature.jpg')}}" alt="">
+                                <img class="object-cover object-center w-full h-full" src="{{asset('images/' . $author->image)}}" alt="">
                             </div>
                             <p class="w-full text-xl font-normal max-w-xl text-body md:text-2xl">{{ $author->username}}</p>
                         </a>
@@ -167,156 +167,133 @@
 
                     <!-- Comment Input -->
                     <div class="mb-8">
-                        <div class="flex gap-2 sm:gap-3 items-start">
-                            <div class="w-8 h-8 sm:w-10 sm:h-10 bg-black border-2 border-black flex-shrink-0 flex items-center justify-center">
-                                <span class="text-white font-bold text-xs sm:text-sm">U</span>
-                            </div>
-                            <div class="flex-1 min-w-0">
-                                <input type="text" id="comment-input" placeholder="Add a comment..." class="w-full px-0 pb-2 bg-transparent border-0 border-b-2 border-gray-300 focus:border-black focus:ring-0 text-xs sm:text-sm placeholder-gray-500 transition-colors">
-                                <div class="mt-3 flex gap-2 justify-end hidden" id="comment-actions">
-                                    <button type="button" class="px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-bold bg-white border-2 border-black hover:bg-gray-100 transition-colors">
-                                        Cancel
-                                    </button>
-                                    <button type="button" class="px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-bold bg-black text-white border-2 border-black shadow-[3px_3px_0_0_rgba(0,0,0,1)] hover:shadow-[1px_1px_0_0_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all">
-                                        Comment
-                                    </button>
+                        @auth
+                        <form action="{{ route('comment.store', $build->build_id) }}" method="POST">
+                            @csrf
+                            <div class="flex gap-2 sm:gap-3 items-start">
+                                <div class="w-8 h-8 sm:w-10 sm:h-10 bg-black border-2 border-black flex-shrink-0 flex items-center justify-center">
+                                    <span class="text-white font-bold text-xs sm:text-sm">{{ strtoupper(substr(Auth::user()->username, 0, 2)) }}</span>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <input type="text" name="content" placeholder="Add a comment..." class="w-full px-0 pb-2 bg-transparent border-0 border-b-2 border-gray-300 focus:border-black focus:ring-0 text-xs sm:text-sm placeholder-gray-500 transition-colors">
+                                    <div class="mt-3 flex gap-2 justify-end">
+                                        <button type="submit" class="px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-bold bg-black text-white border-2 border-black shadow-[3px_3px_0_0_rgba(0,0,0,1)] hover:shadow-[1px_1px_0_0_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all">
+                                            Comment
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </form>
+                        @else
+                        <p class="text-sm text-body">Please <a href="{{ route('login') }}" class="text-fg-brand underline">log in</a> to comment.</p>
+                        @endauth
                     </div>
 
                     <!-- Comments List -->
                     <div class="space-y-6">
-
-                        <!-- Comment 1 -->
+                        @forelse($comments as $comment)
                         <div class="comment-wrapper">
                             <div class="flex gap-2 sm:gap-3 items-start">
-                                <div class="w-8 h-8 sm:w-10 sm:h-10 bg-black border-2 border-black flex-shrink-0 flex items-center justify-center">
-                                    <span class="text-white font-bold text-xs sm:text-sm">JD</span>
+                                <div class="w-8 h-8 sm:w-10 sm:h-10 border-2 border-black flex-shrink-0 flex items-center justify-center">
+                                    <img class="h-full w-full object-cover object-center" src="{{ asset('images/' . $comment->user->image)}}" alt="">
                                 </div>
                                 <div class="flex-1 min-w-0">
                                     <div class="flex items-center gap-2 mb-1 flex-wrap">
-                                        <span class="font-bold text-xs sm:text-sm">@johndoe</span>
-                                        <span class="text-xs text-gray-500">2 hours ago</span>
+                                        <span class="font-bold text-xs sm:text-sm">{{ '@' . $comment->user->username }}</span>
+                                        <span class="text-xs text-gray-500">{{ $comment->created_at->diffForHumans() }}</span>
                                     </div>
-                                    <p class="text-xs sm:text-sm text-body mb-2 break-words">This build is absolutely amazing! The attention to detail is incredible. How long did it take you to complete this?</p>
-                                    <div class="flex items-center gap-3 sm:gap-4">
-                                        <button class="flex items-center gap-1 group">
-                                            <svg class="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path>
-                                            </svg>
-                                            <span class="text-xs sm:text-sm font-bold">42</span>
-                                        </button>
-                                        <button class="flex items-center gap-1 group">
-                                            <svg class="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:scale-110 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path>
-                                            </svg>
-                                        </button>
-                                        <button class="reply-btn text-xs sm:text-sm font-bold hover:bg-black hover:text-white px-2 sm:px-3 py-1 border-2 border-transparent hover:border-black transition-all">
-                                            Reply
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Comment 2 with Reply -->
-                        <div class="comment-wrapper">
-                            <div class="flex gap-2 sm:gap-3 items-start">
-                                <div class="w-8 h-8 sm:w-10 sm:h-10 bg-black border-2 border-black flex-shrink-0 flex items-center justify-center">
-                                    <span class="text-white font-bold text-xs sm:text-sm">MC</span>
-                                </div>
-                                <div class="flex-1 min-w-0">
-                                    <div class="flex items-center gap-2 mb-1 flex-wrap">
-                                        <span class="font-bold text-xs sm:text-sm">@minecraftpro</span>
-                                        <span class="text-xs text-gray-500">5 hours ago</span>
-                                    </div>
-                                    <p class="text-xs sm:text-sm text-body mb-2 break-words">Love the medieval aesthetic! The stone textures really bring it to life.</p>
+                                    <p class="text-xs sm:text-sm text-body mb-2 break-words">{{ $comment->content }}</p>
                                     <div class="flex items-center gap-3 sm:gap-4 mb-4">
-                                        <button class="flex items-center gap-1 group">
-                                            <svg class="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path>
-                                            </svg>
-                                            <span class="text-xs sm:text-sm font-bold">15</span>
-                                        </button>
-                                        <button class="flex items-center gap-1 group">
-                                            <svg class="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:scale-110 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path>
-                                            </svg>
-                                        </button>
-                                        <button class="reply-btn text-xs sm:text-sm font-bold hover:bg-black hover:text-white px-2 sm:px-3 py-1 border-2 border-transparent hover:border-black transition-all">
+                                        {{-- Reply button --}}
+                                        @auth
+                                        <button onclick="document.getElementById('reply-form-{{ $comment->comment_id }}').classList.toggle('hidden')"
+                                            class="reply-btn text-xs sm:text-sm font-bold hover:bg-black hover:text-white px-2 sm:px-3 py-1 border-2 border-transparent hover:border-black transition-all">
                                             Reply
                                         </button>
+                                        @endauth
+
+                                        {{-- Delete button --}}
+                                        @if(Auth::check() && Auth::id() == $comment->user_id)
+                                        <form action="{{ route('comment.destroy', $comment->comment_id) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="text-xs sm:text-sm font-bold text-red-500 hover:underline">Delete</button>
+                                        </form>
+                                        @endif
                                     </div>
 
-                                    <!-- Reply -->
-                                    <div class="ml-6 sm:ml-8 pl-3 sm:pl-4 border-l-2 border-black">
+                                    {{-- Reply form --}}
+                                    @auth
+                                    <div id="reply-form-{{ $comment->comment_id }}" class="hidden mb-4">
+                                        <form action="{{ route('comment.store', $build->build_id) }}" method="POST">
+                                            @csrf
+                                            <input type="hidden" name="parent_id" value="{{ $comment->comment_id }}">
+                                            <input type="text" name="content" placeholder="Write a reply..." class="w-full px-0 pb-2 bg-transparent border-0 border-b-2 border-gray-300 focus:border-black focus:ring-0 text-xs sm:text-sm placeholder-gray-500 transition-colors">
+                                            <div class="mt-2 flex gap-2 justify-end">
+                                                <button type="submit" class="px-3 py-1.5 text-xs font-bold bg-black text-white border-2 border-black transition-all">
+                                                    Reply
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    @endauth
+
+                                    {{-- Replies --}}
+                                    @foreach($comment->replies as $reply)
+                                    <div class="ml-6 sm:ml-8 pl-3 sm:pl-4 border-l-2 border-black mb-4">
                                         <div class="flex gap-2 sm:gap-3 items-start">
-                                            <div class="w-6 h-6 sm:w-8 sm:h-8 bg-black border-2 border-black flex-shrink-0 flex items-center justify-center">
-                                                <span class="text-white font-bold text-xs">AB</span>
+                                            <div class="w-8 h-8 sm:w-10 sm:h-10 border-2 border-black flex-shrink-0 flex items-center justify-center">
+                                                <img class="h-full w-full object-cover object-center" src="{{ asset('images/' . $reply->user->image)}}" alt="">
                                             </div>
                                             <div class="flex-1 min-w-0">
                                                 <div class="flex items-center gap-2 mb-1 flex-wrap">
-                                                    <span class="font-bold text-xs sm:text-sm">@author</span>
-                                                    <!-- <span class="text-xs bg-black text-white px-2 py-0.5 font-bold">CREATOR</span> -->
-                                                    <span class="text-xs text-gray-500">3 hours ago</span>
+                                                    <span class="font-bold text-xs sm:text-sm">{{ '@' . $reply->user->username }}</span>
+                                                    <span class="text-xs text-gray-500">{{ $reply->created_at->diffForHumans() }}</span>
                                                 </div>
-                                                <p class="text-xs sm:text-sm text-body mb-2 break-words">@minecraftpro Thank you! I spent a lot of time getting those textures just right.</p>
-                                                <div class="flex items-center gap-3 sm:gap-4">
-                                                    <button class="flex items-center gap-1 group">
-                                                        <svg class="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path>
-                                                        </svg>
-                                                        <span class="text-xs sm:text-sm font-bold">8</span>
-                                                    </button>
-                                                    <button class="flex items-center gap-1 group">
-                                                        <svg class="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:scale-110 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path>
-                                                        </svg>
-                                                    </button>
-                                                    <button class="reply-btn text-xs sm:text-sm font-bold hover:bg-black hover:text-white px-2 sm:px-3 py-1 border-2 border-transparent hover:border-black transition-all">
+                                                <p class="text-xs sm:text-sm text-body mb-2 break-words">{{ $reply->content }}</p>
+                                                <div class="flex items-center gap-3 sm:gap-4 mt-2">
+                                                    @auth
+                                                    <button onclick="document.getElementById('reply-form-{{ $reply->comment_id }}').classList.toggle('hidden')"
+                                                        class="reply-btn text-xs sm:text-sm font-bold hover:bg-black hover:text-white px-2 sm:px-3 py-1 border-2 border-transparent hover:border-black transition-all">
                                                         Reply
                                                     </button>
+                                                    @endauth
+
+                                                    @if(Auth::check() && Auth::id() == $reply->user_id)
+                                                    <form action="{{ route('comment.destroy', $reply->comment_id) }}" method="POST">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="text-xs font-bold text-red-500 hover:underline">Delete</button>
+                                                    </form>
+                                                    @endif
                                                 </div>
+
+                                                {{-- Reply form --}}
+                                                @auth
+                                                <div id="reply-form-{{ $reply->comment_id }}" class="hidden mt-2">
+                                                    <form action="{{ route('comment.store', $build->build_id) }}" method="POST">
+                                                        @csrf
+                                                        <input type="hidden" name="parent_id" value="{{ $comment->comment_id }}">
+                                                        <input type="text" name="content" placeholder="Write a reply..." class="w-full px-0 pb-2 bg-transparent border-0 border-b-2 border-gray-300 focus:border-black focus:ring-0 text-xs sm:text-sm placeholder-gray-500 transition-colors">
+                                                        <div class="mt-2 flex gap-2 justify-end">
+                                                            <button type="submit" class="px-3 py-1.5 text-xs font-bold bg-black text-white border-2 border-black transition-all">
+                                                                Reply
+                                                            </button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                @endauth
                                             </div>
                                         </div>
                                     </div>
+                                    @endforeach
+
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Comment 3 -->
-                        <div class="comment-wrapper">
-                            <div class="flex gap-2 sm:gap-3 items-start">
-                                <div class="w-8 h-8 sm:w-10 sm:h-10 bg-black border-2 border-black flex-shrink-0 flex items-center justify-center">
-                                    <span class="text-white font-bold text-xs sm:text-sm">BL</span>
-                                </div>
-                                <div class="flex-1 min-w-0">
-                                    <div class="flex items-center gap-2 mb-1 flex-wrap">
-                                        <span class="font-bold text-xs sm:text-sm">@builder123</span>
-                                        <span class="text-xs text-gray-500">1 day ago</span>
-                                    </div>
-                                    <p class="text-xs sm:text-sm text-body mb-2 break-words">Can you share the schematic for this? Would love to use it in my world!</p>
-                                    <div class="flex items-center gap-3 sm:gap-4">
-                                        <button class="flex items-center gap-1 group">
-                                            <svg class="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path>
-                                            </svg>
-                                            <span class="text-xs sm:text-sm font-bold">23</span>
-                                        </button>
-                                        <button class="flex items-center gap-1 group">
-                                            <svg class="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:scale-110 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path>
-                                            </svg>
-                                        </button>
-                                        <button class="reply-btn text-xs sm:text-sm font-bold hover:bg-black hover:text-white px-2 sm:px-3 py-1 border-2 border-transparent hover:border-black transition-all">
-                                            Reply
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
+                        @empty
+                        <p class="text-sm text-body">No comments yet. Be the first to comment!</p>
+                        @endforelse
                     </div>
                 </div>
 
