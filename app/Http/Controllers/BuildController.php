@@ -53,7 +53,7 @@ class BuildController extends Controller
             ->avg('rating');
         $comments = Comment::where('build_id', $build_id)
             ->whereNull('parent_id')
-            ->with(['user', 'replies.user'])
+            ->with(['user', 'replies.user', 'reactions', 'replies.reactions'])
             ->latest()
             ->get();
         $categoryBuilds = Build::where('category_id', $build->category_id)

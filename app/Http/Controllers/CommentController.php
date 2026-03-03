@@ -25,6 +25,35 @@ class CommentController extends Controller
         return redirect()->back()->with('success', 'Comment posted!');
     }
 
+    public function react(Request $request, $comment_id)
+    {
+        $request->validate([
+            'reaction' => 'required|in:like,dislike',
+        ]);
+
+        $existing = \App\Models\Reaction::where('comment_id', $comment_id)
+            ->where('user_id', Auth::id())
+            ->first();
+
+        if ($existing) {
+            if ($existing->reaction === $request->reaction) {
+                // clicking same reaction removes it
+                $existing->delete();
+            } else {
+                // clicking opposite reaction switches it
+                $existing->update(['reaction' => $request->reaction]);
+            }
+        } else {
+            \App\Models\Reaction::create([
+                'comment_id' => $comment_id,
+                'user_id' => Auth::id(),
+                'reaction' => $request->reaction,
+            ]);
+        }
+
+        return redirect()->back();
+    }
+
     public function destroy($comment_id)
     {
         $comment = Comment::where('comment_id', $comment_id)->firstOrFail();

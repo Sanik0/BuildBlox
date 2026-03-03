@@ -59,6 +59,7 @@ Route::post('/creation/{build_id}/rate', [BuildController::class, 'rate'])->name
 // COMMENT ROUTES
 Route::post('/creation/{build_id}/comment', [CommentController::class, 'store'])->name('comment.store')->middleware('auth');
 Route::delete('/comment/{comment_id}', [CommentController::class, 'destroy'])->name('comment.destroy')->middleware('auth');
+Route::post('/comment/{comment_id}/react', [CommentController::class, 'react'])->name('comment.react')->middleware('auth');
 
 // AUTHOR ROUTES
 Route::get('/create', [BuildController::class, 'create'])
