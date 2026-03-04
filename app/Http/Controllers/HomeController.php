@@ -18,6 +18,15 @@ class HomeController extends Controller
 
         $categories = Category::withCount('builds')->get();
 
-        return view('home', compact('topBuilds', 'categories'));
+        $medievalBuilds = Build::whereHas('category', function ($query) {
+            $query->where('title', 'Medieval');
+        })
+            ->withAvg('ratings', 'rating')
+            ->withCount('views')
+            ->orderByDesc('views_count')
+            ->take(4)
+            ->get();
+
+        return view('home', compact('topBuilds', 'categories', 'medievalBuilds'));
     }
 }
