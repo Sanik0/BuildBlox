@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BuildController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\HomeController;
 use App\Models\Build;
 use App\Models\Rating;
 use App\Models\Category;
@@ -12,13 +13,8 @@ use App\Models\View;
 use App\Models\User;
 use App\Models\Comment;
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/home', function () {
-    return view('home');
-})->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index']);
 
 Route::get('/categories', function () {
     return view('categories');

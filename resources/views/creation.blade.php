@@ -255,6 +255,10 @@
                                             <input type="hidden" name="parent_id" value="{{ $comment->comment_id }}">
                                             <input type="text" name="content" placeholder="Write a reply..." class="w-full px-0 pb-2 bg-transparent border-0 border-b-2 border-gray-300 focus:border-black focus:ring-0 text-xs sm:text-sm placeholder-gray-500 transition-colors">
                                             <div class="mt-2 flex gap-2 justify-end">
+                                                <button type="button" onclick="document.getElementById('reply-form-{{ $comment->comment_id }}').classList.add('hidden')"
+                                                    class="px-3 py-1.5 text-xs font-bold border-2 border-black hover:bg-gray-100 transition-all">
+                                                    Cancel
+                                                </button>
                                                 <button type="submit" class="px-3 py-1.5 text-xs font-bold bg-black text-white border-2 border-black transition-all">
                                                     Reply
                                                 </button>
@@ -326,6 +330,10 @@
                                                         <input type="hidden" name="parent_id" value="{{ $comment->comment_id }}">
                                                         <input type="text" name="content" placeholder="Write a reply..." class="w-full px-0 pb-2 bg-transparent border-0 border-b-2 border-gray-300 focus:border-black focus:ring-0 text-xs sm:text-sm placeholder-gray-500 transition-colors">
                                                         <div class="mt-2 flex gap-2 justify-end">
+                                                            <button type="button" onclick="document.getElementById('reply-form-{{ $reply->comment_id }}').classList.add('hidden')"
+                                                                class="px-3 py-1.5 text-xs font-bold border-2 border-black hover:bg-gray-100 transition-all">
+                                                                Cancel
+                                                            </button>
                                                             <button type="submit" class="px-3 py-1.5 text-xs font-bold bg-black text-white border-2 border-black transition-all">
                                                                 Reply
                                                             </button>

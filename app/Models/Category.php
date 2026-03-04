@@ -6,14 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
+    protected $primaryKey = 'category_id';
+
     protected $fillable = [
         'ttle',
         'description',
         'category_id',
     ];
 
-    public function builds() 
+    public function builds()
     {
-        return $this->hasMany(Build::class);
+        return $this->hasMany(Build::class, 'category_id', 'category_id');
     }
 }
