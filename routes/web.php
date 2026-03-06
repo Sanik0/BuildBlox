@@ -20,8 +20,9 @@ Route::get('/categories', function () {
     return view('categories');
 })->name('categories');
 
-// BUILD ROUTES
+// BUILDS ROUTES
 Route::get('/builds', [BuildController::class, 'index'])->name('builds');
+Route::get('/builds/search', [BuildController::class, 'search'])->name('builds.search');
 
 Route::get('/profile', function () {
     return view('profile');

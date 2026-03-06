@@ -16,15 +16,29 @@ use App\Models\Comment;
 class BuildController extends Controller
 {
 
-    public function index() 
+    public function index()
     {
         $builds = Build::withAvg('ratings', 'rating')
-        ->withCount('views')
-        ->orderByDesc('views_count')
-        ->orderByDesc('ratings_avg_rating')
-        ->paginate(22);
+            ->withCount('views')
+            ->orderByDesc('views_count')
+            ->orderByDesc('ratings_avg_rating')
+            ->paginate(22);
 
         return view('builds', compact('builds'));
+    }
+
+    public function search(Request $request)
+    {
+        $query = $request->input('query');
+
+        $builds = Build::where('title', 'like', '%' . $query . '%')
+            ->withAvg('ratings', 'rating')
+            ->withCount('views')
+            ->orderByDesc('views_count')
+            ->paginate(12)
+            ->withQueryString();
+
+        return view('builds', compact('builds', 'query'));
     }
 
     public function showBuild($build_id)

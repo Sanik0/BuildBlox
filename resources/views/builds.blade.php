@@ -13,16 +13,16 @@
             <div class="py-8 px-4 flex flex-col items-center justify-center mx-auto max-w-screen-xl text-center lg:py-30 z-10 relative">
                 <h1 class="mb-6 text-4xl font-bold tracking-tighter text-heading md:text-5xl lg:text-6xl">Search the build for your world</h1>
                 <p class="mb-8 w-full text-base font-normal max-w-xl text-body md:text-xl">Here at flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</p>
-                <form class="max-w-md w-full mx-auto">
-                    <label for="search" class="block mb-2.5 text-sm font-medium text-heading sr-only ">Search</label>
+                <form class="max-w-md w-full mx-auto" action="{{ route('builds.search') }}" method="GET">
+                    <label for="search" class="block mb-2.5 text-sm font-medium text-heading sr-only">Search</label>
                     <div class="relative">
                         <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                             <svg class="w-4 h-4 text-body" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
                             </svg>
                         </div>
-                        <input type="search" id="search" class="block w-full p-3 ps-9 bg-neutral-secondary-medium border border-black text-heading text-sm shadow-[0_3px_0_0_black] focus:ring-brand focus:border-brand placeholder:text-body" placeholder="Search" required />
-                        <button type="button" class=" button-mc absolute end-1.5 bottom-1.5 text-white bg-brand hover:bg-brand-strong box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded text-xs px-3 py-1.5 focus:outline-none">Search</button>
+                        <input type="search" id="search" name="query" value="{{ request('query') }}" class="block w-full p-3 ps-9 bg-neutral-secondary-medium border border-black text-heading text-sm shadow-[0_3px_0_0_black] focus:ring-brand focus:border-brand placeholder:text-body" placeholder="Search" />
+                        <button type="submit" class="button-mc absolute end-1.5 bottom-1.5 text-white bg-brand hover:bg-brand-strong box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded text-xs px-3 py-1.5 focus:outline-none">Search</button>
                     </div>
                 </form>
             </div>
@@ -32,6 +32,9 @@
     <!-- BUILDS -->
     <section class="w-full flex items-center justify-center px-4 flex-col py-10 ">
         <div class="w-full max-w-screen-xl">
+            @if(request('query'))
+            <p class="text-body text-sm mb-6">Showing results for <span class="font-bold text-heading">"{{ request('query') }}"</span> — {{ $builds->total() }} results</p>
+            @endif
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-9">
                 @forelse($builds as $build)
                 <a href="{{ route('build.show', $build->build_id) }}" class="bg-neutral-primary-soft w-full border-2 border-black shadow-[0_3px_0_0_black] transition-all duration-200 hover:translate-y-[2px] hover:shadow-[0_1px_0_0_black] hover:border-blue-500 hover:shadow-[0_1px_0_0_rgb(59,130,246)] block group">
