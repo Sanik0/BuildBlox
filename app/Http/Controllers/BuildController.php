@@ -16,6 +16,17 @@ use App\Models\Comment;
 class BuildController extends Controller
 {
 
+    public function index() 
+    {
+        $builds = Build::withAvg('ratings', 'rating')
+        ->withCount('views')
+        ->orderByDesc('views_count')
+        ->orderByDesc('ratings_avg_rating')
+        ->paginate(22);
+
+        return view('builds', compact('builds'));
+    }
+
     public function showBuild($build_id)
     {
         $build = Build::where('build_id', $build_id)->first();
