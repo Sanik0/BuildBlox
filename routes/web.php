@@ -5,6 +5,8 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BuildController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CategoryController;
+
 use App\Models\Build;
 use App\Models\Rating;
 use App\Models\Category;
@@ -16,9 +18,8 @@ use App\Models\Comment;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/home', [HomeController::class, 'index']);
 
-Route::get('/categories', function () {
-    return view('categories');
-})->name('categories');
+// CATEGORY ROUTES
+Route::get('/categories', [CategoryController::class, 'index'])->name('categories');
 
 // BUILDS ROUTES
 Route::get('/builds', [BuildController::class, 'index'])->name('builds');
