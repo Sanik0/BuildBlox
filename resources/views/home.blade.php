@@ -83,7 +83,7 @@
                 <div class="flex transition-transform duration-500 ease-in-out gap-4">
                     @foreach($categories as $category)
                     <div class="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 px-2">
-                        <a href="#" class="border-black group overflow-hidden hover:border-brand flex items-end relative border-2 w-full h-40 lg:h-48 block">
+                        <a href="{{ route('builds.category', $category->category_id)}}" class="border-black group overflow-hidden hover:border-brand flex items-end relative border-2 w-full h-40 lg:h-48 block">
                             <div class="w-full absolute inset-0 h-full">
                                 <img class="w-full h-full object-center object-cover transition-transform duration-300 group-hover:scale-105"
                                     src="{{ asset('images/' . $category->cover_image)}}"

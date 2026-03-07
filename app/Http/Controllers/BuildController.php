@@ -41,6 +41,19 @@ class BuildController extends Controller
         return view('builds', compact('builds', 'query'));
     }
 
+    public function byCategory($category_id)
+    {
+        $category = Category::where('category_id', $category_id)->firstOrFail();
+
+        $builds = Build::where('category_id', $category_id)
+            ->withAvg('ratings', 'rating')
+            ->withCount('views')
+            ->orderByDesc('views_count')
+            ->paginate(12);
+
+        return view('builds', compact('builds', 'category'));
+    }
+
     public function showBuild($build_id)
     {
         $build = Build::where('build_id', $build_id)->first();

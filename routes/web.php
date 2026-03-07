@@ -24,6 +24,7 @@ Route::get('/categories', [CategoryController::class, 'index'])->name('categorie
 // BUILDS ROUTES
 Route::get('/builds', [BuildController::class, 'index'])->name('builds');
 Route::get('/builds/search', [BuildController::class, 'search'])->name('builds.search');
+Route::get('/builds/category/{category_id}', [BuildController::class, 'byCategory'])->name('builds.category');
 
 Route::get('/profile', function () {
     return view('profile');

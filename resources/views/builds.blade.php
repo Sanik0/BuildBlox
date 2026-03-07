@@ -35,6 +35,11 @@
             @if(request('query'))
             <p class="text-body text-sm mb-6">Showing results for <span class="font-bold text-heading">"{{ request('query') }}"</span> — {{ $builds->total() }} results</p>
             @endif
+            @if(isset($category))
+            <h4 class="text-3xl font-bold mb-3 tracking-tighter text-heading">{{ $category->title }} Builds</h4>
+            @else
+            <h4 class="text-3xl font-bold mb-3 tracking-tighter text-heading">All Builds</h4>
+            @endif
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-9">
                 @forelse($builds as $build)
                 <a href="{{ route('build.show', $build->build_id) }}" class="bg-neutral-primary-soft w-full border-2 border-black shadow-[0_3px_0_0_black] transition-all duration-200 hover:translate-y-[2px] hover:shadow-[0_1px_0_0_black] hover:border-blue-500 hover:shadow-[0_1px_0_0_rgb(59,130,246)] block group">
@@ -68,11 +73,6 @@
             </div>
 
             {{ $builds->links() }}
-
-            <!-- LOAD MORE -->
-            <div class="w-full flex items-center mt-10 justify-center">
-                <button class="text-gray-600 w-fit button-mc shadow-[-4px_-4px_0_0_black] bg-gray-100 hover:bg-gray-200 box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none">Load More</button>
-            </div>
         </div>
     </section>
     <!-- FOOTER -->
