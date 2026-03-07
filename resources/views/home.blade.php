@@ -57,16 +57,16 @@
                 </div>
                 <h1 class="mb-6 text-4xl font-bold tracking-tighter text-heading md:text-5xl lg:text-6xl">Explore a wide variety of Builds</h1>
                 <p class="mb-8 w-full text-base font-normal max-w-xl text-body md:text-xl">Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</p>
-                <form class="max-w-md w-full mx-auto">
-                    <label for="search" class="block mb-2.5 text-sm font-medium text-heading sr-only ">Search</label>
+                <form class="max-w-md w-full mx-auto" action="{{ route('builds.search') }}" method="GET">
+                    <label for="search" class="block mb-2.5 text-sm font-medium text-heading sr-only">Search</label>
                     <div class="relative">
                         <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                             <svg class="w-4 h-4 text-body" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
                             </svg>
                         </div>
-                        <input type="search" id="search" class="block w-full p-3 ps-9 bg-neutral-secondary-medium border border-black text-heading text-sm shadow-[0_3px_0_0_black] focus:ring-brand focus:border-brand placeholder:text-body" placeholder="Search" required />
-                        <button type="button" class=" button-mc absolute end-1.5 bottom-1.5 text-white bg-brand hover:bg-brand-strong box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded text-xs px-3 py-1.5 focus:outline-none">Search</button>
+                        <input type="search" id="search" name="query" value="{{ request('query') }}" class="block w-full p-3 ps-9 bg-neutral-secondary-medium border border-black text-heading text-sm shadow-[0_3px_0_0_black] focus:ring-brand focus:border-brand placeholder:text-body" placeholder="Search" />
+                        <button type="submit" class="button-mc absolute end-1.5 bottom-1.5 text-white bg-brand hover:bg-brand-strong box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded text-xs px-3 py-1.5 focus:outline-none">Search</button>
                     </div>
                 </form>
             </div>
@@ -86,7 +86,7 @@
                         <a href="#" class="border-black group overflow-hidden hover:border-brand flex items-end relative border-2 w-full h-40 lg:h-48 block">
                             <div class="w-full absolute inset-0 h-full">
                                 <img class="w-full h-full object-center object-cover transition-transform duration-300 group-hover:scale-105"
-                                    src="{{ $category->image ? asset('storage/' . $category->image) : asset('images/4k Minecraft Nature.jpg') }}"
+                                    src="{{ asset('images/' . $category->cover_image)}}"
                                     alt="{{ $category->title }}">
                             </div>
                             <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
