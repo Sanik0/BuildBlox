@@ -126,13 +126,13 @@
             <div class="mb-4 border-b border-default">
                 <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="default-styled-tab" data-tabs-toggle="#default-styled-tab-content" data-tabs-active-classes="text-purple hover:text-purple border-purple" data-tabs-inactive-classes="dark:border-transparent text-body hover:text-fg-brand border-default hover:border-brand" role="tablist">
                     <li class="me-2" role="presentation">
-                        <button class="inline-block p-4 border-b-2 rounded-t-base" id="steps-styled-tab" data-tabs-target="#styled-steps" type="button" role="tab" aria-controls="steps" aria-selected="false">Steps</button>
+                        <button class="inline-block p-4 border-b-2 rounded-t-base cursor-pointer" id="steps-styled-tab" data-tabs-target="#styled-steps" type="button" role="tab" aria-controls="steps" aria-selected="false">Steps</button>
                     </li>
                     <li class="me-2" role="presentation">
-                        <button class="inline-block p-4 border-b-2 rounded-t-base hover:text-fg-brand hover:border-brand" id="dashboard-styled-tab" data-tabs-target="#styled-dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="false">Materials</button>
+                        <button class="inline-block p-4 border-b-2 rounded-t-base hover:text-fg-brand hover:border-brand cursor-pointer" id="dashboard-styled-tab" data-tabs-target="#styled-dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="false">Materials</button>
                     </li>
                     <li class="me-2" role="presentation">
-                        <button class="inline-block p-4 border-b-2 rounded-t-base hover:text-fg-brand hover:border-brand" id="settings-styled-tab" data-tabs-target="#styled-settings" type="button" role="tab" aria-controls="settings" aria-selected="false">Comments</button>
+                        <button class="inline-block p-4 border-b-2 rounded-t-base hover:text-fg-brand hover:border-brand cursor-pointer" id="settings-styled-tab" data-tabs-target="#styled-settings" type="button" role="tab" aria-controls="settings" aria-selected="false">Comments</button>
                     </li>
                 </ul>
             </div>
@@ -171,13 +171,13 @@
                         <form action="{{ route('comment.store', $build->build_id) }}" method="POST">
                             @csrf
                             <div class="flex gap-2 sm:gap-3 items-start">
-                                <div class="w-8 h-8 sm:w-10 sm:h-10 bg-black border-2 border-black flex-shrink-0 flex items-center justify-center">
-                                    <span class="text-white font-bold text-xs sm:text-sm">{{ strtoupper(substr(Auth::user()->username, 0, 2)) }}</span>
+                                <div class="w-8 h-8 sm:w-10 sm:h-10 border-2 border-black flex-shrink-0 flex items-center justify-center">
+                                    <img class="h-full w-full object-cover object-center" src="{{ asset('images/' . Auth::user()->image)}}" alt="">
                                 </div>
                                 <div class="flex-1 min-w-0">
                                     <input type="text" name="content" placeholder="Add a comment..." class="w-full px-0 pb-2 bg-transparent border-0 border-b-2 border-gray-300 focus:border-black focus:ring-0 text-xs sm:text-sm placeholder-gray-500 transition-colors">
                                     <div class="mt-3 flex gap-2 justify-end">
-                                        <button type="submit" class="px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-bold bg-black text-white border-2 border-black shadow-[3px_3px_0_0_rgba(0,0,0,1)] hover:shadow-[1px_1px_0_0_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all">
+                                        <button type="submit" class="px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-bold bg-black text-white border-2 border-black transition-all">
                                             Comment
                                         </button>
                                     </div>
@@ -203,13 +203,13 @@
                                         <span class="text-xs text-gray-500">{{ $comment->created_at->diffForHumans() }}</span>
                                     </div>
                                     <p class="text-xs sm:text-sm text-body mb-2 break-words">{{ $comment->content }}</p>
-                                    <div class="flex items-center gap-3 sm:gap-4 mb-4">
+                                    <div class="flex items-center gap-3 sm:gap-4  mb-4">
                                         {{-- Like --}}
                                         <form action="{{ route('comment.react', $comment->comment_id) }}" method="POST">
                                             @csrf
                                             <input type="hidden" name="reaction" value="like">
-                                            <button type="submit" class="flex items-center gap-1 group">
-                                                <svg class="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:scale-110 {{ Auth::check() && $comment->reactions->where('user_id', Auth::id())->where('reaction', 'like')->count() ? 'text-blue-500' : '' }}"
+                                            <button type="submit" class="flex items-center gap-1 hover:bg-gray-200 p-1.5 rounded-full cursor-pointer group">
+                                                <svg class="w-4 h-4 sm:w-5 sm:h-5 {{ Auth::check() && $comment->reactions->where('user_id', Auth::id())->where('reaction', 'like')->count() ? 'text-blue-500' : '' }}"
                                                     fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path>
                                                 </svg>
@@ -218,11 +218,11 @@
                                         </form>
 
                                         {{-- Dislike --}}
-                                        <form action="{{ route('comment.react', $comment->comment_id) }}" method="POST">
+                                        <form action="{{ route('comment.react', $comment->comment_id) }}" method="POST" class="">
                                             @csrf
                                             <input type="hidden" name="reaction" value="dislike">
-                                            <button type="submit" class="flex items-center gap-1 group">
-                                                <svg class="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:scale-110 rotate-180 {{ Auth::check() && $comment->reactions->where('user_id', Auth::id())->where('reaction', 'dislike')->count() ? 'text-red-500' : '' }}"
+                                            <button type="submit" class="flex items-center gap-1 hover:bg-gray-200 p-1.5 rounded-full cursor-pointer group">
+                                                <svg class="w-4 h-4 sm:w-5 sm:h-5 transition-transform rotate-180 {{ Auth::check() && $comment->reactions->where('user_id', Auth::id())->where('reaction', 'dislike')->count() ? 'text-red-500' : '' }}"
                                                     fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path>
                                                 </svg>
@@ -232,7 +232,7 @@
                                         {{-- Reply button --}}
                                         @auth
                                         <button onclick="document.getElementById('reply-form-{{ $comment->comment_id }}').classList.toggle('hidden')"
-                                            class="reply-btn text-xs sm:text-sm font-bold hover:bg-black hover:text-white px-2 sm:px-3 py-1 border-2 border-transparent hover:border-black transition-all">
+                                            class="reply-btn text-xs sm:text-sm font-bold hover:bg-gray-200 cursor-pointer rounded-10 px-2 sm:px-3 py-1 border-2 border-transparent transition-all">
                                             Reply
                                         </button>
                                         @endauth

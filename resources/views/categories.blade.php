@@ -23,7 +23,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-9">
 
                 @foreach($categories as $category)
-                <div class="border-black group overflow-hidden hover:border-brand flex items-end relative border-2 w-full h-40 lg:h-48">
+                <a href="{{ route('builds.category', $category->category_id)}}" class="border-black group overflow-hidden hover:border-brand flex items-end relative border-2 w-full h-40 lg:h-48">
                     <div class="w-full absolute inset-0 h-full">
                         <img class="w-full h-full object-center object-cover transition-transform duration-300 group-hover:scale-105"
                             src="{{ asset('images/' . $category->cover_image)}}"
@@ -34,7 +34,7 @@
                         <p class="w-full text-base font-bold text-white md:text-xl lg:text-2xl">{{ $category->title }}</p>
                         <small class="w-full text-xs font-bold text-gray-300 md:text-xs lg:text-base">{{ $category->builds_count }} Builds</small>
                     </div>
-                </div>
+                </a>
                 @endforeach
             </div>
         </div>

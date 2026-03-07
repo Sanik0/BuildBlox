@@ -49,7 +49,7 @@
                 <div class="w-auto inline-flex items-center p-1 pe-2 mb-4 text-sm text-fg-brand-strong rounded-full bg-brand-softer border border-brand-subtle" role="alert">
                     <span class="bg-brand-soft text-fg-brand-strong py-0.5 px-2 rounded-full">Latest</span>
                     <div class="ms-2 text-sm">
-                        Checkout latest <a href="#" class="font-medium underline hover:no-underline">Builds</a>
+                        Check out latest <a href="{{ route('builds')}}" class="font-medium underline hover:no-underline">Builds</a>
                     </div>
                     <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7" />

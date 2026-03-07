@@ -23,7 +23,7 @@
                     <span class="text-white self-center text-2xl font-semibold whitespace-nowrap">BuildBlox</span>
                 </a>
                 @if(!Auth::check())
-                <a href="/create-account" class="text-gray-600 w-fit button-mc shadow-[-4px_-4px_0_0_black] bg-gray-100 hover:bg-gray-200 box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none">Create Account</a>
+                <a href="{{ route('signup')}}" class="text-gray-600 w-fit button-mc shadow-[-4px_-4px_0_0_black] bg-gray-100 hover:bg-gray-200 box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none">Create Account</a>
                 @endif
             </div>
             <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
