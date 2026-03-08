@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Build;
 use App\Models\View;
+use App\Models\Rating;
 
 class AuthController extends Controller
 {
@@ -121,12 +122,17 @@ class AuthController extends Controller
             )
             ->get();
 
+        $buildsCount = Build::where('user_id', $user->user_id)->count();
+        $ratedBuildsCount = Rating::where('user_id', $user->user_id)->count();
+
         return view('profile', [
             'user' => $user,
             'isOwnProfile' => $isOwnProfile,
             'builds' => $builds,
             'ratedBuilds' => $ratedBuilds,
             'recentlyViewed' => $recentlyViewed,
+            'buildsCount' => $buildsCount,
+            'ratedBuildsCount' => $ratedBuildsCount,
         ]);
     }
 

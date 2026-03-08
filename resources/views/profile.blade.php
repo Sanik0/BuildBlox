@@ -61,8 +61,10 @@
                             @endif
                         </p>
                         <div class="flex items-center space-x-3">
-                            <span class="bg-black border-black text-white text-base font-medium px-2 py-1">340 Builds</span>
-                            <span class="bg-black border border-black text-white text-base font-medium px-2 py-1">578 Rated Builds</span>
+                            @if ($user->role == 2)
+                            <span class="bg-black border-black text-white text-base font-medium px-2 py-1">{{ $buildsCount }} Builds</span>
+                            @endif
+                            <span class="bg-black border border-black text-white text-base font-medium px-2 py-1">{{ $ratedBuildsCount }} Rated Builds</span>
                         </div>
                         <p class="w-full text-base font-normal max-w-xl text-body md:text-xl">Joined: {{ $user->created_at->format('F d, Y')}}</p>
                         <!-- Modal toggle -->
