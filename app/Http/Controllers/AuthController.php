@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Build;
+use App\Models\View;
 
 class AuthController extends Controller
 {
@@ -106,11 +107,26 @@ class AuthController extends Controller
             ->latest()
             ->get();
 
+        $recentlyViewed = Build::whereHas('views', function ($query) use ($user) {
+            $query->where('user_id', $user->user_id);
+        })
+            ->withAvg('ratings', 'rating')
+            ->withCount('views')
+            ->orderByDesc(
+                View::select('created_at')
+                    ->whereColumn('build_id', 'builds.build_id')
+                    ->where('user_id', $user->user_id)
+                    ->latest()
+                    ->limit(1)
+            )
+            ->get();
+
         return view('profile', [
             'user' => $user,
             'isOwnProfile' => $isOwnProfile,
             'builds' => $builds,
-            'ratedBuilds' =>$ratedBuilds,
+            'ratedBuilds' => $ratedBuilds,
+            'recentlyViewed' => $recentlyViewed,
         ]);
     }
 
