@@ -48,12 +48,12 @@ class AuthController extends Controller
     }
 
     // LOGIN METHODS
-    public function showLoginForm() 
+    public function showLoginForm()
     {
         return view('signin');
     }
 
-    public function login(Request $request) 
+    public function login(Request $request)
     {
         $validator = Validator::make($request->all(), [
             'email' => 'required|email',
@@ -62,24 +62,24 @@ class AuthController extends Controller
 
         if ($validator->fails()) {
             return redirect()->back()
-            ->withErrors($validator)
-            ->withInput($request->except('password'));
+                ->withErrors($validator)
+                ->withInput($request->except('password'));
         }
 
         $credentials = $request->only('email', 'password');
 
-        if(Auth::attempt($credentials)) {
+        if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
             return redirect()->intended('/home')->with('success', 'Login succesful');
         }
 
         return redirect()->back()
-        ->withErrors(['email' => 'The provided credentials do not match our records.'])
-        ->withInput($request->except('password'));
+            ->withErrors(['email' => 'The provided credentials do not match our records.'])
+            ->withInput($request->except('password'));
     }
 
     // LOGOUT METHOD 
-    public function logout(Request $request) 
+    public function logout(Request $request)
     {
         Auth::logout();
         $request->session()->invalidate();
@@ -98,14 +98,23 @@ class AuthController extends Controller
 
         $isOwnProfile = Auth::check() && Auth::user()->user_id == $user->user_id;
         $builds = Build::where('user_id', $user->user_id)->withAvg('ratings', 'rating')->withCount('views')->latest()->get();
+        $ratedBuilds = Build::whereHas('ratings', function ($query) use ($user) {
+            $query->where('user_id', $user->user_id);
+        })
+            ->withAvg('ratings', 'rating')
+            ->withCount('views')
+            ->latest()
+            ->get();
+
         return view('profile', [
             'user' => $user,
             'isOwnProfile' => $isOwnProfile,
-            'builds' => $builds
+            'builds' => $builds,
+            'ratedBuilds' =>$ratedBuilds,
         ]);
     }
 
-    public function updateProfile(Request $request) 
+    public function updateProfile(Request $request)
     {
         $user = Auth::user();
 
@@ -117,9 +126,9 @@ class AuthController extends Controller
             'image' => 'nullable|string|max:255',
         ]);
 
-        if($validator->fails()) {
-             return redirect()->route('profile.show', $user->username)
-            ->with('error', $validator->errors()->first());
+        if ($validator->fails()) {
+            return redirect()->route('profile.show', $user->username)
+                ->with('error', $validator->errors()->first());
         }
 
         $user->first_name = $request->first_name;
@@ -127,7 +136,7 @@ class AuthController extends Controller
         $user->username = $request->username;
         $user->biography = $request->biography;
         $user->image = $request->image;
-        
+
         $user->save();
         return redirect()->route('profile.show', $user->username)->with('success', 'Profile updated successfully!');
     }
