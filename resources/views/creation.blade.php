@@ -177,7 +177,7 @@
                                 <div class="flex-1 min-w-0">
                                     <input type="text" name="content" placeholder="Add a comment..." class="w-full px-0 pb-2 bg-transparent border-0 border-b-2 border-gray-300 focus:border-black focus:ring-0 text-xs sm:text-sm placeholder-gray-500 transition-colors">
                                     <div class="mt-3 flex gap-2 justify-end">
-                                        <button type="submit" class="px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-bold bg-black text-white border-2 border-black transition-all">
+                                        <button type="submit" class="px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-bold bg-blue-600 text-white border-2 rounded-2xl hover:bg-blue-700 cursor-pointer hover:text-gray-100 transition-all">
                                             Comment
                                         </button>
                                     </div>
@@ -209,8 +209,8 @@
                                             @csrf
                                             <input type="hidden" name="reaction" value="like">
                                             <button type="submit" class="flex items-center gap-1 hover:bg-gray-200 p-1.5 rounded-full cursor-pointer group">
-                                                <svg class="w-4 h-4 sm:w-5 sm:h-5 {{ Auth::check() && $comment->reactions->where('user_id', Auth::id())->where('reaction', 'like')->count() ? 'text-blue-500' : '' }}"
-                                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <svg class="w-4 h-4 sm:w-5 sm:h-5 {{ Auth::check() && $comment->reactions->where('user_id', Auth::id())->where('reaction', 'like')->count() ? 'fill-black stroke-black' : 'fill-none' }}"
+                                                    stroke="currentColor" viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path>
                                                 </svg>
                                                 <span class="text-xs sm:text-sm font-bold">{{ $comment->reactions->where('reaction', 'like')->count() }}</span>
@@ -222,8 +222,8 @@
                                             @csrf
                                             <input type="hidden" name="reaction" value="dislike">
                                             <button type="submit" class="flex items-center gap-1 hover:bg-gray-200 p-1.5 rounded-full cursor-pointer group">
-                                                <svg class="w-4 h-4 sm:w-5 sm:h-5 transition-transform rotate-180 {{ Auth::check() && $comment->reactions->where('user_id', Auth::id())->where('reaction', 'dislike')->count() ? 'text-red-500' : '' }}"
-                                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <svg class="w-4 h-4 sm:w-5 sm:h-5 transition-transform rotate-180 {{ Auth::check() && $comment->reactions->where('user_id', Auth::id())->where('reaction', 'dislike')->count() ? 'fill-black stroke-black' : 'fill-none' }}"
+                                                    stroke="currentColor" viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path>
                                                 </svg>
                                             </button>
@@ -232,7 +232,7 @@
                                         {{-- Reply button --}}
                                         @auth
                                         <button onclick="document.getElementById('reply-form-{{ $comment->comment_id }}').classList.toggle('hidden')"
-                                            class="reply-btn text-xs sm:text-sm font-bold hover:bg-gray-200 cursor-pointer rounded-10 px-2 sm:px-3 py-1 border-2 border-transparent transition-all">
+                                            class="reply-btn text-xs sm:text-sm font-bold hover:bg-gray-200 cursor-pointer rounded-3xl px-2 sm:px-3 py-1 border-2 border-transparent transition-all">
                                             Reply
                                         </button>
                                         @endauth
@@ -242,7 +242,7 @@
                                         <form action="{{ route('comment.destroy', $comment->comment_id) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="text-xs sm:text-sm font-bold text-red-500 hover:underline">Delete</button>
+                                            <button type="submit" class="text-xs sm:text-sm font-bold text-red-500 hover:underline cursor-pointer">Delete</button>
                                         </form>
                                         @endif
                                     </div>
@@ -256,10 +256,10 @@
                                             <input type="text" name="content" placeholder="Write a reply..." class="w-full px-0 pb-2 bg-transparent border-0 border-b-2 border-gray-300 focus:border-black focus:ring-0 text-xs sm:text-sm placeholder-gray-500 transition-colors">
                                             <div class="mt-2 flex gap-2 justify-end">
                                                 <button type="button" onclick="document.getElementById('reply-form-{{ $comment->comment_id }}').classList.add('hidden')"
-                                                    class="px-3 py-1.5 text-xs font-bold border-2 border-black hover:bg-gray-100 transition-all">
+                                                     class="reply-btn text-xs sm:text-sm font-bold hover:bg-gray-200 cursor-pointer rounded-3xl px-2 sm:px-3 py-1 border-2 border-transparent transition-all">
                                                     Cancel
                                                 </button>
-                                                <button type="submit" class="px-3 py-1.5 text-xs font-bold bg-black text-white border-2 border-black transition-all">
+                                                <button type="submit"  class="reply-btn text-xs sm:text-sm font-bold hover:bg-gray-300 bg-gray-200 cursor-pointer rounded-3xl px-2 sm:px-3 py-1 border-2 border-transparent transition-all">
                                                     Reply
                                                 </button>
                                             </div>
@@ -285,9 +285,9 @@
                                                     <form action="{{ route('comment.react', $reply->comment_id) }}" method="POST">
                                                         @csrf
                                                         <input type="hidden" name="reaction" value="like">
-                                                        <button type="submit" class="flex items-center gap-1 group">
-                                                            <svg class="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:scale-110 {{ Auth::check() && $reply->reactions->where('user_id', Auth::id())->where('reaction', 'like')->count() ? 'text-blue-500' : '' }}"
-                                                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <button type="submit" class="flex items-center gap-1 hover:bg-gray-200 p-1.5 rounded-full cursor-pointer group">
+                                                            <svg class="w-4 h-4 sm:w-5 sm:h-5 {{ Auth::check() && $reply->reactions->where('user_id', Auth::id())->where('reaction', 'like')->count() ? 'fill-black stroke-black' : 'fill-none' }}"
+                                                                stroke="currentColor" viewBox="0 0 24 24">
                                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path>
                                                             </svg>
                                                             <span class="text-xs sm:text-sm font-bold">{{ $reply->reactions->where('reaction', 'like')->count() }}</span>
@@ -298,9 +298,9 @@
                                                     <form action="{{ route('comment.react', $reply->comment_id) }}" method="POST">
                                                         @csrf
                                                         <input type="hidden" name="reaction" value="dislike">
-                                                        <button type="submit" class="flex items-center gap-1 group">
-                                                            <svg class="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:scale-110 rotate-180 {{ Auth::check() && $reply->reactions->where('user_id', Auth::id())->where('reaction', 'dislike')->count() ? 'text-red-500' : '' }}"
-                                                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <button type="submit" class="flex items-center gap-1 hover:bg-gray-200 p-1.5 rounded-full cursor-pointer group">
+                                                            <svg class="w-4 h-4 sm:w-5 sm:h-5 rotate-180 {{ Auth::check() && $reply->reactions->where('user_id', Auth::id())->where('reaction', 'dislike')->count() ? 'fill-black stroke-black' : 'fill-none' }}"
+                                                                stroke="currentColor" viewBox="0 0 24 24">
                                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path>
                                                             </svg>
                                                         </button>
@@ -308,7 +308,7 @@
 
                                                     @auth
                                                     <button onclick="document.getElementById('reply-form-{{ $reply->comment_id }}').classList.toggle('hidden')"
-                                                        class="reply-btn text-xs sm:text-sm font-bold hover:bg-black hover:text-white px-2 sm:px-3 py-1 border-2 border-transparent hover:border-black transition-all">
+                                                         class="reply-btn text-xs sm:text-sm font-bold hover:bg-gray-200 cursor-pointer rounded-3xl px-2 sm:px-3 py-1 border-2 border-transparent transition-all">
                                                         Reply
                                                     </button>
                                                     @endauth
@@ -317,7 +317,7 @@
                                                     <form action="{{ route('comment.destroy', $reply->comment_id) }}" method="POST">
                                                         @csrf
                                                         @method('DELETE')
-                                                        <button type="submit" class="text-xs font-bold text-red-500 hover:underline">Delete</button>
+                                                        <button type="submit" class="text-xs font-bold text-red-500 hover:underline cursor-pointer">Delete</button>
                                                     </form>
                                                     @endif
                                                 </div>
@@ -331,10 +331,10 @@
                                                         <input type="text" name="content" placeholder="Write a reply..." class="w-full px-0 pb-2 bg-transparent border-0 border-b-2 border-gray-300 focus:border-black focus:ring-0 text-xs sm:text-sm placeholder-gray-500 transition-colors">
                                                         <div class="mt-2 flex gap-2 justify-end">
                                                             <button type="button" onclick="document.getElementById('reply-form-{{ $reply->comment_id }}').classList.add('hidden')"
-                                                                class="px-3 py-1.5 text-xs font-bold border-2 border-black hover:bg-gray-100 transition-all">
+                                                                class="reply-btn text-xs sm:text-sm font-bold hover:bg-gray-200 cursor-pointer rounded-3xl px-2 sm:px-3 py-1 border-2 border-transparent transition-all">
                                                                 Cancel
                                                             </button>
-                                                            <button type="submit" class="px-3 py-1.5 text-xs font-bold bg-black text-white border-2 border-black transition-all">
+                                                            <button type="submit" class="reply-btn text-xs sm:text-sm font-bold hover:bg-gray-300 bg-gray-200 cursor-pointer rounded-3xl px-2 sm:px-3 py-1 border-2 border-transparent transition-all">
                                                                 Reply
                                                             </button>
                                                         </div>
