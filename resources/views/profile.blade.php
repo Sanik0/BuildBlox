@@ -221,9 +221,11 @@
 
             <div class="mb-4 border-b border-default">
                 <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="default-styled-tab" data-tabs-toggle="#default-styled-tab-content" data-tabs-active-classes="text-purple hover:text-purple border-purple" data-tabs-inactive-classes="dark:border-transparent text-body hover:text-fg-brand border-default cursor-pointer hover:border-brand" role="tablist">
+                    @if($user->role == 2)
                     <li class="me-2" role="presentation">
                         <button class="inline-block p-4 border-b-2 rounded-t-base" id="steps-styled-tab" data-tabs-target="#styled-steps" type="button" role="tab" aria-controls="steps" aria-selected="false">My Builds</button>
                     </li>
+                    @endif
                     <li class="me-2" role="presentation">
                         <button class="inline-block p-4 border-b-2 rounded-t-base hover:text-fg-brand hover:border-brand" id="dashboard-styled-tab" data-tabs-target="#styled-dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="false">Rated Builds</button>
                     </li>
@@ -233,6 +235,8 @@
                 </ul>
             </div>
             <div id="default-styled-tab-content">
+
+                @if ($user->role == 2)
                 <!-- CREATE BUILDS -->
                 <div class="hidden" id="styled-steps" role="tabpanel" aria-labelledby="steps-tab">
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-9">
@@ -279,6 +283,7 @@
                     </section>
                     @endif
                 </div>
+                @endif
 
                 <!-- RATED BUILDS -->
                 <div id="styled-dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
