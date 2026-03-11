@@ -67,4 +67,9 @@ class User extends Authenticatable
     {
         return $this->role == 2;
     }
+
+    public function builds()
+    {
+        return $this->hasMany(Build::class, 'user_id', 'user_id');
+    }
 }

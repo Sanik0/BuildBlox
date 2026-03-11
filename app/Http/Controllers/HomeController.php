@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Build;
 use App\Models\Category;
+use App\Models\User;
 
 class HomeController extends Controller
 {
@@ -26,8 +27,21 @@ class HomeController extends Controller
             ->orderByDesc('views_count')
             ->take(4)
             ->get();
+        $modernBuilds = Build::whereHas('category', function ($query) {
+            $query->where('title', 'Modern');
+        })
+            ->withAvg('ratings', 'rating')
+            ->withCount('views')
+            ->orderByDesc('views_count')
+            ->take(4)
+            ->get();
 
-        return view('home', compact('topBuilds', 'categories', 'medievalBuilds'));
+        $topBuilders = User::where('role', 2) 
+            ->withCount('builds')
+            ->orderByDesc('builds_count')
+            ->take(6)
+            ->get();
+
+        return view('home', compact('topBuilds', 'categories', 'medievalBuilds', 'modernBuilds', 'topBuilders'));
     }
-
 }
