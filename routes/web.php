@@ -6,6 +6,7 @@ use App\Http\Controllers\BuildController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\AdminController;
 
 use App\Models\Build;
 use App\Models\Rating;
@@ -85,18 +86,9 @@ Route::get('/partials/navigation', function () {
 })->name('partials.navigation');
 
 // ADMIN ROUTES
-Route::get('/admin/home', function () {
-    return view('admin.home');
-})->name('admin.home');
-
-Route::get('/admin/users', function () {
-    return view('admin.users');
-})->name('admin.users');
-
-Route::get('/admin/categories', function () {
-    return view('admin.categories');
-})->name('admin.categories');
-
-Route::get('/admin/builds', function () {
-    return view('admin.builds');
-})->name('admin.builds');
+Route::middleware(['auth'])->prefix('admin')->group(function () {
+    Route::get('home', [AdminController::class, 'users'])->name('admin.home');
+    Route::get('/users', [AdminController::class, 'users'])->name('admin.users');
+    Route::get('/builds', [AdminController::class, 'builds'])->name('admin.builds');
+    Route::get('/categories', [AdminController::class, 'categories'])->name('admin.categories');
+});
